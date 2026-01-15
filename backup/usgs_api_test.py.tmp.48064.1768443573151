@@ -1,0 +1,128 @@
+"""
+USGS NWIS API Connection Test
+- Fetch and parse groundwater data
+"""
+
+import requests
+
+
+def test_api_connection():
+    """Test API connection and parse data"""
+
+    base_url = "https://waterservices.usgs.gov/nwis/dv/"
+
+    params = {
+        'format': 'json',
+        'sites': '323527117050001',
+        'parameterCd': '72019',
+        'period': 'P30D',
+        'siteStatus': 'all'
+    }
+
+    print("=" * 70)
+    print("USGS NWIS API - Groundwater Data Parser")
+    print("=" * 70)
+    print(f"\nURL: {base_url}")
+    print(f"Parameters: {params}")
+    print("\nSending request...")
+
+    try:
+        response = requests.get(base_url, params=params, timeout=30)
+
+        print(f"\n[Response]")
+        print(f"  Status Code: {response.status_code}")
+
+        if response.status_code != 200:
+            print(f"  Error: {response.text[:500]}")
+            return False
+
+        data = response.json()
+        time_series = data.get('value', {}).get('timeSeries', [])
+
+        print(f"  Time Series Count: {len(time_series)}")
+
+        # Process each time series
+        for idx, ts in enumerate(time_series):
+            # --- Site Information ---
+            site_info = ts.get('sourceInfo', {})
+            site_code = site_info.get('siteCode', [{}])[0].get('value', 'N/A')
+            site_name = site_info.get('siteName', 'N/A')
+
+            geo = site_info.get('geoLocation', {}).get('geogLocation', {})
+            latitude = geo.get('latitude', 'N/A')
+            longitude = geo.get('longitude', 'N/A')
+
+            # --- Variable Information ---
+            variable = ts.get('variable', {})
+            var_code = variable.get('variableCode', [{}])[0].get('value', 'N/A')
+            var_name = variable.get('variableName', 'N/A')
+            var_desc = variable.get('variableDescription', 'N/A')
+            unit = variable.get('unit', {}).get('unitCode', 'N/A')
+
+            # --- Values ---
+            values = ts.get('values', [{}])[0].get('value', [])
+            valid_values = [v for v in values if float(v.get('value', -999999)) > -9999]
+
+            if not valid_values:
+                continue
+
+            print(f"\n{'=' * 70}")
+            print(f"[Time Series {idx + 1}]")
+            print(f"{'=' * 70}")
+
+            print(f"\n[Site Information]")
+            print(f"  Site Code  : {site_code}")
+            print(f"  Site Name  : {site_name}")
+            print(f"  Latitude   : {latitude}")
+            print(f"  Longitude  : {longitude}")
+
+            print(f"\n[Variable Information]")
+            print(f"  Code       : {var_code}")
+            print(f"  Name       : {var_name}")
+            print(f"  Description: {var_desc}")
+            print(f"  Unit       : {unit}")
+
+            # --- Statistics ---
+            float_values = [float(v['value']) for v in valid_values]
+            min_val = min(float_values)
+            max_val = max(float_values)
+            avg_val = sum(float_values) / len(float_values)
+
+            print(f"\n[Statistics]")
+            print(f"  Count      : {len(valid_values)}")
+            print(f"  Min        : {min_val:.2f} {unit}")
+            print(f"  Max        : {max_val:.2f} {unit}")
+            print(f"  Average    : {avg_val:.2f} {unit}")
+
+            # --- All Measurements ---
+            print(f"\n[Measurements]")
+            print(f"  {'Date':<12} | {'Value':>10} | {'Qualifier'}")
+            print(f"  {'-' * 12}-+-{'-' * 10}-+-{'-' * 15}")
+
+            # Sort by date
+            sorted_values = sorted(valid_values, key=lambda x: x['dateTime'])
+            for v in sorted_values:
+                date = v['dateTime'][:10]
+                val = float(v['value'])
+                qualifiers = v.get('qualifiers', [])
+                qual_str = ', '.join(qualifiers) if qualifiers else '-'
+                print(f"  {date:<12} | {val:>10.2f} | {qual_str}")
+
+        print(f"\n{'=' * 70}")
+        print("PARSING COMPLETE!")
+        print("=" * 70)
+        return True
+
+    except requests.exceptions.Timeout:
+        print("\nTimeout error (exceeded 30 seconds)")
+        return False
+    except requests.exceptions.ConnectionError as e:
+        print(f"\nConnection error: {e}")
+        return False
+    except Exception as e:
+        print(f"\nError occurred: {type(e).__name__}: {e}")
+        return False
+
+
+if __name__ == "__main__":
+    test_api_connection()

@@ -1,0 +1,60 @@
+{
+  "mcpServers": {
+    "usgs-gwinfo": {
+      "type": "stdio",
+      "command": "python",
+      "args": [
+        "usgs_gwinfo_mcp.py"
+      ]
+    },
+    "kriging": {
+      "type": "stdio",
+      "command": "python",
+      "args": [
+        "kriging_mcp.py"
+      ]
+    },
+    "visualize-kriging": {
+      "type": "stdio",
+      "command": "python",
+      "args": [
+        "visualize_mcp.py"
+      ]
+    },
+    "notion": {
+      "type": "http",
+      "url": "https://mcp.notion.com/mcp"
+    },
+    "slack": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-slack"
+      ],
+      "env": {
+        "SLACK_BOT_TOKEN": "your-slack-bot-token-here",
+        "SLACK_TEAM_ID": "T09F3PG1H1T"
+      }
+    },
+    "youtube-transcript": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/jkawamoto/mcp-youtube-transcript",
+        "mcp-youtube-transcript"
+      ]
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ],
+      "env": {}
+    },
+    "linear": {
+      "type": "sse",
+      "url": "https://mcp.linear.app/sse"
+    }
+  }
+}

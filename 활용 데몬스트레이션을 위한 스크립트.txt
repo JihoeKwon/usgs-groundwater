@@ -1,0 +1,6 @@
+ USGS 에서 San Diego 지역의 2026년 1월13일 관정 정보를 가져와서 그걸 바탕으로 지하수위분포를 가시화해줘.
+ 
+ chatGPT 결과:
+   https://chatgpt.com/share/e/6968bcbb-444c-800c-beb4-978ce21de8ab
+   
+   
