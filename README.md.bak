@@ -1,4 +1,4 @@
-# USGS GroundWater
+# GeoAI Agent
 
 USGS 지하수 데이터 수집, Kriging 보간, 시각화를 위한 MCP(Model Context Protocol) 기반 AI 에이전트 시스템입니다.
 
@@ -140,7 +140,7 @@ aquifer_type: U (Unconfined)
 ## 프로젝트 구조
 
 ```
-usgs-groundwater/
+geoai-agent/
 ├── .mcp.json                 # MCP 서버 설정
 ├── usgs_gwinfo_mcp.py        # USGS 데이터 수집 MCP 서버
 ├── kriging_mcp.py            # Kriging 보간 MCP 서버
