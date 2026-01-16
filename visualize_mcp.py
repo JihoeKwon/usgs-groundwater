@@ -1,20 +1,39 @@
 """
 Kriging Visualization MCP Server
-- Visualize kriging results
-- Create contour/heatmap plots
-- Save as PNG/JPG
+- Visualize kriging results from CSV or sectioned format
+- Single frame: PNG output
+- Multiple frames: GIF animation
+- Support region name and bbox in titles
 """
 
 import json
+import os
 import numpy as np
 import pandas as pd
+import re
 from datetime import datetime
 from mcp.server.fastmcp import FastMCP
+
+
+def _ensure_output_dir(output_dir: str) -> str:
+    """Create output directory if it doesn't exist."""
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
+    return output_dir
+
+
+def _get_output_path(filename: str, output_dir: str = None) -> str:
+    """Get full output path, creating directory if needed."""
+    if output_dir:
+        _ensure_output_dir(output_dir)
+        return os.path.join(output_dir, filename)
+    return filename
 
 try:
     import matplotlib
     matplotlib.use('Agg')  # Non-interactive backend
     import matplotlib.pyplot as plt
+    import matplotlib.animation as animation
     MATPLOTLIB_AVAILABLE = True
 except ImportError:
     MATPLOTLIB_AVAILABLE = False
@@ -23,25 +42,146 @@ except ImportError:
 mcp = FastMCP("visualize-kriging")
 
 
+def _parse_sectioned_file(filepath):
+    """
+    Parse sectioned kriging output file (.dat format).
+
+    Returns:
+        dict: {header, dates, grid_size, coordinates, depth, variance}
+    """
+    with open(filepath, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    result = {'header': {}}
+
+    # Parse [HEADER]
+    header_match = re.search(r'\[HEADER\]\n(.*?)\n\n', content, re.DOTALL)
+    if header_match:
+        for line in header_match.group(1).strip().split('\n'):
+            if '=' in line:
+                key, val = line.split('=', 1)
+                result['header'][key.lower()] = val
+
+    # Parse dates
+    dates_str = result['header'].get('dates', '')
+    result['dates'] = dates_str.split(',') if dates_str else []
+
+    # Parse grid dimensions
+    grid_str = result['header'].get('grid', '50x50')
+    grid_parts = grid_str.lower().split('x')
+    result['grid_size'] = (int(grid_parts[0]), int(grid_parts[1]))
+
+    n_points = int(result['header'].get('points', 0))
+    n_frames = int(result['header'].get('nframe', 1))
+
+    # Parse [COORDINATES]
+    coord_match = re.search(r'\[COORDINATES\]\nLon,Lat\n(.*?)\n\n', content, re.DOTALL)
+    if coord_match:
+        coord_lines = coord_match.group(1).strip().split('\n')
+        coords = [line.split(',') for line in coord_lines]
+        result['coordinates'] = pd.DataFrame(coords, columns=['Lon', 'Lat']).astype(float)
+
+    # Parse [DEPTH]
+    depth_match = re.search(r'\[DEPTH\]\n(.*?)\n\n', content, re.DOTALL)
+    if depth_match:
+        depth_lines = depth_match.group(1).strip().split('\n')
+        result['depth'] = np.array([[float(v) for v in line.split(',')] for line in depth_lines])
+
+    # Parse [VARIANCE]
+    var_match = re.search(r'\[VARIANCE\]\n(.*?)$', content, re.DOTALL)
+    if var_match:
+        var_lines = var_match.group(1).strip().split('\n')
+        result['variance'] = np.array([[float(v) for v in line.split(',')] for line in var_lines])
+
+    return result
+
+
+def _load_kriging_data(filepath):
+    """
+    Load kriging data from sectioned file (.dat) or CSV.
+
+    Returns:
+        dict with grid data
+    """
+    if filepath.endswith('.dat') or not filepath.endswith('.csv'):
+        # Try sectioned format first
+        try:
+            return _parse_sectioned_file(filepath)
+        except:
+            pass
+
+    # Fall back to CSV format
+    df = pd.read_csv(filepath)
+
+    # Check if it's old single-frame format
+    if 'Depth_ft' in df.columns:
+        lons = sorted(df['Lon'].unique())
+        lats = sorted(df['Lat'].unique())
+
+        grid_size = (len(lats), len(lons))
+        n_points = len(lats) * len(lons)
+
+        # Reshape to 2D
+        depth = np.zeros((n_points, 1))
+        variance = np.zeros((n_points, 1))
+        coords = []
+
+        idx = 0
+        for i, lat in enumerate(lats):
+            for j, lon in enumerate(lons):
+                row = df[(df['Lat'] == lat) & (df['Lon'] == lon)]
+                if not row.empty:
+                    depth[idx, 0] = row['Depth_ft'].values[0]
+                    if 'Variance' in df.columns:
+                        variance[idx, 0] = row['Variance'].values[0]
+                coords.append({'Lon': lon, 'Lat': lat})
+                idx += 1
+
+        return {
+            'header': {'nframe': '1', 'grid': f'{len(lons)}x{len(lats)}', 'points': str(n_points)},
+            'dates': ['unknown'],
+            'grid_size': (len(lons), len(lats)),
+            'coordinates': pd.DataFrame(coords),
+            'depth': depth,
+            'variance': variance
+        }
+
+    raise ValueError(f"Unknown file format: {filepath}")
+
+
+def _get_bbox_string(lon_grid, lat_grid):
+    """Generate bbox string for title."""
+    lon_min, lon_max = lon_grid.min(), lon_grid.max()
+    lat_min, lat_max = lat_grid.min(), lat_grid.max()
+    return f"[{lon_min:.1f}, {lat_min:.1f}, {lon_max:.1f}, {lat_max:.1f}]"
+
+
 @mcp.tool()
 def visualize_kriging_result(
-    grid_csv: str,
+    input_file: str,
     original_csv: str = None,
     output_file: str = None,
-    title: str = None,
+    region_name: str = None,
     colormap: str = "viridis_r",
-    show_points: bool = True
+    show_points: bool = True,
+    frame: int = None,
+    fps: int = 2,
+    output_dir: str = None
 ) -> str:
     """
     Visualize kriging interpolation results.
+    Single frame or specified frame -> PNG, Multiple frames -> GIF animation.
 
     Args:
-        grid_csv: Kriging grid CSV file (must have Lon, Lat, Depth_ft columns)
+        input_file: Kriging output file (.dat sectioned format or .csv)
         original_csv: Original data CSV file for overlay (optional)
-        output_file: Output image file (PNG/JPG). Auto-generated if not provided.
-        title: Plot title (optional)
+        output_file: Output image file (PNG for single, GIF for animation)
+        region_name: Region name for title (e.g., 'Southern California')
         colormap: Matplotlib colormap name (default: 'viridis_r')
         show_points: Whether to show original data points (default: True)
+        frame: Specific frame index to render as PNG (optional)
+        fps: Frames per second for GIF animation (default: 2)
+        output_dir: Optional output directory (created if not exists)
 
     Returns:
         JSON string with output file paths
@@ -51,145 +191,196 @@ def visualize_kriging_result(
             "error": "matplotlib not installed. Install with: pip install matplotlib"
         })
 
-    # Load grid data
+    # Load data
     try:
-        grid_df = pd.read_csv(grid_csv)
+        data = _load_kriging_data(input_file)
     except Exception as e:
-        return json.dumps({"error": f"Failed to load grid CSV: {str(e)}"})
+        return json.dumps({"error": f"Failed to load data: {str(e)}"})
 
-    # Get unique lon/lat values
-    lons = sorted(grid_df['Lon'].unique())
-    lats = sorted(grid_df['Lat'].unique())
+    coords = data['coordinates']
+    depth = data['depth']
+    variance = data.get('variance')
+    dates = data['dates']
+    grid_w, grid_h = data['grid_size']
+    n_frames = int(data['header'].get('nframe', 1))
 
-    # Reshape to 2D array
-    z_grid = np.zeros((len(lats), len(lons)))
-    var_grid = np.zeros((len(lats), len(lons)))
-
-    for _, row in grid_df.iterrows():
-        i = lats.index(row['Lat'])
-        j = lons.index(row['Lon'])
-        z_grid[i, j] = row['Depth_ft']
-        if 'Variance' in row:
-            var_grid[i, j] = row['Variance']
-
+    # Get unique coordinates
+    lons = coords['Lon'].values.reshape(grid_h, grid_w)[0, :]
+    lats = coords['Lat'].values.reshape(grid_h, grid_w)[:, 0]
     lon_grid, lat_grid = np.meshgrid(lons, lats)
-
-    # Load original data if provided
-    orig_lons, orig_lats, orig_vals = None, None, None
-    if original_csv and show_points:
-        try:
-            orig_df = pd.read_csv(original_csv)
-            date_cols = [c for c in orig_df.columns if c.startswith('20') and len(c) == 10]
-            if date_cols:
-                val_col = date_cols[-1]
-                valid_mask = orig_df[val_col].notna()
-                orig_lons = orig_df.loc[valid_mask, 'Lon'].astype(float).values
-                orig_lats = orig_df.loc[valid_mask, 'Lat'].astype(float).values
-                orig_vals = orig_df.loc[valid_mask, val_col].astype(float).values
-        except Exception as e:
-            pass  # Continue without original points
+    bbox_str = _get_bbox_string(lon_grid, lat_grid)
 
     output_files = []
 
-    # Create main figure (2 panels)
-    fig, axes = plt.subplots(1, 2, figsize=(16, 8))
+    if n_frames == 1 or frame is not None:
+        # Single frame -> PNG
+        frame_idx = frame if frame is not None else 0
+        z_grid = depth[:, frame_idx].reshape(grid_h, grid_w)
+        var_grid = variance[:, frame_idx].reshape(grid_h, grid_w) if variance is not None else None
+        date_str = dates[frame_idx] if frame_idx < len(dates) else 'Unknown'
 
-    # Plot 1: Depth contour
-    ax1 = axes[0]
-    levels = np.linspace(z_grid.min(), z_grid.max(), 20)
-    cf = ax1.contourf(lon_grid, lat_grid, z_grid, levels=levels, cmap=colormap)
-    plt.colorbar(cf, ax=ax1, label='Depth to Water (ft)')
+        # Load original data for overlay
+        orig_data = None
+        if original_csv and show_points:
+            try:
+                orig_df = pd.read_csv(original_csv)
+                date_cols = [c for c in orig_df.columns if c.startswith('20') and len(c) == 10]
+                if date_str in date_cols:
+                    valid_mask = orig_df[date_str].notna()
+                    orig_data = {
+                        'lon': orig_df.loc[valid_mask, 'Lon'].astype(float).values,
+                        'lat': orig_df.loc[valid_mask, 'Lat'].astype(float).values,
+                        'val': orig_df.loc[valid_mask, date_str].astype(float).values
+                    }
+            except:
+                pass
 
-    cs = ax1.contour(lon_grid, lat_grid, z_grid, levels=10, colors='white',
-                     linewidths=0.5, alpha=0.5)
-    ax1.clabel(cs, inline=True, fontsize=8, fmt='%.0f')
+        # Create figure with depth and variance
+        fig, axes = plt.subplots(1, 2, figsize=(16, 8))
 
-    if orig_lons is not None:
-        ax1.scatter(orig_lons, orig_lats, c=orig_vals, cmap=colormap,
-                   edgecolors='white', linewidths=1.5, s=100,
-                   vmin=z_grid.min(), vmax=z_grid.max(), zorder=5)
+        # Depth plot
+        levels = np.linspace(z_grid.min(), z_grid.max(), 20)
+        cf1 = axes[0].contourf(lon_grid, lat_grid, z_grid, levels=levels, cmap=colormap)
+        plt.colorbar(cf1, ax=axes[0], label='Depth to Water (ft)', shrink=0.8)
+        cs1 = axes[0].contour(lon_grid, lat_grid, z_grid, levels=10, colors='black',
+                              linewidths=0.5, alpha=0.5)
+        axes[0].clabel(cs1, inline=True, fontsize=8, fmt='%.0f')
 
-    ax1.set_xlabel('Longitude')
-    ax1.set_ylabel('Latitude')
-    ax1.set_title('Groundwater Depth (Kriging Interpolation)')
-    ax1.grid(True, alpha=0.3)
+        if orig_data:
+            axes[0].scatter(orig_data['lon'], orig_data['lat'], c='red',
+                           edgecolors='white', linewidths=1, s=50, zorder=5)
 
-    # Plot 2: Variance
-    ax2 = axes[1]
-    if var_grid.max() > 0:
-        cf2 = ax2.contourf(lon_grid, lat_grid, var_grid, levels=20, cmap='Reds')
-        plt.colorbar(cf2, ax=ax2, label='Kriging Variance')
+        axes[0].set_xlabel('Longitude')
+        axes[0].set_ylabel('Latitude')
+        if region_name:
+            axes[0].set_title(f'{region_name}\nGroundwater Depth - {date_str}')
+        else:
+            axes[0].set_title(f'Groundwater Depth - {date_str}')
+        axes[0].grid(True, alpha=0.3, linestyle='--')
 
-        if orig_lons is not None:
-            ax2.scatter(orig_lons, orig_lats, c='blue', edgecolors='white',
-                       linewidths=1, s=80, zorder=5, label='Observation Points')
-            ax2.legend(loc='upper right')
+        # Stats box
+        stats_text = f'Min: {z_grid.min():.1f} ft\nMax: {z_grid.max():.1f} ft\nMean: {z_grid.mean():.1f} ft'
+        axes[0].text(0.02, 0.98, stats_text, transform=axes[0].transAxes, fontsize=9,
+                    verticalalignment='top', bbox=dict(boxstyle='round', facecolor='white', alpha=0.8))
 
-    ax2.set_xlabel('Longitude')
-    ax2.set_ylabel('Latitude')
-    ax2.set_title('Kriging Variance (Uncertainty)')
-    ax2.grid(True, alpha=0.3)
+        # Variance plot
+        if var_grid is not None and var_grid.max() > 0:
+            cf2 = axes[1].contourf(lon_grid, lat_grid, var_grid, levels=20, cmap='Reds')
+            plt.colorbar(cf2, ax=axes[1], label='Kriging Variance')
+            if orig_data:
+                axes[1].scatter(orig_data['lon'], orig_data['lat'], c='blue',
+                               edgecolors='white', s=50, zorder=5)
+        axes[1].set_xlabel('Longitude')
+        axes[1].set_ylabel('Latitude')
+        axes[1].set_title(f'Uncertainty - {date_str}')
+        axes[1].grid(True, alpha=0.3)
 
-    if title:
-        fig.suptitle(title, fontsize=14, fontweight='bold')
+        # Main title
+        if region_name:
+            fig.suptitle(f'{region_name} - Groundwater Level Kriging Analysis\nBBox: {bbox_str}',
+                        fontsize=14, fontweight='bold')
+        else:
+            fig.suptitle(f'Groundwater Level Kriging Analysis\nBBox: {bbox_str}',
+                        fontsize=14, fontweight='bold')
 
-    plt.tight_layout()
+        plt.tight_layout()
 
-    # Save main figure
-    if output_file is None:
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        output_file = f"kriging_visualization_{timestamp}.png"
+        if output_file is None:
+            output_file = f"kriging_{date_str}.png"
 
-    plt.savefig(output_file, dpi=150, bbox_inches='tight',
-                facecolor='white', edgecolor='none')
-    output_files.append(output_file)
-    plt.close()
+        output_path = _get_output_path(output_file, output_dir)
+        plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor='white')
+        output_files.append(output_path)
+        plt.close()
 
-    # Create simple single-plot version
-    fig2, ax = plt.subplots(figsize=(12, 10))
+    else:
+        # Multiple frames -> GIF animation
+        vmin = depth.min()
+        vmax = depth.max()
 
-    cf = ax.contourf(lon_grid, lat_grid, z_grid, levels=20, cmap=colormap)
-    plt.colorbar(cf, ax=ax, label='Depth to Water (ft)', shrink=0.8)
+        # Load original data
+        orig_df = None
+        if original_csv and show_points:
+            try:
+                orig_df = pd.read_csv(original_csv)
+            except:
+                pass
 
-    cs = ax.contour(lon_grid, lat_grid, z_grid, levels=10, colors='black',
-                    linewidths=0.5, alpha=0.7)
-    ax.clabel(cs, inline=True, fontsize=9, fmt='%.0f ft')
+        fig, ax = plt.subplots(figsize=(12, 10))
 
-    if orig_lons is not None:
-        ax.scatter(orig_lons, orig_lats, c=orig_vals, cmap=colormap,
-                  edgecolors='black', linewidths=2, s=150,
-                  vmin=z_grid.min(), vmax=z_grid.max(), zorder=5)
-        for lon, lat, val in zip(orig_lons, orig_lats, orig_vals):
-            ax.annotate(f'{val:.1f}', (lon, lat), fontsize=8,
-                       ha='center', va='bottom', fontweight='bold',
-                       xytext=(0, 8), textcoords='offset points')
+        # Initial contour
+        z_grid = depth[:, 0].reshape(grid_h, grid_w)
+        levels = np.linspace(vmin, vmax, 20)
+        cf = ax.contourf(lon_grid, lat_grid, z_grid, levels=levels, cmap=colormap, extend='both')
+        cbar = plt.colorbar(cf, ax=ax, label='Depth to Water (ft)', shrink=0.8)
 
-    ax.set_xlabel('Longitude', fontsize=12)
-    ax.set_ylabel('Latitude', fontsize=12)
-    ax.set_title(title or 'Groundwater Depth - Kriging Interpolation',
-                fontsize=14, fontweight='bold')
-    ax.grid(True, alpha=0.3, linestyle='--')
+        # Title
+        if region_name:
+            title_text = f'{region_name} - Groundwater Depth\nBBox: {bbox_str}\n{dates[0]}'
+        else:
+            title_text = f'Groundwater Depth - {dates[0]}\nBBox: {bbox_str}'
+        title = ax.set_title(title_text, fontsize=12, fontweight='bold')
 
-    stats_text = f'Min: {z_grid.min():.1f} ft\nMax: {z_grid.max():.1f} ft\nMean: {z_grid.mean():.1f} ft'
-    ax.text(0.02, 0.98, stats_text, transform=ax.transAxes, fontsize=10,
-           verticalalignment='top', bbox=dict(boxstyle='round', facecolor='white', alpha=0.8))
+        ax.set_xlabel('Longitude')
+        ax.set_ylabel('Latitude')
+        ax.grid(True, alpha=0.3, linestyle='--')
 
-    simple_output = output_file.replace('.png', '_simple.png').replace('.jpg', '_simple.jpg')
-    plt.savefig(simple_output, dpi=150, bbox_inches='tight',
-                facecolor='white', edgecolor='none')
-    output_files.append(simple_output)
-    plt.close()
+        stats_text = ax.text(0.02, 0.98, '', transform=ax.transAxes, fontsize=9,
+                             verticalalignment='top',
+                             bbox=dict(boxstyle='round', facecolor='white', alpha=0.8))
+
+        def update(frame_idx):
+            nonlocal cf
+
+            for c in ax.collections:
+                c.remove()
+            for t in ax.texts:
+                if t != stats_text:
+                    t.remove()
+
+            z_grid = depth[:, frame_idx].reshape(grid_h, grid_w)
+            date_str = dates[frame_idx]
+
+            cf = ax.contourf(lon_grid, lat_grid, z_grid, levels=levels, cmap=colormap, extend='both')
+            cs = ax.contour(lon_grid, lat_grid, z_grid, levels=10, colors='black',
+                            linewidths=0.5, alpha=0.5)
+            ax.clabel(cs, inline=True, fontsize=8, fmt='%.0f')
+
+            if orig_df is not None and date_str in orig_df.columns:
+                valid_mask = orig_df[date_str].notna()
+                if valid_mask.any():
+                    ax.scatter(orig_df.loc[valid_mask, 'Lon'].astype(float),
+                              orig_df.loc[valid_mask, 'Lat'].astype(float),
+                              c='red', edgecolors='white', linewidths=1, s=50, zorder=5)
+
+            if region_name:
+                title.set_text(f'{region_name} - Groundwater Depth\nBBox: {bbox_str}\n{date_str}')
+            else:
+                title.set_text(f'Groundwater Depth - {date_str}\nBBox: {bbox_str}')
+            stats_text.set_text(f'Min: {z_grid.min():.1f} ft\nMax: {z_grid.max():.1f} ft\nMean: {z_grid.mean():.1f} ft')
+
+            return [cf]
+
+        anim = animation.FuncAnimation(fig, update, frames=n_frames, interval=1000//fps, blit=False)
+
+        if output_file is None:
+            output_file = "kriging_animation.gif"
+
+        output_path = _get_output_path(output_file, output_dir)
+        anim.save(output_path, writer='pillow', fps=fps, dpi=100)
+        output_files.append(output_path)
+        plt.close()
 
     return json.dumps({
         "status": "success",
-        "grid_csv": grid_csv,
+        "input_file": input_file,
         "original_csv": original_csv,
-        "grid_size": f"{len(lons)} x {len(lats)}",
-        "depth_range": {
-            "min": float(z_grid.min()),
-            "max": float(z_grid.max()),
-            "mean": float(z_grid.mean())
-        },
+        "region_name": region_name,
+        "n_frames": n_frames,
+        "grid_size": f"{grid_w} x {grid_h}",
+        "bbox": bbox_str,
+        "output_type": "gif" if n_frames > 1 and frame is None else "png",
+        "output_dir": output_dir,
         "output_files": output_files
     }, indent=2)
 
@@ -225,7 +416,8 @@ def create_comparison_plot(
     grid_csv_2: str,
     label_1: str = "Dataset 1",
     label_2: str = "Dataset 2",
-    output_file: str = None
+    output_file: str = None,
+    output_dir: str = None
 ) -> str:
     """
     Create side-by-side comparison of two kriging results.
@@ -236,6 +428,7 @@ def create_comparison_plot(
         label_1: Label for first dataset
         label_2: Label for second dataset
         output_file: Output image file
+        output_dir: Optional output directory (created if not exists)
 
     Returns:
         JSON string with output file path
@@ -290,12 +483,14 @@ def create_comparison_plot(
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         output_file = f"kriging_comparison_{timestamp}.png"
 
-    plt.savefig(output_file, dpi=150, bbox_inches='tight', facecolor='white')
+    output_path = _get_output_path(output_file, output_dir)
+    plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor='white')
     plt.close()
 
     return json.dumps({
         "status": "success",
-        "output_file": output_file,
+        "output_file": output_path,
+        "output_dir": output_dir,
         "dataset_1": {
             "file": grid_csv_1,
             "min": float(z1.min()),

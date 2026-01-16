@@ -1,0 +1,508 @@
+#!/usr/bin/env python3
+"""
+Analysis Report MCP Server
+Generates summary reports from groundwater kriging analysis results.
+"""
+
+import json
+import os
+from datetime import datetime
+from mcp.server.fastmcp import FastMCP
+
+import pandas as pd
+import numpy as np
+
+mcp = FastMCP("analysis-report")
+
+
+def _ensure_output_dir(output_dir: str) -> str:
+    """Create output directory if it doesn't exist."""
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
+    return output_dir
+
+
+def _get_output_path(filename: str, output_dir: str = None) -> str:
+    """Get full output path, creating directory if needed."""
+    if output_dir:
+        _ensure_output_dir(output_dir)
+        return os.path.join(output_dir, filename)
+    return filename
+
+
+def parse_kriging_dat(dat_file: str) -> dict:
+    """Parse kriging .dat file and extract statistics.
+
+    Supports two formats:
+    1. Sectioned format with [DEPTH:date] sections
+    2. Matrix format with [DEPTH] section containing all dates per row
+    """
+    with open(dat_file, 'r') as f:
+        lines = f.readlines()
+
+    dates = []
+    depth_data = []
+    current_section = None
+
+    i = 0
+    while i < len(lines):
+        line = lines[i].strip()
+
+        if line.startswith('[HEADER]'):
+            current_section = 'header'
+            i += 1
+            continue
+        elif line.startswith('DATES='):
+            dates = line.replace('DATES=', '').split(',')
+            i += 1
+            continue
+        elif line.startswith('[COORDINATES]'):
+            current_section = 'coordinates'
+            i += 1
+            continue
+        elif line == '[DEPTH]':
+            current_section = 'depth'
+            i += 1
+            continue
+        elif line.startswith('[DEPTH:'):
+            # Old format with per-date sections
+            date = line.replace('[DEPTH:', '').replace(']', '').strip()
+            if date not in dates:
+                dates.append(date)
+            current_section = f'depth:{date}'
+            i += 1
+            continue
+        elif line.startswith('[VARIANCE]') or line.startswith('[VARIANCE:'):
+            current_section = 'variance'
+            i += 1
+            continue
+
+        if current_section == 'depth' and line:
+            try:
+                values = [float(v) for v in line.split(',') if v.strip()]
+                if values:
+                    depth_data.append(values)
+            except:
+                pass
+        elif current_section and current_section.startswith('depth:') and line:
+            # Old format handling
+            date = current_section.replace('depth:', '')
+            try:
+                values = [float(v) for v in line.split(',') if v.strip()]
+                # Store in different structure for old format
+                if not hasattr(parse_kriging_dat, '_old_format_data'):
+                    parse_kriging_dat._old_format_data = {}
+                if date not in parse_kriging_dat._old_format_data:
+                    parse_kriging_dat._old_format_data[date] = []
+                parse_kriging_dat._old_format_data[date].extend(values)
+            except:
+                pass
+
+        i += 1
+
+    # Calculate statistics for each date
+    stats = {}
+
+    if depth_data and dates:
+        # Matrix format: each row contains values for all dates
+        depth_array = np.array(depth_data)  # Shape: (n_points, n_dates)
+
+        for idx, date in enumerate(dates):
+            if idx < depth_array.shape[1]:
+                date_values = depth_array[:, idx]
+                valid_values = date_values[~np.isnan(date_values)]
+                if len(valid_values) > 0:
+                    stats[date] = {
+                        'min': float(np.min(valid_values)),
+                        'max': float(np.max(valid_values)),
+                        'mean': float(np.mean(valid_values)),
+                        'std': float(np.std(valid_values)),
+                        'median': float(np.median(valid_values))
+                    }
+    elif hasattr(parse_kriging_dat, '_old_format_data'):
+        # Old sectioned format
+        for date, values in parse_kriging_dat._old_format_data.items():
+            if values:
+                arr = np.array(values)
+                stats[date] = {
+                    'min': float(np.min(arr)),
+                    'max': float(np.max(arr)),
+                    'mean': float(np.mean(arr)),
+                    'std': float(np.std(arr)),
+                    'median': float(np.median(arr))
+                }
+        parse_kriging_dat._old_format_data = {}
+
+    return stats
+
+
+def analyze_csv_data(csv_file: str) -> dict:
+    """Analyze original CSV data."""
+    df = pd.read_csv(csv_file)
+
+    # Basic info
+    info = {
+        'total_sites': len(df),
+        'lat_range': [float(df['Lat'].min()), float(df['Lat'].max())],
+        'lon_range': [float(df['Lon'].min()), float(df['Lon'].max())]
+    }
+
+    # Date columns
+    date_cols = [c for c in df.columns if c[0:2] in ['20', '19']]
+    info['date_count'] = len(date_cols)
+
+    if date_cols:
+        info['date_range'] = [date_cols[0], date_cols[-1]]
+
+        # Per-date statistics
+        date_stats = {}
+        for col in date_cols:
+            valid_data = df[col].dropna()
+            if len(valid_data) > 0:
+                date_stats[col] = {
+                    'sites_with_data': int(len(valid_data)),
+                    'min': float(valid_data.min()),
+                    'max': float(valid_data.max()),
+                    'mean': float(valid_data.mean()),
+                    'std': float(valid_data.std()) if len(valid_data) > 1 else 0
+                }
+        info['date_stats'] = date_stats
+
+    return info
+
+
+def generate_markdown_report(
+    region_name: str,
+    csv_info: dict,
+    kriging_stats: dict,
+    output_file: str
+) -> str:
+    """Generate a markdown report."""
+
+    lines = []
+    lines.append(f"# {region_name} Groundwater Analysis Report")
+    lines.append(f"\nGenerated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    lines.append("\n---\n")
+
+    # Data Overview
+    lines.append("## 1. Data Overview\n")
+    lines.append(f"- **Total Monitoring Sites**: {csv_info['total_sites']}")
+    lines.append(f"- **Latitude Range**: {csv_info['lat_range'][0]:.4f}° ~ {csv_info['lat_range'][1]:.4f}°")
+    lines.append(f"- **Longitude Range**: {csv_info['lon_range'][0]:.4f}° ~ {csv_info['lon_range'][1]:.4f}°")
+    lines.append(f"- **Analysis Period**: {csv_info.get('date_range', ['N/A', 'N/A'])[0]} ~ {csv_info.get('date_range', ['N/A', 'N/A'])[1]}")
+    lines.append(f"- **Total Data Points**: {csv_info.get('date_count', 0)} dates")
+    lines.append("")
+
+    # Summary Statistics
+    lines.append("## 2. Summary Statistics\n")
+
+    if 'date_stats' in csv_info and csv_info['date_stats']:
+        date_stats = csv_info['date_stats']
+        dates = sorted(date_stats.keys())
+
+        # Overall statistics
+        all_means = [date_stats[d]['mean'] for d in dates]
+        all_mins = [date_stats[d]['min'] for d in dates]
+        all_maxs = [date_stats[d]['max'] for d in dates]
+
+        lines.append("### Overall Statistics (Original Data)\n")
+        lines.append(f"- **Depth Range**: {min(all_mins):.1f} ft ~ {max(all_maxs):.1f} ft")
+        lines.append(f"- **Mean Depth Range**: {min(all_means):.1f} ft ~ {max(all_means):.1f} ft")
+        lines.append(f"- **Average Mean Depth**: {np.mean(all_means):.1f} ft")
+        lines.append("")
+
+        # Temporal Analysis
+        lines.append("### Temporal Analysis\n")
+        lines.append("| Date | Sites | Min (ft) | Max (ft) | Mean (ft) |")
+        lines.append("|------|-------|----------|----------|-----------|")
+
+        # Sample key dates (first, middle, last of each year)
+        years = sorted(set(d[:4] for d in dates))
+        sample_dates = []
+        for year in years:
+            year_dates = [d for d in dates if d.startswith(year)]
+            if year_dates:
+                sample_dates.append(year_dates[0])  # First
+                if len(year_dates) > 6:
+                    sample_dates.append(year_dates[len(year_dates)//2])  # Middle
+                if len(year_dates) > 1:
+                    sample_dates.append(year_dates[-1])  # Last
+
+        sample_dates = sorted(set(sample_dates))
+        for d in sample_dates:
+            s = date_stats[d]
+            lines.append(f"| {d} | {s['sites_with_data']} | {s['min']:.1f} | {s['max']:.1f} | {s['mean']:.1f} |")
+        lines.append("")
+
+    # Kriging Results
+    if kriging_stats:
+        lines.append("## 3. Kriging Interpolation Results\n")
+
+        kriging_dates = sorted(kriging_stats.keys())
+        kriging_means = [kriging_stats[d]['mean'] for d in kriging_dates]
+        kriging_mins = [kriging_stats[d]['min'] for d in kriging_dates]
+        kriging_maxs = [kriging_stats[d]['max'] for d in kriging_dates]
+
+        lines.append("### Interpolated Surface Statistics\n")
+        lines.append(f"- **Interpolated Depth Range**: {min(kriging_mins):.1f} ft ~ {max(kriging_maxs):.1f} ft")
+        lines.append(f"- **Mean Interpolated Depth**: {np.mean(kriging_means):.1f} ft")
+        lines.append(f"- **Total Frames**: {len(kriging_dates)}")
+        lines.append("")
+
+        # Yearly summary
+        lines.append("### Yearly Summary (Kriging Results)\n")
+        lines.append("| Year | Frames | Avg Min (ft) | Avg Max (ft) | Avg Mean (ft) |")
+        lines.append("|------|--------|--------------|--------------|---------------|")
+
+        years = sorted(set(d[:4] for d in kriging_dates))
+        for year in years:
+            year_dates = [d for d in kriging_dates if d.startswith(year)]
+            year_mins = [kriging_stats[d]['min'] for d in year_dates]
+            year_maxs = [kriging_stats[d]['max'] for d in year_dates]
+            year_means = [kriging_stats[d]['mean'] for d in year_dates]
+            lines.append(f"| {year} | {len(year_dates)} | {np.mean(year_mins):.1f} | {np.mean(year_maxs):.1f} | {np.mean(year_means):.1f} |")
+        lines.append("")
+
+    # Spatial Patterns
+    lines.append("## 4. Spatial Patterns\n")
+    lines.append("Based on the kriging interpolation results:\n")
+    lines.append("- **Deep Aquifer Zone**: Areas with depth > 400 ft (typically in mountainous/inland regions)")
+    lines.append("- **Shallow Aquifer Zone**: Areas with depth < 100 ft (typically near coast/valleys)")
+    lines.append("- **Transition Zone**: Areas with depth 100-400 ft")
+    lines.append("")
+
+    # Data Quality Analysis
+    data_quality_warnings = []
+    site_count_issues = []
+
+    if 'date_stats' in csv_info and csv_info['date_stats']:
+        date_stats = csv_info['date_stats']
+        dates = sorted(date_stats.keys())
+        site_counts = [date_stats[d]['sites_with_data'] for d in dates]
+
+        # Find peak and final site counts
+        peak_sites = max(site_counts)
+        peak_date = dates[site_counts.index(peak_sites)]
+        final_sites = site_counts[-1]
+        final_date = dates[-1]
+
+        # Check for significant drop from peak
+        if final_sites < peak_sites * 0.7:  # 30% or more drop
+            drop_pct = (1 - final_sites / peak_sites) * 100
+            site_count_issues.append({
+                'type': 'significant_drop',
+                'peak_date': peak_date,
+                'peak_sites': peak_sites,
+                'final_date': final_date,
+                'final_sites': final_sites,
+                'drop_pct': drop_pct
+            })
+            data_quality_warnings.append(
+                f"Site count dropped {drop_pct:.0f}% from peak ({peak_sites} sites on {peak_date}) "
+                f"to {final_sites} sites on {final_date}"
+            )
+
+        # Check for sudden drops (>20% between consecutive periods)
+        for i in range(1, len(site_counts)):
+            if site_counts[i] < site_counts[i-1] * 0.8:
+                drop_pct = (1 - site_counts[i] / site_counts[i-1]) * 100
+                data_quality_warnings.append(
+                    f"Sudden drop of {drop_pct:.0f}% between {dates[i-1]} ({site_counts[i-1]} sites) "
+                    f"and {dates[i]} ({site_counts[i]} sites)"
+                )
+
+    if data_quality_warnings:
+        lines.append("## 5. Data Quality Warnings\n")
+        lines.append("> **CAUTION**: The following data quality issues were detected:\n")
+        for warning in data_quality_warnings:
+            lines.append(f"- {warning}")
+        lines.append("")
+        lines.append("These issues may significantly affect the reliability of trend analysis and kriging results.")
+        lines.append("Results for periods with reduced site counts should be interpreted with caution.")
+        lines.append("")
+
+    # Trend Analysis
+    if kriging_stats and len(kriging_stats) > 10:
+        section_num = 6 if data_quality_warnings else 5
+        lines.append(f"## {section_num}. Trend Analysis\n")
+        kriging_dates = sorted(kriging_stats.keys())
+        first_10 = kriging_dates[:10]
+        last_10 = kriging_dates[-10:]
+
+        early_mean = np.mean([kriging_stats[d]['mean'] for d in first_10])
+        late_mean = np.mean([kriging_stats[d]['mean'] for d in last_10])
+        change = late_mean - early_mean
+
+        lines.append(f"- **Early Period Mean** ({first_10[0]} ~ {first_10[-1]}): {early_mean:.1f} ft")
+        lines.append(f"- **Late Period Mean** ({last_10[0]} ~ {last_10[-1]}): {late_mean:.1f} ft")
+        lines.append(f"- **Change**: {change:+.1f} ft ({'deepening' if change > 0 else 'rising'})")
+
+        # Add caveat if site counts are problematic
+        if site_count_issues:
+            lines.append("")
+            lines.append("> **Note**: This trend may be affected by the significant reduction in monitoring sites ")
+            lines.append("> during the late period. The apparent change could be due to:")
+            lines.append("> - Actual groundwater level changes")
+            lines.append("> - Sampling bias from site dropout (remaining sites may not be representative)")
+            lines.append("> - Seasonal data collection patterns")
+        lines.append("")
+
+    # Write to file
+    content = '\n'.join(lines)
+    with open(output_file, 'w', encoding='utf-8') as f:
+        f.write(content)
+
+    return content
+
+
+@mcp.tool()
+def generate_analysis_report(
+    kriging_file: str,
+    original_csv: str,
+    region_name: str = "Groundwater Analysis",
+    output_file: str = None,
+    output_format: str = "markdown",
+    output_dir: str = None
+) -> str:
+    """
+    Generate an analysis report from kriging results.
+
+    Args:
+        kriging_file: Path to kriging output file (.dat sectioned format)
+        original_csv: Path to original CSV data file
+        region_name: Name of the region for the report title
+        output_file: Output file path (auto-generated if not specified)
+        output_format: Output format - 'markdown' or 'json'
+        output_dir: Optional output directory (created if not exists)
+
+    Returns:
+        JSON string with report content and output file path
+    """
+    try:
+        # Analyze CSV data
+        csv_info = analyze_csv_data(original_csv)
+
+        # Parse kriging results
+        kriging_stats = {}
+        if kriging_file and os.path.exists(kriging_file):
+            kriging_stats = parse_kriging_dat(kriging_file)
+
+        # Generate output filename
+        if not output_file:
+            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+            base_name = os.path.splitext(os.path.basename(original_csv))[0]
+            ext = '.md' if output_format == 'markdown' else '.json'
+            output_file = f"{base_name}_report_{timestamp}{ext}"
+
+        output_path = _get_output_path(output_file, output_dir)
+
+        if output_format == 'markdown':
+            content = generate_markdown_report(
+                region_name, csv_info, kriging_stats, output_path
+            )
+            result = {
+                'status': 'success',
+                'format': 'markdown',
+                'output_file': output_path,
+                'output_dir': output_dir,
+                'summary': {
+                    'region': region_name,
+                    'total_sites': csv_info['total_sites'],
+                    'date_count': csv_info.get('date_count', 0),
+                    'kriging_frames': len(kriging_stats)
+                }
+            }
+        else:
+            # JSON format
+            report_data = {
+                'region_name': region_name,
+                'generated_at': datetime.now().isoformat(),
+                'data_overview': csv_info,
+                'kriging_statistics': kriging_stats
+            }
+            with open(output_path, 'w', encoding='utf-8') as f:
+                json.dump(report_data, f, indent=2, ensure_ascii=False)
+
+            result = {
+                'status': 'success',
+                'format': 'json',
+                'output_file': output_path,
+                'output_dir': output_dir,
+                'summary': {
+                    'region': region_name,
+                    'total_sites': csv_info['total_sites'],
+                    'date_count': csv_info.get('date_count', 0),
+                    'kriging_frames': len(kriging_stats)
+                }
+            }
+
+        return json.dumps(result, indent=2)
+
+    except Exception as e:
+        return json.dumps({
+            'status': 'error',
+            'error': str(e)
+        }, indent=2)
+
+
+@mcp.tool()
+def get_quick_summary(
+    original_csv: str,
+    kriging_file: str = None
+) -> str:
+    """
+    Get a quick summary of groundwater analysis data.
+
+    Args:
+        original_csv: Path to original CSV data file
+        kriging_file: Optional path to kriging output file (.dat)
+
+    Returns:
+        JSON string with quick summary statistics
+    """
+    try:
+        csv_info = analyze_csv_data(original_csv)
+
+        summary = {
+            'total_sites': csv_info['total_sites'],
+            'lat_range': csv_info['lat_range'],
+            'lon_range': csv_info['lon_range'],
+            'date_count': csv_info.get('date_count', 0),
+            'date_range': csv_info.get('date_range', [])
+        }
+
+        if 'date_stats' in csv_info:
+            date_stats = csv_info['date_stats']
+            all_means = [v['mean'] for v in date_stats.values()]
+            all_mins = [v['min'] for v in date_stats.values()]
+            all_maxs = [v['max'] for v in date_stats.values()]
+
+            summary['depth_statistics'] = {
+                'overall_min': min(all_mins),
+                'overall_max': max(all_maxs),
+                'mean_of_means': np.mean(all_means),
+                'mean_range': [min(all_means), max(all_means)]
+            }
+
+        if kriging_file and os.path.exists(kriging_file):
+            kriging_stats = parse_kriging_dat(kriging_file)
+            summary['kriging_frames'] = len(kriging_stats)
+
+            if kriging_stats:
+                kriging_means = [v['mean'] for v in kriging_stats.values()]
+                summary['kriging_mean_range'] = [min(kriging_means), max(kriging_means)]
+
+        return json.dumps({
+            'status': 'success',
+            'summary': summary
+        }, indent=2)
+
+    except Exception as e:
+        return json.dumps({
+            'status': 'error',
+            'error': str(e)
+        }, indent=2)
+
+
+if __name__ == "__main__":
+    mcp.run(transport="stdio")

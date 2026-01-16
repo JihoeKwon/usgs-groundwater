@@ -21,6 +21,13 @@
         "visualize_mcp.py"
       ]
     },
+    "analysis-report": {
+      "type": "stdio",
+      "command": "python",
+      "args": [
+        "analysis_report_mcp.py"
+      ]
+    },
     "notion": {
       "type": "http",
       "url": "https://mcp.notion.com/mcp"

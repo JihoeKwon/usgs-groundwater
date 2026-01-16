@@ -66,6 +66,7 @@ Claude Code에서는 `.mcp.json`에 설정되어 자동으로 실행됩니다.
 | `end_date` | string | O | 종료일 `'YYYY-MM-DD'` |
 | `aquifer_type` | string | X | 대수층 유형 (기본값: `'U'`) |
 | `output_csv` | string | X | CSV 출력 파일명 |
+| `output_dir` | string | X | 출력 디렉토리 (없으면 자동 생성) |
 
 **반환값:**
 ```json
@@ -79,7 +80,8 @@ Claude Code에서는 `.mcp.json`에 설정되어 자동으로 실행됩니다.
   "date_count": 13,
   "dates": ["2026-01-01", "2026-01-02", "..."],
   "stats": {"min": 4.67, "max": 415.07, "mean": 134.62},
-  "output_csv": "socal_groundwater.csv",
+  "output_csv": "output/socal_groundwater.csv",
+  "output_dir": "output",
   "data": {
     "323527117050003": {
       "name": "018S002W22E005S",
@@ -114,6 +116,7 @@ Site,Name,Lat,Lon,2026-01-01,2026-01-02,...,2026-01-13,Change
 | `date` | string | O | 대상 날짜 `'YYYY-MM-DD'` |
 | `aquifer_type` | string | X | 대수층 유형 (기본값: `'U'`) |
 | `output_csv` | string | X | CSV 출력 파일명 |
+| `output_dir` | string | X | 출력 디렉토리 (없으면 자동 생성) |
 
 **반환값:**
 ```json
@@ -123,7 +126,8 @@ Site,Name,Lat,Lon,2026-01-01,2026-01-02,...,2026-01-13,Change
   "aquifer_type": "U",
   "sites_found": 22,
   "sites_with_data": 20,
-  "output_csv": "san_diego_gw.csv",
+  "output_csv": "output/san_diego_gw.csv",
+  "output_dir": "output",
   "data": {
     "323527117050003": {
       "name": "018S002W22E005S",
@@ -185,6 +189,8 @@ Claude Code가 자동으로 다음을 수행:
 [kriging_interpolate] → Grid CSV + GeoTIFF
         ↓
 [visualize_kriging_result] → PNG 시각화
+        ↓
+[generate_analysis_report] → Markdown 보고서
 ```
 
 **시계열 분석 (다중 날짜):**
@@ -194,6 +200,8 @@ Claude Code가 자동으로 다음을 수행:
 [kriging_interpolate_multiple] → .dat 섹션 파일
         ↓
 [visualize_kriging_result] → GIF 애니메이션
+        ↓
+[generate_analysis_report] → Markdown 보고서
 ```
 
 ---
@@ -206,6 +214,7 @@ Claude Code가 자동으로 다음을 수행:
 | Los Angeles | `-118.7,33.7,-117.5,34.4` |
 | Central Valley | `-122.5,35.0,-118.5,40.5` |
 | San Francisco Bay | `-123.0,37.0,-121.5,38.5` |
+| SW California | `-120.5,32.5,-115.5,34.5` |
 
 ---
 
@@ -235,3 +244,7 @@ Claude Code가 자동으로 다음을 수행:
 ### 데이터가 비어있는 경우
 - 요청한 날짜에 관측 데이터가 없을 수 있음
 - 날짜 범위를 넓혀서 재시도
+
+### 대용량 데이터 처리
+- 다년간 데이터 조회 시 `output_dir` 파라미터를 사용하여 파일 정리
+- 예: `output_dir="sw_california_2023_2025"`로 지정하면 해당 폴더에 모든 출력 파일 저장
