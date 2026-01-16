@@ -188,7 +188,7 @@ Claude Code가 자동으로 다음을 수행:
         ↓
 [kriging_interpolate] → Grid CSV + GeoTIFF
         ↓
-[visualize_kriging_result] → PNG 시각화
+[visualize_kriging_result] → PNG 시각화 (배경 지도 포함)
         ↓
 [generate_analysis_report] → Markdown 보고서
 ```
@@ -199,10 +199,33 @@ Claude Code가 자동으로 다음을 수행:
         ↓
 [kriging_interpolate_multiple] → .dat 섹션 파일
         ↓
-[visualize_kriging_result] → GIF 애니메이션
+[visualize_kriging_result] → GIF 애니메이션 (위성 지도 배경)
         ↓
 [generate_analysis_report] → Markdown 보고서
 ```
+
+### 위성 지도 배경 시각화
+
+`visualize_kriging_result` 도구는 배경 지도(basemap) 기능을 지원합니다:
+
+**Basemap 파라미터:**
+| 파라미터 | 기본값 | 설명 |
+|---------|--------|------|
+| `show_basemap` | `true` | 배경 지도 표시 여부 |
+| `basemap_provider` | `OpenStreetMap` | 배경 지도 제공자 |
+| `basemap_alpha` | `0.5` | 배경 지도 투명도 (0~1) |
+
+**지원 배경 지도:**
+- `OpenStreetMap` - 기본 OSM 지도
+- `CartoDB.Positron` - 밝은 회색조 지도
+- `CartoDB.Voyager` - 컬러 지도
+- `Esri.WorldImagery` - **위성 이미지** (추천)
+
+**사용 예시:**
+```
+위성 지도 위에 지하수위 변화를 시각화해줘
+```
+→ Claude Code가 `basemap_provider="Esri.WorldImagery"` 옵션 자동 적용
 
 ---
 

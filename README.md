@@ -6,7 +6,7 @@ USGS 지하수 데이터 수집, Kriging 보간, 시각화, 분석 보고서 생
 
 - **USGS NWIS API 연동**: 미국 전역의 지하수 관측소 데이터 실시간 조회
 - **Kriging 공간 보간**: Ordinary Kriging을 통한 지하수위 분포 예측
-- **자동 시각화**: 등고선 맵, 불확실성 맵, GIF 애니메이션 자동 생성
+- **자동 시각화**: 등고선 맵, 불확실성 맵, GIF 애니메이션 자동 생성 (위성/지도 배경 지원)
 - **분석 보고서**: 연도별/분기별 통계, 추세 분석, 데이터 품질 경고
 - **Claude Code 통합**: 자연어 명령으로 전체 분석 파이프라인 실행
 
@@ -24,7 +24,7 @@ USGS 지하수 데이터 수집, Kriging 보간, 시각화, 분석 보고서 생
 │ • 관측소 조회│  │ • Ordinary  │  │ • 등고선 맵     │  │ • 통계 분석     │
 │ • 수위 데이터│  │   Kriging   │  │ • 불확실성 맵   │  │ • 추세 분석     │
 │ • CSV 출력  │  │ • 다중날짜  │  │ • GIF 애니메이션│  │ • 품질 경고     │
-│             │  │ • .dat출력  │  │ • 비교 플롯     │  │ • MD/JSON 보고서│
+│             │  │ • .dat출력  │  │ • 위성/지도 배경│  │ • MD/JSON 보고서│
 └─────────────┘  └─────────────┘  └─────────────────┘  └─────────────────┘
        │                │                │                    │
        ▼                ▼                ▼                    ▼
@@ -45,6 +45,9 @@ pip install requests pandas numpy mcp
 
 # Kriging 및 시각화 (전체 기능)
 pip install pykrige matplotlib pillow
+
+# 위성/지도 배경 (basemap 기능)
+pip install contextily
 
 # GeoTIFF 출력 (선택)
 pip install rasterio
@@ -109,9 +112,15 @@ python analysis_report_mcp.py
 
 | 도구 | 설명 |
 |------|------|
-| `visualize_kriging_result` | Kriging 결과 시각화 (PNG/GIF 애니메이션) |
+| `visualize_kriging_result` | Kriging 결과 시각화 (PNG/GIF 애니메이션, 위성/지도 배경 지원) |
 | `get_available_colormaps` | 사용 가능한 컬러맵 목록 |
 | `create_comparison_plot` | 두 데이터셋 비교 플롯 |
+
+**Basemap 지원:**
+- `OpenStreetMap` - 기본 지도
+- `CartoDB.Positron` - 밝은 회색조
+- `CartoDB.Voyager` - 컬러 지도
+- `Esri.WorldImagery` - 위성 이미지
 
 ### analysis-report
 
@@ -188,7 +197,7 @@ usgs-groundwater/
 
 - **데이터 수집**: USGS NWIS REST API
 - **공간 보간**: PyKrige (Ordinary Kriging)
-- **시각화**: Matplotlib, Pillow (GIF)
+- **시각화**: Matplotlib, Pillow (GIF), Contextily (basemap)
 - **AI 통합**: Model Context Protocol (MCP)
 - **래스터 출력**: Rasterio (선택)
 

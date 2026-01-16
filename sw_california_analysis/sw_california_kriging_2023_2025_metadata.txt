@@ -1,0 +1,4404 @@
+Kriging Interpolation Results - Multiple Dates
+============================================================
+
+Input file: D:/Claude/usgs-groundwater/sw_california_analysis/sw_california_gw_2023_2025.csv
+Output file: sw_california_analysis\sw_california_kriging_2023_2025.dat
+Grid resolution: 50 x 50
+Grid points per frame: 2500
+Variogram model: spherical
+
+Grid bounds:
+  Lon: [-117.421197, -116.626197]
+  Lat: [32.475270, 34.199514]
+
+Dates processed: 1096
+Dates skipped: 0
+
+============================================================
+Statistics by Date
+============================================================
+
+2023-01-01:
+  Input: 64 pts, 7.04 ~ 578.61 ft
+  Output: 16.35 ~ 553.21 ft (mean: 153.74)
+
+2023-01-02:
+  Input: 64 pts, 7.56 ~ 578.73 ft
+  Output: 16.55 ~ 553.37 ft (mean: 153.87)
+
+2023-01-03:
+  Input: 65 pts, 8.97 ~ 585.06 ft
+  Output: 18.23 ~ 547.99 ft (mean: 162.41)
+
+2023-01-04:
+  Input: 65 pts, 7.73 ~ 585.19 ft
+  Output: 18.19 ~ 548.07 ft (mean: 162.33)
+
+2023-01-05:
+  Input: 63 pts, 6.51 ~ 578.87 ft
+  Output: 16.50 ~ 553.69 ft (mean: 154.12)
+
+2023-01-06:
+  Input: 64 pts, 6.85 ~ 585.25 ft
+  Output: 18.19 ~ 548.65 ft (mean: 162.68)
+
+2023-01-07:
+  Input: 65 pts, 7.70 ~ 585.20 ft
+  Output: 18.17 ~ 548.52 ft (mean: 162.57)
+
+2023-01-08:
+  Input: 65 pts, 8.42 ~ 585.20 ft
+  Output: 18.18 ~ 548.60 ft (mean: 162.66)
+
+2023-01-09:
+  Input: 64 pts, 8.91 ~ 578.88 ft
+  Output: 16.51 ~ 553.61 ft (mean: 154.26)
+
+2023-01-10:
+  Input: 64 pts, 6.67 ~ 578.74 ft
+  Output: 16.44 ~ 553.41 ft (mean: 154.05)
+
+2023-01-11:
+  Input: 65 pts, 6.93 ~ 585.23 ft
+  Output: 18.09 ~ 548.56 ft (mean: 162.52)
+
+2023-01-12:
+  Input: 65 pts, 7.75 ~ 585.22 ft
+  Output: 18.07 ~ 548.77 ft (mean: 162.63)
+
+2023-01-13:
+  Input: 64 pts, 8.34 ~ 585.16 ft
+  Output: 18.06 ~ 548.13 ft (mean: 162.43)
+
+2023-01-14:
+  Input: 63 pts, 5.62 ~ 578.55 ft
+  Output: 16.06 ~ 553.09 ft (mean: 153.55)
+
+2023-01-15:
+  Input: 62 pts, 5.56 ~ 578.40 ft
+  Output: 15.80 ~ 553.06 ft (mean: 153.47)
+
+2023-01-16:
+  Input: 60 pts, 4.97 ~ 578.29 ft
+  Output: 17.69 ~ 554.28 ft (mean: 158.04)
+
+2023-01-17:
+  Input: 63 pts, 6.47 ~ 584.86 ft
+  Output: 17.24 ~ 547.91 ft (mean: 161.81)
+
+2023-01-18:
+  Input: 64 pts, 6.80 ~ 585.10 ft
+  Output: 17.42 ~ 548.10 ft (mean: 161.73)
+
+2023-01-19:
+  Input: 64 pts, 7.16 ~ 585.11 ft
+  Output: 17.51 ~ 548.20 ft (mean: 161.54)
+
+2023-01-20:
+  Input: 64 pts, 6.72 ~ 585.13 ft
+  Output: 17.56 ~ 548.22 ft (mean: 161.33)
+
+2023-01-21:
+  Input: 64 pts, 7.11 ~ 585.25 ft
+  Output: 17.67 ~ 548.39 ft (mean: 161.21)
+
+2023-01-22:
+  Input: 65 pts, 7.55 ~ 584.89 ft
+  Output: 17.95 ~ 548.32 ft (mean: 162.77)
+
+2023-01-23:
+  Input: 66 pts, 7.80 ~ 584.97 ft
+  Output: 17.89 ~ 547.84 ft (mean: 162.01)
+
+2023-01-24:
+  Input: 67 pts, 8.05 ~ 585.20 ft
+  Output: 17.81 ~ 549.61 ft (mean: 163.08)
+
+2023-01-25:
+  Input: 67 pts, 8.26 ~ 585.28 ft
+  Output: 17.85 ~ 549.67 ft (mean: 162.95)
+
+2023-01-26:
+  Input: 68 pts, 8.43 ~ 585.33 ft
+  Output: 18.04 ~ 549.72 ft (mean: 163.81)
+
+2023-01-27:
+  Input: 66 pts, 8.55 ~ 584.98 ft
+  Output: 17.61 ~ 549.61 ft (mean: 161.05)
+
+2023-01-28:
+  Input: 64 pts, 8.66 ~ 584.93 ft
+  Output: 24.61 ~ 549.50 ft (mean: 161.00)
+
+2023-01-29:
+  Input: 64 pts, 8.75 ~ 584.87 ft
+  Output: 24.66 ~ 549.42 ft (mean: 161.09)
+
+2023-01-30:
+  Input: 62 pts, 8.84 ~ 584.88 ft
+  Output: 25.06 ~ 554.48 ft (mean: 165.88)
+
+2023-01-31:
+  Input: 62 pts, 8.81 ~ 584.97 ft
+  Output: 25.06 ~ 554.54 ft (mean: 165.83)
+
+2023-02-01:
+  Input: 64 pts, 8.88 ~ 585.08 ft
+  Output: 25.03 ~ 549.49 ft (mean: 163.42)
+
+2023-02-02:
+  Input: 66 pts, 8.95 ~ 585.20 ft
+  Output: 18.49 ~ 549.70 ft (mean: 163.29)
+
+2023-02-03:
+  Input: 66 pts, 8.95 ~ 585.15 ft
+  Output: 18.01 ~ 549.62 ft (mean: 162.86)
+
+2023-02-04:
+  Input: 68 pts, 8.97 ~ 585.09 ft
+  Output: 18.06 ~ 549.63 ft (mean: 163.10)
+
+2023-02-05:
+  Input: 68 pts, 8.99 ~ 585.07 ft
+  Output: 18.10 ~ 549.78 ft (mean: 163.05)
+
+2023-02-06:
+  Input: 68 pts, 9.00 ~ 585.06 ft
+  Output: 18.12 ~ 549.70 ft (mean: 163.02)
+
+2023-02-07:
+  Input: 68 pts, 9.03 ~ 585.08 ft
+  Output: 18.16 ~ 549.85 ft (mean: 163.11)
+
+2023-02-08:
+  Input: 69 pts, 9.04 ~ 585.02 ft
+  Output: 18.07 ~ 550.26 ft (mean: 162.55)
+
+2023-02-09:
+  Input: 69 pts, 9.04 ~ 585.03 ft
+  Output: 18.08 ~ 550.46 ft (mean: 162.63)
+
+2023-02-10:
+  Input: 69 pts, 9.06 ~ 584.84 ft
+  Output: 18.10 ~ 550.12 ft (mean: 162.59)
+
+2023-02-11:
+  Input: 69 pts, 9.05 ~ 584.63 ft
+  Output: 18.07 ~ 550.23 ft (mean: 162.57)
+
+2023-02-12:
+  Input: 70 pts, 8.79 ~ 584.56 ft
+  Output: 17.99 ~ 550.33 ft (mean: 162.85)
+
+2023-02-13:
+  Input: 70 pts, 9.04 ~ 584.56 ft
+  Output: 18.03 ~ 550.35 ft (mean: 162.87)
+
+2023-02-14:
+  Input: 67 pts, 9.03 ~ 578.82 ft
+  Output: 16.38 ~ 552.39 ft (mean: 154.34)
+
+2023-02-15:
+  Input: 68 pts, 9.04 ~ 584.52 ft
+  Output: 17.65 ~ 550.42 ft (mean: 160.16)
+
+2023-02-16:
+  Input: 68 pts, 9.06 ~ 584.82 ft
+  Output: 17.72 ~ 550.57 ft (mean: 160.22)
+
+2023-02-17:
+  Input: 68 pts, 8.98 ~ 584.60 ft
+  Output: 17.66 ~ 550.44 ft (mean: 160.17)
+
+2023-02-18:
+  Input: 68 pts, 8.94 ~ 584.58 ft
+  Output: 17.66 ~ 550.38 ft (mean: 160.22)
+
+2023-02-19:
+  Input: 68 pts, 8.92 ~ 584.55 ft
+  Output: 17.67 ~ 550.43 ft (mean: 160.32)
+
+2023-02-20:
+  Input: 68 pts, 8.93 ~ 584.52 ft
+  Output: 17.67 ~ 550.46 ft (mean: 160.28)
+
+2023-02-21:
+  Input: 68 pts, 8.90 ~ 584.13 ft
+  Output: 17.91 ~ 550.16 ft (mean: 161.97)
+
+2023-02-22:
+  Input: 67 pts, 8.98 ~ 584.07 ft
+  Output: 18.02 ~ 549.96 ft (mean: 162.41)
+
+2023-02-23:
+  Input: 65 pts, 7.58 ~ 578.72 ft
+  Output: 16.52 ~ 552.29 ft (mean: 154.70)
+
+2023-02-24:
+  Input: 64 pts, 7.40 ~ 578.80 ft
+  Output: 16.17 ~ 553.93 ft (mean: 150.85)
+
+2023-02-25:
+  Input: 62 pts, 5.78 ~ 578.64 ft
+  Output: 18.16 ~ 555.07 ft (mean: 155.29)
+
+2023-02-26:
+  Input: 63 pts, 6.05 ~ 578.75 ft
+  Output: 16.43 ~ 554.00 ft (mean: 151.21)
+
+2023-02-27:
+  Input: 62 pts, 6.64 ~ 578.81 ft
+  Output: 16.48 ~ 554.12 ft (mean: 151.26)
+
+2023-02-28:
+  Input: 61 pts, 6.60 ~ 578.67 ft
+  Output: 18.25 ~ 555.26 ft (mean: 155.26)
+
+2023-03-01:
+  Input: 61 pts, 5.45 ~ 578.57 ft
+  Output: 17.97 ~ 554.72 ft (mean: 154.84)
+
+2023-03-02:
+  Input: 62 pts, 6.37 ~ 578.57 ft
+  Output: 16.29 ~ 553.56 ft (mean: 150.70)
+
+2023-03-03:
+  Input: 64 pts, 6.66 ~ 584.31 ft
+  Output: 17.51 ~ 547.99 ft (mean: 158.17)
+
+2023-03-04:
+  Input: 64 pts, 6.78 ~ 584.30 ft
+  Output: 17.58 ~ 547.83 ft (mean: 157.74)
+
+2023-03-05:
+  Input: 64 pts, 6.92 ~ 584.39 ft
+  Output: 17.63 ~ 548.22 ft (mean: 157.50)
+
+2023-03-06:
+  Input: 64 pts, 7.17 ~ 584.42 ft
+  Output: 17.65 ~ 548.30 ft (mean: 157.35)
+
+2023-03-07:
+  Input: 64 pts, 7.35 ~ 584.33 ft
+  Output: 17.61 ~ 548.19 ft (mean: 157.17)
+
+2023-03-08:
+  Input: 64 pts, 7.47 ~ 584.36 ft
+  Output: 17.65 ~ 548.09 ft (mean: 157.07)
+
+2023-03-09:
+  Input: 64 pts, 7.58 ~ 584.30 ft
+  Output: 17.61 ~ 548.02 ft (mean: 156.96)
+
+2023-03-10:
+  Input: 62 pts, 6.60 ~ 584.26 ft
+  Output: 19.70 ~ 546.32 ft (mean: 161.62)
+
+2023-03-11:
+  Input: 62 pts, 6.61 ~ 584.26 ft
+  Output: 19.64 ~ 546.14 ft (mean: 161.55)
+
+2023-03-12:
+  Input: 63 pts, 6.94 ~ 584.26 ft
+  Output: 17.84 ~ 548.04 ft (mean: 157.39)
+
+2023-03-13:
+  Input: 64 pts, 7.25 ~ 584.24 ft
+  Output: 17.31 ~ 548.20 ft (mean: 156.70)
+
+2023-03-14:
+  Input: 64 pts, 7.42 ~ 583.93 ft
+  Output: 17.29 ~ 547.96 ft (mean: 156.63)
+
+2023-03-15:
+  Input: 61 pts, 5.46 ~ 578.63 ft
+  Output: 17.47 ~ 554.76 ft (mean: 152.31)
+
+2023-03-16:
+  Input: 63 pts, 6.37 ~ 584.10 ft
+  Output: 17.45 ~ 547.78 ft (mean: 156.65)
+
+2023-03-17:
+  Input: 64 pts, 6.68 ~ 584.05 ft
+  Output: 17.01 ~ 547.76 ft (mean: 155.58)
+
+2023-03-18:
+  Input: 64 pts, 6.78 ~ 584.13 ft
+  Output: 17.05 ~ 547.77 ft (mean: 155.19)
+
+2023-03-19:
+  Input: 65 pts, 6.82 ~ 584.10 ft
+  Output: 17.05 ~ 547.50 ft (mean: 154.43)
+
+2023-03-20:
+  Input: 64 pts, 6.83 ~ 583.99 ft
+  Output: 17.56 ~ 547.45 ft (mean: 153.88)
+
+2023-03-21:
+  Input: 61 pts, 5.03 ~ 578.27 ft
+  Output: 17.63 ~ 554.51 ft (mean: 149.11)
+
+2023-03-22:
+  Input: 61 pts, 5.39 ~ 578.26 ft
+  Output: 17.75 ~ 554.58 ft (mean: 148.85)
+
+2023-03-23:
+  Input: 62 pts, 6.28 ~ 584.23 ft
+  Output: 19.47 ~ 545.61 ft (mean: 157.51)
+
+2023-03-24:
+  Input: 63 pts, 6.53 ~ 584.24 ft
+  Output: 17.91 ~ 548.18 ft (mean: 153.15)
+
+2023-03-25:
+  Input: 64 pts, 6.60 ~ 584.08 ft
+  Output: 16.76 ~ 547.15 ft (mean: 153.76)
+
+2023-03-26:
+  Input: 64 pts, 6.65 ~ 584.15 ft
+  Output: 16.83 ~ 547.22 ft (mean: 153.65)
+
+2023-03-27:
+  Input: 64 pts, 6.71 ~ 584.22 ft
+  Output: 16.88 ~ 547.23 ft (mean: 153.54)
+
+2023-03-28:
+  Input: 61 pts, 6.77 ~ 584.11 ft
+  Output: 21.82 ~ 547.31 ft (mean: 151.51)
+
+2023-03-29:
+  Input: 61 pts, 6.81 ~ 583.96 ft
+  Output: 21.85 ~ 547.13 ft (mean: 151.32)
+
+2023-03-30:
+  Input: 62 pts, 6.36 ~ 583.94 ft
+  Output: 19.01 ~ 543.66 ft (mean: 157.89)
+
+2023-03-31:
+  Input: 63 pts, 6.47 ~ 584.18 ft
+  Output: 17.42 ~ 546.69 ft (mean: 153.56)
+
+2023-04-01:
+  Input: 64 pts, 6.75 ~ 584.15 ft
+  Output: 16.93 ~ 546.37 ft (mean: 152.75)
+
+2023-04-02:
+  Input: 61 pts, 6.80 ~ 584.05 ft
+  Output: 21.82 ~ 546.25 ft (mean: 150.72)
+
+2023-04-03:
+  Input: 62 pts, 6.83 ~ 583.91 ft
+  Output: 21.73 ~ 551.00 ft (mean: 151.28)
+
+2023-04-04:
+  Input: 66 pts, 7.02 ~ 584.04 ft
+  Output: 17.11 ~ 549.91 ft (mean: 151.96)
+
+2023-04-05:
+  Input: 66 pts, 7.26 ~ 584.11 ft
+  Output: 17.12 ~ 549.99 ft (mean: 151.93)
+
+2023-04-06:
+  Input: 66 pts, 7.42 ~ 584.11 ft
+  Output: 17.13 ~ 549.96 ft (mean: 151.84)
+
+2023-04-07:
+  Input: 66 pts, 7.55 ~ 584.16 ft
+  Output: 17.14 ~ 549.90 ft (mean: 151.81)
+
+2023-04-08:
+  Input: 63 pts, 7.67 ~ 584.18 ft
+  Output: 15.92 ~ 549.92 ft (mean: 159.18)
+
+2023-04-09:
+  Input: 63 pts, 7.78 ~ 584.20 ft
+  Output: 15.92 ~ 549.91 ft (mean: 159.14)
+
+2023-04-10:
+  Input: 63 pts, 7.85 ~ 584.19 ft
+  Output: 15.93 ~ 549.84 ft (mean: 159.08)
+
+2023-04-11:
+  Input: 63 pts, 7.93 ~ 584.79 ft
+  Output: 15.96 ~ 550.03 ft (mean: 159.13)
+
+2023-04-12:
+  Input: 63 pts, 7.97 ~ 584.16 ft
+  Output: 15.99 ~ 550.02 ft (mean: 159.07)
+
+2023-04-13:
+  Input: 63 pts, 8.02 ~ 584.14 ft
+  Output: 15.94 ~ 549.79 ft (mean: 159.06)
+
+2023-04-14:
+  Input: 63 pts, 8.08 ~ 584.21 ft
+  Output: 15.96 ~ 549.78 ft (mean: 159.06)
+
+2023-04-15:
+  Input: 63 pts, 8.13 ~ 584.37 ft
+  Output: 16.00 ~ 549.97 ft (mean: 159.12)
+
+2023-04-16:
+  Input: 63 pts, 8.17 ~ 584.31 ft
+  Output: 16.02 ~ 550.05 ft (mean: 159.25)
+
+2023-04-17:
+  Input: 63 pts, 8.20 ~ 584.21 ft
+  Output: 15.96 ~ 550.01 ft (mean: 159.24)
+
+2023-04-18:
+  Input: 66 pts, 8.20 ~ 584.23 ft
+  Output: 17.16 ~ 550.23 ft (mean: 152.06)
+
+2023-04-19:
+  Input: 66 pts, 8.23 ~ 584.28 ft
+  Output: 17.18 ~ 550.30 ft (mean: 152.11)
+
+2023-04-20:
+  Input: 66 pts, 8.24 ~ 584.42 ft
+  Output: 17.18 ~ 550.58 ft (mean: 152.24)
+
+2023-04-21:
+  Input: 66 pts, 8.20 ~ 584.35 ft
+  Output: 17.14 ~ 550.51 ft (mean: 152.31)
+
+2023-04-22:
+  Input: 66 pts, 8.20 ~ 584.13 ft
+  Output: 17.10 ~ 550.66 ft (mean: 152.33)
+
+2023-04-23:
+  Input: 66 pts, 8.27 ~ 584.16 ft
+  Output: 17.15 ~ 550.72 ft (mean: 152.70)
+
+2023-04-24:
+  Input: 66 pts, 8.30 ~ 584.23 ft
+  Output: 17.18 ~ 550.77 ft (mean: 152.83)
+
+2023-04-25:
+  Input: 66 pts, 8.32 ~ 584.25 ft
+  Output: 17.20 ~ 550.83 ft (mean: 152.93)
+
+2023-04-26:
+  Input: 66 pts, 8.35 ~ 584.30 ft
+  Output: 17.24 ~ 550.97 ft (mean: 153.05)
+
+2023-04-27:
+  Input: 66 pts, 8.36 ~ 584.31 ft
+  Output: 17.25 ~ 551.08 ft (mean: 153.10)
+
+2023-04-28:
+  Input: 66 pts, 8.37 ~ 584.37 ft
+  Output: 17.25 ~ 550.81 ft (mean: 153.01)
+
+2023-04-29:
+  Input: 66 pts, 8.39 ~ 584.38 ft
+  Output: 17.24 ~ 550.88 ft (mean: 153.05)
+
+2023-04-30:
+  Input: 66 pts, 8.37 ~ 584.26 ft
+  Output: 17.21 ~ 550.85 ft (mean: 153.06)
+
+2023-05-01:
+  Input: 66 pts, 8.37 ~ 584.24 ft
+  Output: 17.19 ~ 550.95 ft (mean: 153.11)
+
+2023-05-02:
+  Input: 65 pts, 8.37 ~ 584.28 ft
+  Output: 17.37 ~ 548.42 ft (mean: 152.34)
+
+2023-05-03:
+  Input: 65 pts, 8.35 ~ 584.31 ft
+  Output: 17.37 ~ 548.29 ft (mean: 152.32)
+
+2023-05-04:
+  Input: 65 pts, 6.94 ~ 584.33 ft
+  Output: 17.29 ~ 548.07 ft (mean: 152.17)
+
+2023-05-05:
+  Input: 64 pts, 7.22 ~ 584.45 ft
+  Output: 17.29 ~ 547.91 ft (mean: 152.14)
+
+2023-05-06:
+  Input: 65 pts, 7.81 ~ 584.45 ft
+  Output: 17.25 ~ 547.88 ft (mean: 152.20)
+
+2023-05-07:
+  Input: 65 pts, 8.04 ~ 584.43 ft
+  Output: 17.22 ~ 548.08 ft (mean: 152.22)
+
+2023-05-08:
+  Input: 65 pts, 8.16 ~ 584.37 ft
+  Output: 17.22 ~ 548.26 ft (mean: 152.25)
+
+2023-05-09:
+  Input: 65 pts, 8.23 ~ 584.34 ft
+  Output: 17.24 ~ 548.22 ft (mean: 152.28)
+
+2023-05-10:
+  Input: 65 pts, 8.29 ~ 584.43 ft
+  Output: 17.28 ~ 548.06 ft (mean: 152.33)
+
+2023-05-11:
+  Input: 65 pts, 8.34 ~ 584.38 ft
+  Output: 17.26 ~ 548.07 ft (mean: 152.34)
+
+2023-05-12:
+  Input: 65 pts, 8.38 ~ 584.33 ft
+  Output: 17.25 ~ 548.08 ft (mean: 152.34)
+
+2023-05-13:
+  Input: 66 pts, 8.43 ~ 584.23 ft
+  Output: 17.03 ~ 550.97 ft (mean: 153.14)
+
+2023-05-14:
+  Input: 66 pts, 8.45 ~ 584.34 ft
+  Output: 17.03 ~ 551.14 ft (mean: 153.29)
+
+2023-05-15:
+  Input: 66 pts, 8.45 ~ 584.53 ft
+  Output: 17.03 ~ 551.61 ft (mean: 153.40)
+
+2023-05-16:
+  Input: 66 pts, 8.40 ~ 584.50 ft
+  Output: 17.00 ~ 551.63 ft (mean: 153.34)
+
+2023-05-17:
+  Input: 66 pts, 8.36 ~ 584.31 ft
+  Output: 16.94 ~ 551.71 ft (mean: 153.30)
+
+2023-05-18:
+  Input: 66 pts, 8.40 ~ 584.43 ft
+  Output: 16.93 ~ 551.77 ft (mean: 153.34)
+
+2023-05-19:
+  Input: 66 pts, 8.44 ~ 584.55 ft
+  Output: 16.93 ~ 551.91 ft (mean: 153.43)
+
+2023-05-20:
+  Input: 66 pts, 8.44 ~ 584.57 ft
+  Output: 16.90 ~ 552.02 ft (mean: 153.40)
+
+2023-05-21:
+  Input: 66 pts, 8.44 ~ 584.49 ft
+  Output: 16.86 ~ 552.01 ft (mean: 153.33)
+
+2023-05-22:
+  Input: 66 pts, 8.47 ~ 584.53 ft
+  Output: 16.85 ~ 551.98 ft (mean: 153.29)
+
+2023-05-23:
+  Input: 66 pts, 8.51 ~ 584.55 ft
+  Output: 16.85 ~ 552.05 ft (mean: 153.37)
+
+2023-05-24:
+  Input: 66 pts, 8.51 ~ 584.50 ft
+  Output: 16.83 ~ 551.83 ft (mean: 153.31)
+
+2023-05-25:
+  Input: 66 pts, 8.53 ~ 584.48 ft
+  Output: 16.80 ~ 551.55 ft (mean: 153.23)
+
+2023-05-26:
+  Input: 66 pts, 8.57 ~ 584.56 ft
+  Output: 16.82 ~ 551.64 ft (mean: 153.28)
+
+2023-05-27:
+  Input: 66 pts, 8.59 ~ 584.54 ft
+  Output: 16.82 ~ 551.66 ft (mean: 153.27)
+
+2023-05-28:
+  Input: 66 pts, 8.57 ~ 584.55 ft
+  Output: 16.80 ~ 551.62 ft (mean: 153.21)
+
+2023-05-29:
+  Input: 66 pts, 8.58 ~ 584.61 ft
+  Output: 16.79 ~ 551.70 ft (mean: 153.22)
+
+2023-05-30:
+  Input: 66 pts, 8.58 ~ 584.53 ft
+  Output: 16.78 ~ 551.64 ft (mean: 153.21)
+
+2023-05-31:
+  Input: 66 pts, 8.54 ~ 584.59 ft
+  Output: 16.78 ~ 551.58 ft (mean: 153.18)
+
+2023-06-01:
+  Input: 66 pts, 8.53 ~ 584.72 ft
+  Output: 16.78 ~ 551.50 ft (mean: 153.20)
+
+2023-06-02:
+  Input: 66 pts, 8.51 ~ 584.63 ft
+  Output: 16.77 ~ 551.53 ft (mean: 153.21)
+
+2023-06-03:
+  Input: 66 pts, 8.47 ~ 584.59 ft
+  Output: 16.75 ~ 551.56 ft (mean: 153.17)
+
+2023-06-04:
+  Input: 66 pts, 8.46 ~ 584.52 ft
+  Output: 16.73 ~ 551.44 ft (mean: 153.10)
+
+2023-06-05:
+  Input: 66 pts, 8.47 ~ 584.64 ft
+  Output: 16.75 ~ 551.48 ft (mean: 153.12)
+
+2023-06-06:
+  Input: 66 pts, 8.52 ~ 585.31 ft
+  Output: 16.81 ~ 551.65 ft (mean: 153.19)
+
+2023-06-07:
+  Input: 66 pts, 8.57 ~ 585.42 ft
+  Output: 16.85 ~ 551.72 ft (mean: 153.27)
+
+2023-06-08:
+  Input: 66 pts, 8.58 ~ 585.56 ft
+  Output: 16.89 ~ 551.80 ft (mean: 153.27)
+
+2023-06-09:
+  Input: 66 pts, 8.62 ~ 585.61 ft
+  Output: 16.91 ~ 551.84 ft (mean: 153.24)
+
+2023-06-10:
+  Input: 66 pts, 8.63 ~ 585.59 ft
+  Output: 16.89 ~ 551.80 ft (mean: 153.19)
+
+2023-06-11:
+  Input: 66 pts, 8.65 ~ 585.63 ft
+  Output: 16.86 ~ 551.78 ft (mean: 153.10)
+
+2023-06-12:
+  Input: 66 pts, 8.65 ~ 585.78 ft
+  Output: 16.85 ~ 551.74 ft (mean: 153.06)
+
+2023-06-13:
+  Input: 66 pts, 8.63 ~ 585.82 ft
+  Output: 16.84 ~ 551.63 ft (mean: 153.04)
+
+2023-06-14:
+  Input: 66 pts, 8.61 ~ 585.73 ft
+  Output: 16.85 ~ 551.61 ft (mean: 153.06)
+
+2023-06-15:
+  Input: 66 pts, 8.61 ~ 585.79 ft
+  Output: 16.84 ~ 551.64 ft (mean: 153.04)
+
+2023-06-16:
+  Input: 66 pts, 8.62 ~ 585.88 ft
+  Output: 16.89 ~ 551.72 ft (mean: 153.07)
+
+2023-06-17:
+  Input: 66 pts, 8.63 ~ 585.90 ft
+  Output: 16.95 ~ 551.85 ft (mean: 153.02)
+
+2023-06-18:
+  Input: 66 pts, 8.63 ~ 585.91 ft
+  Output: 16.98 ~ 551.91 ft (mean: 153.02)
+
+2023-06-19:
+  Input: 66 pts, 8.68 ~ 586.00 ft
+  Output: 17.04 ~ 551.81 ft (mean: 153.07)
+
+2023-06-20:
+  Input: 66 pts, 8.69 ~ 586.09 ft
+  Output: 17.11 ~ 551.84 ft (mean: 153.06)
+
+2023-06-21:
+  Input: 66 pts, 8.72 ~ 586.13 ft
+  Output: 17.18 ~ 552.07 ft (mean: 153.08)
+
+2023-06-22:
+  Input: 66 pts, 8.73 ~ 586.16 ft
+  Output: 17.22 ~ 552.34 ft (mean: 153.19)
+
+2023-06-23:
+  Input: 66 pts, 8.77 ~ 586.26 ft
+  Output: 17.31 ~ 552.44 ft (mean: 153.25)
+
+2023-06-24:
+  Input: 66 pts, 8.78 ~ 586.30 ft
+  Output: 17.37 ~ 552.34 ft (mean: 153.24)
+
+2023-06-25:
+  Input: 66 pts, 8.80 ~ 586.32 ft
+  Output: 17.41 ~ 552.35 ft (mean: 153.21)
+
+2023-06-26:
+  Input: 66 pts, 8.79 ~ 586.37 ft
+  Output: 17.39 ~ 552.34 ft (mean: 153.21)
+
+2023-06-27:
+  Input: 66 pts, 8.78 ~ 586.28 ft
+  Output: 17.42 ~ 552.40 ft (mean: 153.20)
+
+2023-06-28:
+  Input: 66 pts, 8.77 ~ 586.32 ft
+  Output: 17.40 ~ 552.43 ft (mean: 152.99)
+
+2023-06-29:
+  Input: 66 pts, 8.76 ~ 586.37 ft
+  Output: 17.38 ~ 552.49 ft (mean: 152.88)
+
+2023-06-30:
+  Input: 66 pts, 8.72 ~ 586.20 ft
+  Output: 17.28 ~ 552.21 ft (mean: 152.54)
+
+2023-07-01:
+  Input: 66 pts, 8.68 ~ 587.11 ft
+  Output: 17.24 ~ 552.43 ft (mean: 152.50)
+
+2023-07-02:
+  Input: 66 pts, 8.63 ~ 587.23 ft
+  Output: 17.16 ~ 552.66 ft (mean: 152.33)
+
+2023-07-03:
+  Input: 64 pts, 8.61 ~ 587.40 ft
+  Output: 16.69 ~ 552.97 ft (mean: 150.41)
+
+2023-07-04:
+  Input: 66 pts, 8.64 ~ 587.50 ft
+  Output: 17.12 ~ 553.04 ft (mean: 152.33)
+
+2023-07-05:
+  Input: 62 pts, 8.67 ~ 587.54 ft
+  Output: 23.86 ~ 553.13 ft (mean: 154.70)
+
+2023-07-06:
+  Input: 66 pts, 8.71 ~ 587.12 ft
+  Output: 17.11 ~ 553.07 ft (mean: 152.16)
+
+2023-07-07:
+  Input: 66 pts, 8.72 ~ 586.89 ft
+  Output: 17.07 ~ 553.07 ft (mean: 152.14)
+
+2023-07-08:
+  Input: 66 pts, 8.77 ~ 587.13 ft
+  Output: 17.08 ~ 553.19 ft (mean: 152.21)
+
+2023-07-09:
+  Input: 66 pts, 8.82 ~ 587.25 ft
+  Output: 17.04 ~ 553.30 ft (mean: 152.20)
+
+2023-07-10:
+  Input: 66 pts, 8.83 ~ 587.31 ft
+  Output: 17.03 ~ 553.47 ft (mean: 152.17)
+
+2023-07-11:
+  Input: 66 pts, 8.83 ~ 587.45 ft
+  Output: 16.94 ~ 553.59 ft (mean: 152.01)
+
+2023-07-12:
+  Input: 66 pts, 8.82 ~ 588.10 ft
+  Output: 16.90 ~ 553.64 ft (mean: 152.01)
+
+2023-07-13:
+  Input: 66 pts, 8.81 ~ 588.17 ft
+  Output: 16.84 ~ 553.71 ft (mean: 152.00)
+
+2023-07-14:
+  Input: 66 pts, 8.79 ~ 587.65 ft
+  Output: 16.77 ~ 553.77 ft (mean: 151.98)
+
+2023-07-15:
+  Input: 66 pts, 8.78 ~ 587.58 ft
+  Output: 16.73 ~ 553.68 ft (mean: 151.99)
+
+2023-07-16:
+  Input: 64 pts, 8.79 ~ 587.62 ft
+  Output: 23.60 ~ 553.74 ft (mean: 152.14)
+
+2023-07-17:
+  Input: 64 pts, 8.80 ~ 587.72 ft
+  Output: 23.59 ~ 554.01 ft (mean: 152.19)
+
+2023-07-18:
+  Input: 66 pts, 8.82 ~ 587.71 ft
+  Output: 16.64 ~ 554.08 ft (mean: 152.11)
+
+2023-07-19:
+  Input: 66 pts, 8.83 ~ 587.83 ft
+  Output: 16.60 ~ 554.16 ft (mean: 152.13)
+
+2023-07-20:
+  Input: 66 pts, 8.85 ~ 588.47 ft
+  Output: 16.56 ~ 554.20 ft (mean: 152.13)
+
+2023-07-21:
+  Input: 65 pts, 8.88 ~ 588.56 ft
+  Output: 17.90 ~ 554.30 ft (mean: 151.75)
+
+2023-07-22:
+  Input: 66 pts, 8.89 ~ 588.59 ft
+  Output: 16.61 ~ 554.43 ft (mean: 152.59)
+
+2023-07-23:
+  Input: 66 pts, 8.93 ~ 588.70 ft
+  Output: 16.59 ~ 554.49 ft (mean: 152.67)
+
+2023-07-24:
+  Input: 66 pts, 8.95 ~ 588.87 ft
+  Output: 16.58 ~ 554.56 ft (mean: 152.63)
+
+2023-07-25:
+  Input: 66 pts, 8.94 ~ 588.89 ft
+  Output: 16.55 ~ 554.61 ft (mean: 152.69)
+
+2023-07-26:
+  Input: 66 pts, 8.93 ~ 588.34 ft
+  Output: 16.51 ~ 554.67 ft (mean: 152.65)
+
+2023-07-27:
+  Input: 66 pts, 8.93 ~ 588.87 ft
+  Output: 16.52 ~ 554.27 ft (mean: 152.67)
+
+2023-07-28:
+  Input: 66 pts, 8.89 ~ 589.08 ft
+  Output: 16.51 ~ 554.33 ft (mean: 152.71)
+
+2023-07-29:
+  Input: 66 pts, 8.84 ~ 589.16 ft
+  Output: 16.49 ~ 554.70 ft (mean: 152.85)
+
+2023-07-30:
+  Input: 66 pts, 8.77 ~ 589.15 ft
+  Output: 16.42 ~ 554.84 ft (mean: 152.70)
+
+2023-07-31:
+  Input: 66 pts, 8.73 ~ 589.28 ft
+  Output: 16.47 ~ 554.83 ft (mean: 152.79)
+
+2023-08-01:
+  Input: 66 pts, 8.70 ~ 589.31 ft
+  Output: 16.44 ~ 554.72 ft (mean: 152.85)
+
+2023-08-02:
+  Input: 65 pts, 8.72 ~ 581.85 ft
+  Output: 14.91 ~ 555.94 ft (mean: 146.06)
+
+2023-08-03:
+  Input: 64 pts, 8.76 ~ 589.51 ft
+  Output: 19.27 ~ 554.68 ft (mean: 153.33)
+
+2023-08-04:
+  Input: 65 pts, 8.83 ~ 589.48 ft
+  Output: 19.72 ~ 554.62 ft (mean: 155.45)
+
+2023-08-05:
+  Input: 65 pts, 8.85 ~ 589.54 ft
+  Output: 19.72 ~ 554.55 ft (mean: 155.52)
+
+2023-08-06:
+  Input: 65 pts, 8.91 ~ 589.67 ft
+  Output: 19.74 ~ 554.87 ft (mean: 155.54)
+
+2023-08-07:
+  Input: 65 pts, 8.92 ~ 589.77 ft
+  Output: 19.72 ~ 554.92 ft (mean: 155.61)
+
+2023-08-08:
+  Input: 65 pts, 8.94 ~ 589.81 ft
+  Output: 19.72 ~ 554.96 ft (mean: 155.70)
+
+2023-08-09:
+  Input: 65 pts, 8.93 ~ 589.81 ft
+  Output: 19.70 ~ 554.92 ft (mean: 155.70)
+
+2023-08-10:
+  Input: 65 pts, 8.94 ~ 589.84 ft
+  Output: 19.71 ~ 554.90 ft (mean: 155.67)
+
+2023-08-11:
+  Input: 65 pts, 8.93 ~ 589.90 ft
+  Output: 19.72 ~ 554.96 ft (mean: 155.73)
+
+2023-08-12:
+  Input: 65 pts, 8.92 ~ 589.93 ft
+  Output: 19.74 ~ 554.99 ft (mean: 155.74)
+
+2023-08-13:
+  Input: 65 pts, 8.91 ~ 589.93 ft
+  Output: 19.73 ~ 554.98 ft (mean: 155.71)
+
+2023-08-14:
+  Input: 58 pts, 8.92 ~ 589.93 ft
+  Output: 19.76 ~ 555.00 ft (mean: 156.23)
+
+2023-08-15:
+  Input: 58 pts, 8.92 ~ 590.04 ft
+  Output: 19.81 ~ 555.20 ft (mean: 156.41)
+
+2023-08-16:
+  Input: 58 pts, 8.92 ~ 589.97 ft
+  Output: 19.79 ~ 555.23 ft (mean: 156.42)
+
+2023-08-17:
+  Input: 65 pts, 8.95 ~ 589.99 ft
+  Output: 19.74 ~ 555.16 ft (mean: 155.66)
+
+2023-08-18:
+  Input: 66 pts, 8.96 ~ 589.99 ft
+  Output: 19.73 ~ 555.23 ft (mean: 155.64)
+
+2023-08-19:
+  Input: 66 pts, 8.97 ~ 590.11 ft
+  Output: 19.70 ~ 554.89 ft (mean: 155.50)
+
+2023-08-20:
+  Input: 63 pts, 5.49 ~ 589.83 ft
+  Output: 21.56 ~ 546.70 ft (mean: 158.58)
+
+2023-08-21:
+  Input: 63 pts, 5.66 ~ 590.30 ft
+  Output: 21.73 ~ 546.41 ft (mean: 158.68)
+
+2023-08-22:
+  Input: 64 pts, 6.93 ~ 590.30 ft
+  Output: 19.85 ~ 549.63 ft (mean: 154.77)
+
+2023-08-23:
+  Input: 65 pts, 7.59 ~ 590.25 ft
+  Output: 19.35 ~ 549.48 ft (mean: 154.12)
+
+2023-08-24:
+  Input: 65 pts, 7.95 ~ 590.40 ft
+  Output: 19.38 ~ 549.66 ft (mean: 154.19)
+
+2023-08-25:
+  Input: 65 pts, 8.20 ~ 590.42 ft
+  Output: 19.39 ~ 549.66 ft (mean: 154.23)
+
+2023-08-26:
+  Input: 66 pts, 8.39 ~ 590.47 ft
+  Output: 19.22 ~ 554.57 ft (mean: 154.82)
+
+2023-08-27:
+  Input: 66 pts, 8.56 ~ 590.48 ft
+  Output: 19.20 ~ 554.70 ft (mean: 154.82)
+
+2023-08-28:
+  Input: 66 pts, 8.72 ~ 590.47 ft
+  Output: 19.20 ~ 554.82 ft (mean: 154.92)
+
+2023-08-29:
+  Input: 66 pts, 8.67 ~ 590.41 ft
+  Output: 19.18 ~ 555.11 ft (mean: 155.00)
+
+2023-08-30:
+  Input: 66 pts, 8.65 ~ 590.50 ft
+  Output: 19.17 ~ 555.23 ft (mean: 155.06)
+
+2023-08-31:
+  Input: 66 pts, 8.68 ~ 590.41 ft
+  Output: 19.18 ~ 555.31 ft (mean: 155.14)
+
+2023-09-01:
+  Input: 66 pts, 8.77 ~ 590.56 ft
+  Output: 19.21 ~ 555.36 ft (mean: 155.14)
+
+2023-09-02:
+  Input: 66 pts, 8.79 ~ 590.33 ft
+  Output: 19.20 ~ 555.31 ft (mean: 154.94)
+
+2023-09-03:
+  Input: 66 pts, 8.78 ~ 590.64 ft
+  Output: 19.15 ~ 555.30 ft (mean: 154.80)
+
+2023-09-04:
+  Input: 66 pts, 8.79 ~ 590.61 ft
+  Output: 19.14 ~ 555.39 ft (mean: 154.78)
+
+2023-09-05:
+  Input: 66 pts, 8.83 ~ 590.66 ft
+  Output: 19.15 ~ 555.43 ft (mean: 154.80)
+
+2023-09-06:
+  Input: 65 pts, 8.87 ~ 590.72 ft
+  Output: 19.11 ~ 555.27 ft (mean: 154.73)
+
+2023-09-07:
+  Input: 65 pts, 8.90 ~ 590.76 ft
+  Output: 19.11 ~ 555.36 ft (mean: 154.70)
+
+2023-09-08:
+  Input: 66 pts, 8.92 ~ 590.90 ft
+  Output: 19.11 ~ 555.63 ft (mean: 154.63)
+
+2023-09-09:
+  Input: 66 pts, 8.90 ~ 590.35 ft
+  Output: 19.09 ~ 555.61 ft (mean: 154.55)
+
+2023-09-10:
+  Input: 66 pts, 8.88 ~ 590.20 ft
+  Output: 19.04 ~ 555.61 ft (mean: 154.46)
+
+2023-09-11:
+  Input: 66 pts, 8.87 ~ 590.79 ft
+  Output: 19.02 ~ 555.59 ft (mean: 154.43)
+
+2023-09-12:
+  Input: 66 pts, 8.88 ~ 590.61 ft
+  Output: 19.01 ~ 555.65 ft (mean: 154.42)
+
+2023-09-13:
+  Input: 66 pts, 8.88 ~ 590.31 ft
+  Output: 19.00 ~ 555.66 ft (mean: 154.35)
+
+2023-09-14:
+  Input: 66 pts, 8.91 ~ 590.27 ft
+  Output: 19.04 ~ 555.84 ft (mean: 154.44)
+
+2023-09-15:
+  Input: 66 pts, 8.92 ~ 590.22 ft
+  Output: 19.04 ~ 555.72 ft (mean: 154.46)
+
+2023-09-16:
+  Input: 66 pts, 8.94 ~ 590.21 ft
+  Output: 19.00 ~ 555.50 ft (mean: 154.21)
+
+2023-09-17:
+  Input: 66 pts, 8.94 ~ 590.18 ft
+  Output: 18.96 ~ 555.53 ft (mean: 154.05)
+
+2023-09-18:
+  Input: 66 pts, 8.95 ~ 590.15 ft
+  Output: 18.94 ~ 555.59 ft (mean: 154.02)
+
+2023-09-19:
+  Input: 66 pts, 8.93 ~ 590.04 ft
+  Output: 18.89 ~ 555.49 ft (mean: 153.85)
+
+2023-09-20:
+  Input: 66 pts, 8.95 ~ 590.05 ft
+  Output: 18.90 ~ 555.49 ft (mean: 153.81)
+
+2023-09-21:
+  Input: 66 pts, 8.97 ~ 589.52 ft
+  Output: 18.89 ~ 555.44 ft (mean: 153.84)
+
+2023-09-22:
+  Input: 66 pts, 9.00 ~ 589.48 ft
+  Output: 18.86 ~ 555.53 ft (mean: 153.76)
+
+2023-09-23:
+  Input: 66 pts, 8.98 ~ 589.40 ft
+  Output: 18.81 ~ 555.51 ft (mean: 153.62)
+
+2023-09-24:
+  Input: 66 pts, 8.97 ~ 589.31 ft
+  Output: 18.79 ~ 555.28 ft (mean: 153.49)
+
+2023-09-25:
+  Input: 66 pts, 8.95 ~ 589.36 ft
+  Output: 18.77 ~ 555.36 ft (mean: 153.46)
+
+2023-09-26:
+  Input: 65 pts, 8.90 ~ 589.19 ft
+  Output: 19.13 ~ 549.75 ft (mean: 153.51)
+
+2023-09-27:
+  Input: 65 pts, 8.87 ~ 589.05 ft
+  Output: 19.14 ~ 549.84 ft (mean: 153.50)
+
+2023-09-28:
+  Input: 66 pts, 8.88 ~ 589.05 ft
+  Output: 18.81 ~ 555.67 ft (mean: 153.42)
+
+2023-09-29:
+  Input: 66 pts, 8.88 ~ 588.92 ft
+  Output: 18.82 ~ 555.73 ft (mean: 153.41)
+
+2023-09-30:
+  Input: 65 pts, 8.86 ~ 588.86 ft
+  Output: 19.18 ~ 549.99 ft (mean: 153.39)
+
+2023-10-01:
+  Input: 65 pts, 8.86 ~ 588.85 ft
+  Output: 19.18 ~ 549.78 ft (mean: 153.30)
+
+2023-10-02:
+  Input: 65 pts, 8.89 ~ 588.90 ft
+  Output: 19.20 ~ 549.59 ft (mean: 153.28)
+
+2023-10-03:
+  Input: 63 pts, 8.91 ~ 588.77 ft
+  Output: 26.37 ~ 549.49 ft (mean: 153.61)
+
+2023-10-04:
+  Input: 64 pts, 8.94 ~ 588.90 ft
+  Output: 25.08 ~ 549.63 ft (mean: 151.44)
+
+2023-10-05:
+  Input: 64 pts, 9.00 ~ 588.81 ft
+  Output: 25.21 ~ 549.59 ft (mean: 151.47)
+
+2023-10-06:
+  Input: 65 pts, 9.02 ~ 588.73 ft
+  Output: 19.10 ~ 549.67 ft (mean: 151.24)
+
+2023-10-07:
+  Input: 65 pts, 9.04 ~ 588.61 ft
+  Output: 19.11 ~ 549.70 ft (mean: 151.25)
+
+2023-10-08:
+  Input: 65 pts, 9.04 ~ 588.58 ft
+  Output: 19.10 ~ 549.69 ft (mean: 151.21)
+
+2023-10-09:
+  Input: 65 pts, 9.02 ~ 588.52 ft
+  Output: 19.09 ~ 549.58 ft (mean: 151.21)
+
+2023-10-10:
+  Input: 65 pts, 9.01 ~ 588.39 ft
+  Output: 19.10 ~ 549.57 ft (mean: 151.21)
+
+2023-10-11:
+  Input: 66 pts, 9.00 ~ 588.29 ft
+  Output: 19.09 ~ 549.02 ft (mean: 151.22)
+
+2023-10-12:
+  Input: 67 pts, 9.01 ~ 588.33 ft
+  Output: 19.12 ~ 548.78 ft (mean: 151.23)
+
+2023-10-13:
+  Input: 67 pts, 9.03 ~ 588.47 ft
+  Output: 19.15 ~ 548.81 ft (mean: 151.32)
+
+2023-10-14:
+  Input: 67 pts, 9.05 ~ 588.54 ft
+  Output: 19.17 ~ 548.57 ft (mean: 151.33)
+
+2023-10-15:
+  Input: 67 pts, 9.03 ~ 588.49 ft
+  Output: 19.17 ~ 548.99 ft (mean: 151.33)
+
+2023-10-16:
+  Input: 67 pts, 9.00 ~ 588.49 ft
+  Output: 19.14 ~ 549.18 ft (mean: 151.28)
+
+2023-10-17:
+  Input: 68 pts, 8.99 ~ 588.33 ft
+  Output: 16.35 ~ 549.13 ft (mean: 151.08)
+
+2023-10-18:
+  Input: 68 pts, 9.00 ~ 588.35 ft
+  Output: 16.33 ~ 549.04 ft (mean: 151.11)
+
+2023-10-19:
+  Input: 68 pts, 9.02 ~ 588.62 ft
+  Output: 16.33 ~ 549.13 ft (mean: 151.13)
+
+2023-10-20:
+  Input: 68 pts, 9.03 ~ 588.50 ft
+  Output: 16.31 ~ 549.06 ft (mean: 151.13)
+
+2023-10-21:
+  Input: 68 pts, 9.06 ~ 588.23 ft
+  Output: 16.29 ~ 549.00 ft (mean: 151.07)
+
+2023-10-22:
+  Input: 68 pts, 9.08 ~ 588.11 ft
+  Output: 16.28 ~ 548.87 ft (mean: 151.00)
+
+2023-10-23:
+  Input: 68 pts, 9.06 ~ 588.05 ft
+  Output: 16.28 ~ 548.81 ft (mean: 150.95)
+
+2023-10-24:
+  Input: 68 pts, 9.07 ~ 588.07 ft
+  Output: 16.28 ~ 548.76 ft (mean: 150.97)
+
+2023-10-25:
+  Input: 68 pts, 9.08 ~ 588.23 ft
+  Output: 16.32 ~ 548.73 ft (mean: 151.02)
+
+2023-10-26:
+  Input: 68 pts, 9.05 ~ 588.18 ft
+  Output: 16.31 ~ 548.71 ft (mean: 150.97)
+
+2023-10-27:
+  Input: 68 pts, 9.02 ~ 588.11 ft
+  Output: 16.31 ~ 548.65 ft (mean: 150.94)
+
+2023-10-28:
+  Input: 68 pts, 9.00 ~ 588.06 ft
+  Output: 16.29 ~ 548.54 ft (mean: 150.91)
+
+2023-10-29:
+  Input: 68 pts, 8.99 ~ 588.16 ft
+  Output: 16.27 ~ 548.53 ft (mean: 150.87)
+
+2023-10-30:
+  Input: 68 pts, 9.00 ~ 588.11 ft
+  Output: 16.27 ~ 548.66 ft (mean: 150.87)
+
+2023-10-31:
+  Input: 68 pts, 9.02 ~ 588.08 ft
+  Output: 16.30 ~ 548.48 ft (mean: 150.91)
+
+2023-11-01:
+  Input: 67 pts, 9.06 ~ 588.08 ft
+  Output: 16.26 ~ 532.39 ft (mean: 149.12)
+
+2023-11-02:
+  Input: 67 pts, 9.10 ~ 588.08 ft
+  Output: 16.25 ~ 532.43 ft (mean: 149.20)
+
+2023-11-03:
+  Input: 67 pts, 9.13 ~ 587.96 ft
+  Output: 16.25 ~ 532.57 ft (mean: 149.20)
+
+2023-11-04:
+  Input: 67 pts, 9.15 ~ 587.90 ft
+  Output: 16.25 ~ 532.55 ft (mean: 149.20)
+
+2023-11-05:
+  Input: 67 pts, 9.16 ~ 587.78 ft
+  Output: 16.21 ~ 532.53 ft (mean: 149.17)
+
+2023-11-06:
+  Input: 66 pts, 9.19 ~ 587.73 ft
+  Output: 15.97 ~ 530.60 ft (mean: 150.41)
+
+2023-11-07:
+  Input: 67 pts, 9.21 ~ 587.73 ft
+  Output: 16.21 ~ 532.12 ft (mean: 149.14)
+
+2023-11-08:
+  Input: 65 pts, 9.24 ~ 587.79 ft
+  Output: 16.24 ~ 529.94 ft (mean: 148.51)
+
+2023-11-09:
+  Input: 67 pts, 9.24 ~ 587.77 ft
+  Output: 16.23 ~ 532.47 ft (mean: 149.03)
+
+2023-11-10:
+  Input: 67 pts, 9.23 ~ 587.66 ft
+  Output: 16.11 ~ 531.54 ft (mean: 149.52)
+
+2023-11-11:
+  Input: 67 pts, 9.23 ~ 587.64 ft
+  Output: 16.11 ~ 531.50 ft (mean: 149.51)
+
+2023-11-12:
+  Input: 67 pts, 9.19 ~ 587.53 ft
+  Output: 16.09 ~ 531.43 ft (mean: 149.45)
+
+2023-11-13:
+  Input: 67 pts, 9.18 ~ 587.51 ft
+  Output: 16.08 ~ 531.40 ft (mean: 149.43)
+
+2023-11-14:
+  Input: 67 pts, 9.17 ~ 587.45 ft
+  Output: 16.10 ~ 531.43 ft (mean: 149.44)
+
+2023-11-15:
+  Input: 67 pts, 6.74 ~ 587.40 ft
+  Output: 16.07 ~ 531.24 ft (mean: 149.11)
+
+2023-11-16:
+  Input: 67 pts, 6.78 ~ 587.42 ft
+  Output: 16.06 ~ 531.07 ft (mean: 148.98)
+
+2023-11-17:
+  Input: 65 pts, 7.87 ~ 587.34 ft
+  Output: 18.42 ~ 531.45 ft (mean: 153.45)
+
+2023-11-18:
+  Input: 65 pts, 8.37 ~ 587.39 ft
+  Output: 18.44 ~ 531.39 ft (mean: 153.42)
+
+2023-11-19:
+  Input: 67 pts, 8.63 ~ 587.33 ft
+  Output: 16.04 ~ 531.02 ft (mean: 148.93)
+
+2023-11-20:
+  Input: 67 pts, 8.77 ~ 587.42 ft
+  Output: 16.06 ~ 531.07 ft (mean: 149.00)
+
+2023-11-21:
+  Input: 67 pts, 8.89 ~ 587.52 ft
+  Output: 16.12 ~ 531.26 ft (mean: 149.08)
+
+2023-11-22:
+  Input: 67 pts, 8.92 ~ 587.16 ft
+  Output: 16.11 ~ 530.90 ft (mean: 148.93)
+
+2023-11-23:
+  Input: 67 pts, 8.92 ~ 586.95 ft
+  Output: 16.05 ~ 530.75 ft (mean: 148.87)
+
+2023-11-24:
+  Input: 67 pts, 8.96 ~ 586.99 ft
+  Output: 16.04 ~ 530.77 ft (mean: 148.91)
+
+2023-11-25:
+  Input: 67 pts, 9.01 ~ 587.10 ft
+  Output: 16.06 ~ 531.04 ft (mean: 148.98)
+
+2023-11-26:
+  Input: 67 pts, 9.04 ~ 587.12 ft
+  Output: 16.05 ~ 530.85 ft (mean: 148.93)
+
+2023-11-27:
+  Input: 67 pts, 9.07 ~ 587.10 ft
+  Output: 16.04 ~ 530.73 ft (mean: 148.91)
+
+2023-11-28:
+  Input: 67 pts, 9.08 ~ 587.05 ft
+  Output: 16.10 ~ 530.89 ft (mean: 149.00)
+
+2023-11-29:
+  Input: 67 pts, 9.08 ~ 586.87 ft
+  Output: 16.10 ~ 530.70 ft (mean: 148.92)
+
+2023-11-30:
+  Input: 67 pts, 9.09 ~ 586.82 ft
+  Output: 16.13 ~ 530.87 ft (mean: 148.99)
+
+2023-12-01:
+  Input: 67 pts, 9.11 ~ 586.84 ft
+  Output: 16.13 ~ 530.66 ft (mean: 148.91)
+
+2023-12-02:
+  Input: 67 pts, 9.15 ~ 587.00 ft
+  Output: 16.18 ~ 530.73 ft (mean: 148.93)
+
+2023-12-03:
+  Input: 67 pts, 9.16 ~ 587.00 ft
+  Output: 16.18 ~ 530.72 ft (mean: 148.89)
+
+2023-12-04:
+  Input: 67 pts, 9.17 ~ 586.91 ft
+  Output: 16.18 ~ 530.63 ft (mean: 148.84)
+
+2023-12-05:
+  Input: 67 pts, 9.19 ~ 586.90 ft
+  Output: 16.20 ~ 530.64 ft (mean: 148.85)
+
+2023-12-06:
+  Input: 67 pts, 9.19 ~ 586.76 ft
+  Output: 16.21 ~ 530.59 ft (mean: 148.85)
+
+2023-12-07:
+  Input: 67 pts, 9.19 ~ 586.73 ft
+  Output: 16.29 ~ 531.45 ft (mean: 149.13)
+
+2023-12-08:
+  Input: 67 pts, 9.18 ~ 586.67 ft
+  Output: 16.29 ~ 531.42 ft (mean: 149.08)
+
+2023-12-09:
+  Input: 68 pts, 9.20 ~ 586.75 ft
+  Output: 16.36 ~ 547.57 ft (mean: 150.83)
+
+2023-12-10:
+  Input: 68 pts, 9.16 ~ 586.69 ft
+  Output: 16.41 ~ 547.82 ft (mean: 150.89)
+
+2023-12-11:
+  Input: 68 pts, 9.12 ~ 586.46 ft
+  Output: 16.43 ~ 547.84 ft (mean: 150.92)
+
+2023-12-12:
+  Input: 68 pts, 9.10 ~ 586.39 ft
+  Output: 16.40 ~ 547.82 ft (mean: 150.96)
+
+2023-12-13:
+  Input: 68 pts, 9.12 ~ 586.49 ft
+  Output: 16.41 ~ 547.90 ft (mean: 151.04)
+
+2023-12-14:
+  Input: 68 pts, 9.15 ~ 586.65 ft
+  Output: 16.42 ~ 547.85 ft (mean: 151.03)
+
+2023-12-15:
+  Input: 68 pts, 9.14 ~ 586.60 ft
+  Output: 16.44 ~ 547.90 ft (mean: 151.06)
+
+2023-12-16:
+  Input: 68 pts, 9.11 ~ 586.50 ft
+  Output: 16.43 ~ 547.77 ft (mean: 150.96)
+
+2023-12-17:
+  Input: 68 pts, 9.09 ~ 586.40 ft
+  Output: 16.43 ~ 547.51 ft (mean: 150.82)
+
+2023-12-18:
+  Input: 68 pts, 9.07 ~ 586.32 ft
+  Output: 16.46 ~ 547.49 ft (mean: 150.81)
+
+2023-12-19:
+  Input: 68 pts, 9.05 ~ 586.22 ft
+  Output: 16.48 ~ 547.36 ft (mean: 150.80)
+
+2023-12-20:
+  Input: 68 pts, 9.03 ~ 586.17 ft
+  Output: 16.44 ~ 546.65 ft (mean: 150.49)
+
+2023-12-21:
+  Input: 68 pts, 9.01 ~ 586.21 ft
+  Output: 16.45 ~ 546.65 ft (mean: 150.43)
+
+2023-12-22:
+  Input: 66 pts, 7.28 ~ 586.14 ft
+  Output: 18.60 ~ 542.12 ft (mean: 154.73)
+
+2023-12-23:
+  Input: 67 pts, 7.92 ~ 586.22 ft
+  Output: 16.78 ~ 546.30 ft (mean: 150.79)
+
+2023-12-24:
+  Input: 67 pts, 8.36 ~ 586.33 ft
+  Output: 16.81 ~ 546.39 ft (mean: 150.85)
+
+2023-12-25:
+  Input: 68 pts, 8.53 ~ 586.35 ft
+  Output: 16.30 ~ 546.42 ft (mean: 150.22)
+
+2023-12-26:
+  Input: 68 pts, 8.59 ~ 586.32 ft
+  Output: 16.30 ~ 546.35 ft (mean: 150.20)
+
+2023-12-27:
+  Input: 68 pts, 8.64 ~ 586.30 ft
+  Output: 16.31 ~ 546.30 ft (mean: 150.21)
+
+2023-12-28:
+  Input: 68 pts, 8.67 ~ 586.29 ft
+  Output: 16.35 ~ 546.40 ft (mean: 150.23)
+
+2023-12-29:
+  Input: 68 pts, 8.68 ~ 586.23 ft
+  Output: 16.38 ~ 546.31 ft (mean: 150.21)
+
+2023-12-30:
+  Input: 68 pts, 8.69 ~ 586.18 ft
+  Output: 16.38 ~ 546.19 ft (mean: 150.17)
+
+2023-12-31:
+  Input: 68 pts, 8.68 ~ 586.20 ft
+  Output: 16.40 ~ 546.13 ft (mean: 150.13)
+
+2024-01-01:
+  Input: 68 pts, 8.67 ~ 586.18 ft
+  Output: 16.41 ~ 546.04 ft (mean: 150.12)
+
+2024-01-02:
+  Input: 68 pts, 8.70 ~ 586.29 ft
+  Output: 16.46 ~ 546.14 ft (mean: 150.20)
+
+2024-01-03:
+  Input: 66 pts, 8.64 ~ 586.08 ft
+  Output: 18.82 ~ 541.61 ft (mean: 154.65)
+
+2024-01-04:
+  Input: 67 pts, 8.62 ~ 586.12 ft
+  Output: 16.90 ~ 545.78 ft (mean: 150.64)
+
+2024-01-05:
+  Input: 68 pts, 8.58 ~ 586.09 ft
+  Output: 16.37 ~ 545.82 ft (mean: 150.00)
+
+2024-01-06:
+  Input: 68 pts, 8.56 ~ 585.94 ft
+  Output: 16.37 ~ 545.55 ft (mean: 149.90)
+
+2024-01-07:
+  Input: 68 pts, 8.55 ~ 585.83 ft
+  Output: 16.34 ~ 545.34 ft (mean: 149.86)
+
+2024-01-08:
+  Input: 67 pts, 8.61 ~ 586.07 ft
+  Output: 16.43 ~ 545.77 ft (mean: 150.18)
+
+2024-01-09:
+  Input: 66 pts, 8.63 ~ 586.05 ft
+  Output: 16.35 ~ 545.00 ft (mean: 149.76)
+
+2024-01-10:
+  Input: 67 pts, 8.60 ~ 585.92 ft
+  Output: 16.36 ~ 545.16 ft (mean: 149.90)
+
+2024-01-11:
+  Input: 67 pts, 8.58 ~ 585.83 ft
+  Output: 16.34 ~ 544.98 ft (mean: 149.83)
+
+2024-01-12:
+  Input: 67 pts, 8.61 ~ 586.03 ft
+  Output: 16.41 ~ 545.40 ft (mean: 149.92)
+
+2024-01-13:
+  Input: 66 pts, 8.59 ~ 585.96 ft
+  Output: 23.45 ~ 545.01 ft (mean: 149.96)
+
+2024-01-14:
+  Input: 66 pts, 8.57 ~ 585.90 ft
+  Output: 23.45 ~ 544.89 ft (mean: 149.90)
+
+2024-01-15:
+  Input: 66 pts, 8.56 ~ 585.91 ft
+  Output: 23.48 ~ 545.20 ft (mean: 149.96)
+
+2024-01-16:
+  Input: 66 pts, 8.56 ~ 585.90 ft
+  Output: 23.51 ~ 545.25 ft (mean: 150.01)
+
+2024-01-17:
+  Input: 68 pts, 8.55 ~ 585.89 ft
+  Output: 16.48 ~ 545.11 ft (mean: 149.80)
+
+2024-01-18:
+  Input: 68 pts, 8.55 ~ 585.90 ft
+  Output: 16.50 ~ 545.29 ft (mean: 149.83)
+
+2024-01-19:
+  Input: 68 pts, 8.54 ~ 585.82 ft
+  Output: 16.50 ~ 545.15 ft (mean: 149.74)
+
+2024-01-20:
+  Input: 67 pts, 7.35 ~ 585.70 ft
+  Output: 16.99 ~ 544.84 ft (mean: 150.22)
+
+2024-01-21:
+  Input: 68 pts, 6.44 ~ 585.65 ft
+  Output: 16.31 ~ 544.73 ft (mean: 149.36)
+
+2024-01-22:
+  Input: 66 pts, 5.13 ~ 585.48 ft
+  Output: 17.97 ~ 540.38 ft (mean: 153.55)
+
+2024-01-23:
+  Input: 66 pts, 6.16 ~ 585.59 ft
+  Output: 18.34 ~ 541.07 ft (mean: 154.01)
+
+2024-01-24:
+  Input: 67 pts, 6.62 ~ 585.82 ft
+  Output: 16.48 ~ 545.42 ft (mean: 150.20)
+
+2024-01-25:
+  Input: 68 pts, 6.85 ~ 585.84 ft
+  Output: 15.96 ~ 545.63 ft (mean: 149.65)
+
+2024-01-26:
+  Input: 68 pts, 7.06 ~ 585.91 ft
+  Output: 16.00 ~ 545.50 ft (mean: 149.70)
+
+2024-01-27:
+  Input: 68 pts, 7.22 ~ 585.84 ft
+  Output: 16.00 ~ 545.14 ft (mean: 149.49)
+
+2024-01-28:
+  Input: 68 pts, 7.32 ~ 585.80 ft
+  Output: 16.00 ~ 544.82 ft (mean: 149.37)
+
+2024-01-29:
+  Input: 68 pts, 7.42 ~ 585.76 ft
+  Output: 16.03 ~ 544.74 ft (mean: 149.36)
+
+2024-01-30:
+  Input: 68 pts, 7.50 ~ 585.67 ft
+  Output: 16.07 ~ 544.72 ft (mean: 149.33)
+
+2024-01-31:
+  Input: 69 pts, 7.54 ~ 585.59 ft
+  Output: 16.09 ~ 544.53 ft (mean: 149.30)
+
+2024-02-01:
+  Input: 67 pts, 5.60 ~ 585.37 ft
+  Output: 18.33 ~ 540.07 ft (mean: 153.56)
+
+2024-02-02:
+  Input: 67 pts, 6.16 ~ 585.45 ft
+  Output: 18.32 ~ 539.85 ft (mean: 153.58)
+
+2024-02-03:
+  Input: 68 pts, 6.52 ~ 585.60 ft
+  Output: 16.42 ~ 544.10 ft (mean: 149.58)
+
+2024-02-04:
+  Input: 69 pts, 6.64 ~ 585.55 ft
+  Output: 15.86 ~ 544.13 ft (mean: 148.95)
+
+2024-02-05:
+  Input: 67 pts, 5.21 ~ 585.37 ft
+  Output: 18.20 ~ 539.83 ft (mean: 153.32)
+
+2024-02-06:
+  Input: 67 pts, 5.17 ~ 585.21 ft
+  Output: 17.87 ~ 539.62 ft (mean: 153.10)
+
+2024-02-07:
+  Input: 67 pts, 5.87 ~ 585.33 ft
+  Output: 17.76 ~ 539.59 ft (mean: 153.13)
+
+2024-02-08:
+  Input: 67 pts, 5.32 ~ 585.44 ft
+  Output: 17.67 ~ 539.62 ft (mean: 152.82)
+
+2024-02-09:
+  Input: 67 pts, 6.17 ~ 585.52 ft
+  Output: 17.80 ~ 540.10 ft (mean: 152.62)
+
+2024-02-10:
+  Input: 67 pts, 6.21 ~ 585.49 ft
+  Output: 17.83 ~ 539.69 ft (mean: 152.29)
+
+2024-02-11:
+  Input: 67 pts, 6.40 ~ 585.64 ft
+  Output: 17.96 ~ 539.69 ft (mean: 152.13)
+
+2024-02-12:
+  Input: 67 pts, 6.44 ~ 585.50 ft
+  Output: 18.00 ~ 539.78 ft (mean: 151.99)
+
+2024-02-13:
+  Input: 69 pts, 6.47 ~ 585.46 ft
+  Output: 15.47 ~ 543.98 ft (mean: 147.25)
+
+2024-02-14:
+  Input: 68 pts, 6.52 ~ 585.60 ft
+  Output: 15.55 ~ 544.13 ft (mean: 147.29)
+
+2024-02-15:
+  Input: 67 pts, 6.53 ~ 585.57 ft
+  Output: 15.63 ~ 544.07 ft (mean: 147.50)
+
+2024-02-16:
+  Input: 67 pts, 6.54 ~ 585.53 ft
+  Output: 15.65 ~ 544.02 ft (mean: 147.51)
+
+2024-02-17:
+  Input: 67 pts, 6.55 ~ 585.53 ft
+  Output: 15.67 ~ 543.86 ft (mean: 147.50)
+
+2024-02-18:
+  Input: 67 pts, 6.54 ~ 585.48 ft
+  Output: 15.68 ~ 543.81 ft (mean: 147.50)
+
+2024-02-19:
+  Input: 67 pts, 6.56 ~ 585.48 ft
+  Output: 15.70 ~ 543.89 ft (mean: 147.57)
+
+2024-02-20:
+  Input: 67 pts, 6.10 ~ 585.52 ft
+  Output: 15.62 ~ 543.70 ft (mean: 147.44)
+
+2024-02-21:
+  Input: 64 pts, 6.06 ~ 585.45 ft
+  Output: 17.90 ~ 533.54 ft (mean: 151.17)
+
+2024-02-22:
+  Input: 65 pts, 6.35 ~ 585.59 ft
+  Output: 16.08 ~ 537.35 ft (mean: 147.23)
+
+2024-02-23:
+  Input: 66 pts, 6.48 ~ 585.44 ft
+  Output: 15.47 ~ 536.94 ft (mean: 146.50)
+
+2024-02-24:
+  Input: 65 pts, 6.50 ~ 585.41 ft
+  Output: 15.49 ~ 536.62 ft (mean: 146.43)
+
+2024-02-25:
+  Input: 66 pts, 6.52 ~ 585.41 ft
+  Output: 15.51 ~ 536.99 ft (mean: 146.53)
+
+2024-02-26:
+  Input: 66 pts, 6.52 ~ 585.33 ft
+  Output: 15.53 ~ 537.09 ft (mean: 146.52)
+
+2024-02-27:
+  Input: 66 pts, 6.54 ~ 585.32 ft
+  Output: 15.57 ~ 536.98 ft (mean: 146.55)
+
+2024-02-28:
+  Input: 66 pts, 6.56 ~ 585.33 ft
+  Output: 15.60 ~ 536.88 ft (mean: 146.55)
+
+2024-02-29:
+  Input: 66 pts, 6.57 ~ 585.43 ft
+  Output: 15.63 ~ 536.89 ft (mean: 146.59)
+
+2024-03-01:
+  Input: 66 pts, 6.57 ~ 585.42 ft
+  Output: 15.64 ~ 536.79 ft (mean: 146.57)
+
+2024-03-02:
+  Input: 66 pts, 6.27 ~ 585.29 ft
+  Output: 15.58 ~ 536.66 ft (mean: 146.49)
+
+2024-03-03:
+  Input: 65 pts, 6.30 ~ 585.30 ft
+  Output: 17.20 ~ 536.55 ft (mean: 146.51)
+
+2024-03-04:
+  Input: 64 pts, 6.54 ~ 585.32 ft
+  Output: 22.04 ~ 536.64 ft (mean: 146.68)
+
+2024-03-05:
+  Input: 66 pts, 6.57 ~ 585.27 ft
+  Output: 15.59 ~ 536.64 ft (mean: 146.54)
+
+2024-03-06:
+  Input: 62 pts, 6.43 ~ 585.08 ft
+  Output: 15.53 ~ 537.31 ft (mean: 145.33)
+
+2024-03-07:
+  Input: 60 pts, 6.20 ~ 585.05 ft
+  Output: 18.01 ~ 533.36 ft (mean: 149.97)
+
+2024-03-08:
+  Input: 66 pts, 6.53 ~ 585.26 ft
+  Output: 15.49 ~ 536.51 ft (mean: 146.46)
+
+2024-03-09:
+  Input: 66 pts, 6.57 ~ 585.25 ft
+  Output: 15.50 ~ 536.47 ft (mean: 146.41)
+
+2024-03-10:
+  Input: 66 pts, 6.58 ~ 585.18 ft
+  Output: 15.51 ~ 536.56 ft (mean: 146.37)
+
+2024-03-11:
+  Input: 66 pts, 6.59 ~ 585.20 ft
+  Output: 15.53 ~ 536.51 ft (mean: 146.37)
+
+2024-03-12:
+  Input: 64 pts, 6.60 ~ 585.24 ft
+  Output: 15.57 ~ 536.48 ft (mean: 146.39)
+
+2024-03-13:
+  Input: 66 pts, 6.58 ~ 585.04 ft
+  Output: 15.56 ~ 536.19 ft (mean: 146.27)
+
+2024-03-14:
+  Input: 66 pts, 6.57 ~ 584.91 ft
+  Output: 15.57 ~ 536.36 ft (mean: 146.28)
+
+2024-03-15:
+  Input: 66 pts, 6.57 ~ 584.87 ft
+  Output: 15.57 ~ 536.13 ft (mean: 146.27)
+
+2024-03-16:
+  Input: 66 pts, 6.58 ~ 585.10 ft
+  Output: 15.65 ~ 536.11 ft (mean: 146.37)
+
+2024-03-17:
+  Input: 66 pts, 6.60 ~ 585.12 ft
+  Output: 15.67 ~ 536.22 ft (mean: 146.37)
+
+2024-03-18:
+  Input: 66 pts, 6.59 ~ 585.13 ft
+  Output: 15.66 ~ 536.16 ft (mean: 146.35)
+
+2024-03-19:
+  Input: 63 pts, 6.60 ~ 585.07 ft
+  Output: 21.94 ~ 536.43 ft (mean: 148.03)
+
+2024-03-20:
+  Input: 66 pts, 6.59 ~ 585.08 ft
+  Output: 15.87 ~ 536.37 ft (mean: 146.39)
+
+2024-03-21:
+  Input: 66 pts, 6.59 ~ 585.14 ft
+  Output: 15.88 ~ 536.07 ft (mean: 146.35)
+
+2024-03-22:
+  Input: 64 pts, 6.57 ~ 585.07 ft
+  Output: 21.61 ~ 536.04 ft (mean: 146.48)
+
+2024-03-23:
+  Input: 66 pts, 6.52 ~ 584.89 ft
+  Output: 15.87 ~ 536.17 ft (mean: 146.19)
+
+2024-03-24:
+  Input: 66 pts, 6.52 ~ 584.80 ft
+  Output: 15.82 ~ 536.15 ft (mean: 146.12)
+
+2024-03-25:
+  Input: 66 pts, 6.56 ~ 584.90 ft
+  Output: 15.79 ~ 536.04 ft (mean: 146.07)
+
+2024-03-26:
+  Input: 65 pts, 6.57 ~ 585.06 ft
+  Output: 15.88 ~ 536.11 ft (mean: 146.12)
+
+2024-03-27:
+  Input: 64 pts, 6.58 ~ 585.16 ft
+  Output: 19.67 ~ 536.18 ft (mean: 146.43)
+
+2024-03-28:
+  Input: 66 pts, 6.56 ~ 584.99 ft
+  Output: 15.87 ~ 535.87 ft (mean: 146.05)
+
+2024-03-29:
+  Input: 66 pts, 6.53 ~ 584.87 ft
+  Output: 15.88 ~ 536.25 ft (mean: 146.01)
+
+2024-03-30:
+  Input: 64 pts, 5.43 ~ 584.70 ft
+  Output: 18.01 ~ 531.96 ft (mean: 150.34)
+
+2024-03-31:
+  Input: 65 pts, 5.55 ~ 584.78 ft
+  Output: 16.11 ~ 535.58 ft (mean: 146.03)
+
+2024-04-01:
+  Input: 66 pts, 5.87 ~ 584.80 ft
+  Output: 15.67 ~ 535.05 ft (mean: 144.96)
+
+2024-04-02:
+  Input: 66 pts, 6.26 ~ 585.26 ft
+  Output: 15.83 ~ 535.07 ft (mean: 144.74)
+
+2024-04-03:
+  Input: 66 pts, 6.32 ~ 585.15 ft
+  Output: 15.09 ~ 534.92 ft (mean: 144.38)
+
+2024-04-04:
+  Input: 66 pts, 6.33 ~ 584.98 ft
+  Output: 14.22 ~ 534.67 ft (mean: 144.08)
+
+2024-04-05:
+  Input: 66 pts, 6.37 ~ 584.99 ft
+  Output: 13.59 ~ 534.50 ft (mean: 143.92)
+
+2024-04-06:
+  Input: 66 pts, 6.42 ~ 585.21 ft
+  Output: 12.93 ~ 534.45 ft (mean: 143.82)
+
+2024-04-07:
+  Input: 66 pts, 6.42 ~ 585.02 ft
+  Output: 12.32 ~ 534.36 ft (mean: 143.62)
+
+2024-04-08:
+  Input: 66 pts, 6.43 ~ 585.01 ft
+  Output: 12.04 ~ 534.40 ft (mean: 143.57)
+
+2024-04-09:
+  Input: 66 pts, 6.45 ~ 585.16 ft
+  Output: 11.82 ~ 534.76 ft (mean: 143.60)
+
+2024-04-10:
+  Input: 66 pts, 6.44 ~ 585.13 ft
+  Output: 11.57 ~ 534.97 ft (mean: 143.58)
+
+2024-04-11:
+  Input: 62 pts, 6.42 ~ 584.95 ft
+  Output: 11.36 ~ 535.59 ft (mean: 142.43)
+
+2024-04-12:
+  Input: 63 pts, 6.42 ~ 585.06 ft
+  Output: 11.17 ~ 535.54 ft (mean: 143.19)
+
+2024-04-13:
+  Input: 67 pts, 6.31 ~ 585.23 ft
+  Output: 11.01 ~ 535.28 ft (mean: 143.57)
+
+2024-04-14:
+  Input: 67 pts, 6.29 ~ 585.27 ft
+  Output: 10.71 ~ 535.02 ft (mean: 143.46)
+
+2024-04-15:
+  Input: 67 pts, 6.39 ~ 585.25 ft
+  Output: 10.55 ~ 534.97 ft (mean: 143.41)
+
+2024-04-16:
+  Input: 67 pts, 6.41 ~ 585.19 ft
+  Output: 10.34 ~ 534.91 ft (mean: 143.36)
+
+2024-04-17:
+  Input: 67 pts, 6.41 ~ 585.22 ft
+  Output: 10.28 ~ 534.94 ft (mean: 143.38)
+
+2024-04-18:
+  Input: 67 pts, 6.41 ~ 585.16 ft
+  Output: 10.32 ~ 535.17 ft (mean: 143.42)
+
+2024-04-19:
+  Input: 67 pts, 6.41 ~ 585.13 ft
+  Output: 10.58 ~ 535.49 ft (mean: 143.54)
+
+2024-04-20:
+  Input: 67 pts, 6.43 ~ 585.18 ft
+  Output: 10.77 ~ 535.46 ft (mean: 143.58)
+
+2024-04-21:
+  Input: 67 pts, 6.45 ~ 585.11 ft
+  Output: 10.88 ~ 535.52 ft (mean: 143.61)
+
+2024-04-22:
+  Input: 67 pts, 6.45 ~ 585.09 ft
+  Output: 10.94 ~ 535.54 ft (mean: 143.62)
+
+2024-04-23:
+  Input: 67 pts, 6.48 ~ 585.23 ft
+  Output: 11.38 ~ 535.62 ft (mean: 143.81)
+
+2024-04-24:
+  Input: 67 pts, 6.48 ~ 585.28 ft
+  Output: 11.67 ~ 535.69 ft (mean: 143.91)
+
+2024-04-25:
+  Input: 67 pts, 6.49 ~ 585.22 ft
+  Output: 11.83 ~ 535.45 ft (mean: 143.90)
+
+2024-04-26:
+  Input: 68 pts, 6.47 ~ 585.14 ft
+  Output: 11.90 ~ 535.20 ft (mean: 143.64)
+
+2024-04-27:
+  Input: 68 pts, 6.46 ~ 585.20 ft
+  Output: 12.01 ~ 535.29 ft (mean: 143.67)
+
+2024-04-28:
+  Input: 68 pts, 6.49 ~ 585.27 ft
+  Output: 12.06 ~ 535.01 ft (mean: 143.66)
+
+2024-04-29:
+  Input: 68 pts, 6.48 ~ 585.18 ft
+  Output: 12.00 ~ 535.00 ft (mean: 143.61)
+
+2024-04-30:
+  Input: 68 pts, 6.48 ~ 585.20 ft
+  Output: 12.21 ~ 535.16 ft (mean: 143.69)
+
+2024-05-01:
+  Input: 68 pts, 6.47 ~ 585.22 ft
+  Output: 12.59 ~ 535.80 ft (mean: 143.89)
+
+2024-05-02:
+  Input: 68 pts, 6.57 ~ 585.29 ft
+  Output: 12.65 ~ 535.89 ft (mean: 143.90)
+
+2024-05-03:
+  Input: 68 pts, 6.58 ~ 585.32 ft
+  Output: 12.73 ~ 535.44 ft (mean: 143.86)
+
+2024-05-04:
+  Input: 68 pts, 6.60 ~ 585.37 ft
+  Output: 12.84 ~ 535.21 ft (mean: 143.87)
+
+2024-05-05:
+  Input: 68 pts, 6.55 ~ 585.37 ft
+  Output: 12.82 ~ 535.02 ft (mean: 143.80)
+
+2024-05-06:
+  Input: 68 pts, 6.62 ~ 585.48 ft
+  Output: 13.00 ~ 534.93 ft (mean: 143.86)
+
+2024-05-07:
+  Input: 68 pts, 6.61 ~ 585.37 ft
+  Output: 13.09 ~ 535.14 ft (mean: 143.90)
+
+2024-05-08:
+  Input: 68 pts, 6.60 ~ 585.33 ft
+  Output: 13.24 ~ 535.01 ft (mean: 143.93)
+
+2024-05-09:
+  Input: 68 pts, 6.62 ~ 585.46 ft
+  Output: 13.46 ~ 534.84 ft (mean: 144.01)
+
+2024-05-10:
+  Input: 68 pts, 6.63 ~ 585.52 ft
+  Output: 13.52 ~ 535.46 ft (mean: 144.13)
+
+2024-05-11:
+  Input: 68 pts, 6.63 ~ 585.51 ft
+  Output: 13.59 ~ 535.71 ft (mean: 144.18)
+
+2024-05-12:
+  Input: 68 pts, 6.64 ~ 585.57 ft
+  Output: 13.62 ~ 535.78 ft (mean: 144.19)
+
+2024-05-13:
+  Input: 68 pts, 6.65 ~ 585.63 ft
+  Output: 13.69 ~ 535.57 ft (mean: 144.19)
+
+2024-05-14:
+  Input: 68 pts, 6.65 ~ 585.61 ft
+  Output: 13.93 ~ 535.47 ft (mean: 144.24)
+
+2024-05-15:
+  Input: 68 pts, 6.64 ~ 585.68 ft
+  Output: 14.23 ~ 535.51 ft (mean: 144.34)
+
+2024-05-16:
+  Input: 68 pts, 6.65 ~ 585.74 ft
+  Output: 14.31 ~ 535.44 ft (mean: 144.34)
+
+2024-05-17:
+  Input: 68 pts, 6.65 ~ 585.75 ft
+  Output: 14.37 ~ 535.46 ft (mean: 144.36)
+
+2024-05-18:
+  Input: 65 pts, 6.66 ~ 585.84 ft
+  Output: 14.25 ~ 535.68 ft (mean: 144.95)
+
+2024-05-19:
+  Input: 65 pts, 6.69 ~ 585.87 ft
+  Output: 14.33 ~ 535.76 ft (mean: 144.99)
+
+2024-05-20:
+  Input: 65 pts, 6.69 ~ 585.86 ft
+  Output: 14.29 ~ 535.70 ft (mean: 144.98)
+
+2024-05-21:
+  Input: 65 pts, 6.68 ~ 585.84 ft
+  Output: 14.58 ~ 535.92 ft (mean: 145.11)
+
+2024-05-22:
+  Input: 68 pts, 6.70 ~ 585.89 ft
+  Output: 14.87 ~ 535.82 ft (mean: 144.57)
+
+2024-05-23:
+  Input: 68 pts, 6.69 ~ 585.89 ft
+  Output: 14.74 ~ 535.41 ft (mean: 144.43)
+
+2024-05-24:
+  Input: 68 pts, 6.67 ~ 585.91 ft
+  Output: 14.73 ~ 535.28 ft (mean: 144.39)
+
+2024-05-25:
+  Input: 68 pts, 6.66 ~ 585.97 ft
+  Output: 14.83 ~ 535.21 ft (mean: 144.41)
+
+2024-05-26:
+  Input: 68 pts, 6.72 ~ 586.04 ft
+  Output: 14.90 ~ 535.22 ft (mean: 144.42)
+
+2024-05-27:
+  Input: 68 pts, 6.75 ~ 586.10 ft
+  Output: 15.10 ~ 535.61 ft (mean: 144.59)
+
+2024-05-28:
+  Input: 68 pts, 6.78 ~ 586.15 ft
+  Output: 15.22 ~ 535.74 ft (mean: 144.68)
+
+2024-05-29:
+  Input: 68 pts, 6.84 ~ 586.15 ft
+  Output: 15.32 ~ 535.74 ft (mean: 144.72)
+
+2024-05-30:
+  Input: 68 pts, 6.86 ~ 586.11 ft
+  Output: 15.34 ~ 535.79 ft (mean: 144.74)
+
+2024-05-31:
+  Input: 68 pts, 6.87 ~ 586.10 ft
+  Output: 15.45 ~ 535.64 ft (mean: 144.74)
+
+2024-06-01:
+  Input: 68 pts, 6.94 ~ 586.14 ft
+  Output: 15.59 ~ 535.58 ft (mean: 144.77)
+
+2024-06-02:
+  Input: 68 pts, 6.96 ~ 586.17 ft
+  Output: 15.62 ~ 535.54 ft (mean: 144.77)
+
+2024-06-03:
+  Input: 68 pts, 6.98 ~ 586.18 ft
+  Output: 15.60 ~ 535.56 ft (mean: 144.78)
+
+2024-06-04:
+  Input: 68 pts, 6.98 ~ 586.17 ft
+  Output: 15.67 ~ 535.52 ft (mean: 144.81)
+
+2024-06-05:
+  Input: 68 pts, 7.04 ~ 586.23 ft
+  Output: 15.76 ~ 535.69 ft (mean: 144.90)
+
+2024-06-06:
+  Input: 68 pts, 7.09 ~ 586.21 ft
+  Output: 15.84 ~ 535.79 ft (mean: 144.94)
+
+2024-06-07:
+  Input: 68 pts, 7.12 ~ 586.31 ft
+  Output: 16.00 ~ 535.69 ft (mean: 144.99)
+
+2024-06-08:
+  Input: 68 pts, 7.15 ~ 586.47 ft
+  Output: 16.00 ~ 535.70 ft (mean: 145.00)
+
+2024-06-09:
+  Input: 68 pts, 7.16 ~ 586.44 ft
+  Output: 16.03 ~ 535.78 ft (mean: 145.02)
+
+2024-06-10:
+  Input: 68 pts, 7.18 ~ 586.39 ft
+  Output: 16.06 ~ 535.82 ft (mean: 145.01)
+
+2024-06-11:
+  Input: 68 pts, 7.19 ~ 586.41 ft
+  Output: 16.09 ~ 535.94 ft (mean: 145.05)
+
+2024-06-12:
+  Input: 68 pts, 7.23 ~ 587.11 ft
+  Output: 16.23 ~ 535.91 ft (mean: 145.11)
+
+2024-06-13:
+  Input: 68 pts, 7.26 ~ 587.26 ft
+  Output: 16.38 ~ 536.02 ft (mean: 145.20)
+
+2024-06-14:
+  Input: 68 pts, 7.28 ~ 586.97 ft
+  Output: 16.47 ~ 536.17 ft (mean: 145.24)
+
+2024-06-15:
+  Input: 68 pts, 7.28 ~ 586.68 ft
+  Output: 16.53 ~ 536.17 ft (mean: 145.23)
+
+2024-06-16:
+  Input: 68 pts, 7.29 ~ 586.88 ft
+  Output: 16.43 ~ 536.09 ft (mean: 145.18)
+
+2024-06-17:
+  Input: 68 pts, 7.32 ~ 587.28 ft
+  Output: 16.46 ~ 536.19 ft (mean: 145.22)
+
+2024-06-18:
+  Input: 68 pts, 7.33 ~ 587.37 ft
+  Output: 16.69 ~ 536.12 ft (mean: 145.26)
+
+2024-06-19:
+  Input: 68 pts, 7.35 ~ 587.53 ft
+  Output: 16.81 ~ 536.18 ft (mean: 145.33)
+
+2024-06-20:
+  Input: 68 pts, 7.36 ~ 587.57 ft
+  Output: 16.81 ~ 536.28 ft (mean: 145.35)
+
+2024-06-21:
+  Input: 68 pts, 7.36 ~ 587.62 ft
+  Output: 16.86 ~ 536.20 ft (mean: 145.35)
+
+2024-06-22:
+  Input: 68 pts, 7.39 ~ 587.78 ft
+  Output: 16.86 ~ 536.23 ft (mean: 145.39)
+
+2024-06-23:
+  Input: 68 pts, 7.41 ~ 587.91 ft
+  Output: 17.08 ~ 536.42 ft (mean: 145.52)
+
+2024-06-24:
+  Input: 59 pts, 7.44 ~ 587.99 ft
+  Output: 17.02 ~ 536.32 ft (mean: 146.13)
+
+2024-06-25:
+  Input: 59 pts, 7.46 ~ 588.13 ft
+  Output: 17.20 ~ 536.57 ft (mean: 146.24)
+
+2024-06-26:
+  Input: 59 pts, 7.49 ~ 588.78 ft
+  Output: 17.45 ~ 536.88 ft (mean: 146.43)
+
+2024-06-27:
+  Input: 68 pts, 7.48 ~ 588.78 ft
+  Output: 17.37 ~ 536.64 ft (mean: 145.62)
+
+2024-06-28:
+  Input: 68 pts, 7.49 ~ 588.88 ft
+  Output: 17.18 ~ 536.02 ft (mean: 145.42)
+
+2024-06-29:
+  Input: 68 pts, 7.52 ~ 589.02 ft
+  Output: 17.27 ~ 535.98 ft (mean: 145.46)
+
+2024-06-30:
+  Input: 68 pts, 7.54 ~ 589.18 ft
+  Output: 17.30 ~ 535.94 ft (mean: 145.47)
+
+2024-07-01:
+  Input: 68 pts, 7.56 ~ 588.67 ft
+  Output: 17.22 ~ 535.97 ft (mean: 145.43)
+
+2024-07-02:
+  Input: 68 pts, 7.56 ~ 588.66 ft
+  Output: 17.28 ~ 536.78 ft (mean: 145.71)
+
+2024-07-03:
+  Input: 68 pts, 7.58 ~ 588.73 ft
+  Output: 17.26 ~ 536.86 ft (mean: 145.75)
+
+2024-07-04:
+  Input: 68 pts, 7.60 ~ 588.86 ft
+  Output: 17.24 ~ 537.26 ft (mean: 145.90)
+
+2024-07-05:
+  Input: 68 pts, 7.59 ~ 588.76 ft
+  Output: 17.16 ~ 537.15 ft (mean: 145.80)
+
+2024-07-06:
+  Input: 68 pts, 7.62 ~ 588.87 ft
+  Output: 17.13 ~ 537.15 ft (mean: 145.83)
+
+2024-07-07:
+  Input: 68 pts, 7.65 ~ 588.95 ft
+  Output: 17.10 ~ 537.33 ft (mean: 145.90)
+
+2024-07-08:
+  Input: 68 pts, 7.66 ~ 588.92 ft
+  Output: 17.06 ~ 537.05 ft (mean: 145.72)
+
+2024-07-09:
+  Input: 68 pts, 7.68 ~ 588.99 ft
+  Output: 17.04 ~ 537.23 ft (mean: 145.79)
+
+2024-07-10:
+  Input: 68 pts, 7.70 ~ 589.08 ft
+  Output: 17.01 ~ 537.28 ft (mean: 145.79)
+
+2024-07-11:
+  Input: 68 pts, 7.72 ~ 589.16 ft
+  Output: 17.00 ~ 537.48 ft (mean: 145.90)
+
+2024-07-12:
+  Input: 68 pts, 7.75 ~ 589.22 ft
+  Output: 16.97 ~ 537.65 ft (mean: 145.97)
+
+2024-07-13:
+  Input: 68 pts, 7.76 ~ 589.25 ft
+  Output: 16.93 ~ 537.75 ft (mean: 146.00)
+
+2024-07-14:
+  Input: 68 pts, 7.79 ~ 589.05 ft
+  Output: 16.86 ~ 537.55 ft (mean: 145.90)
+
+2024-07-15:
+  Input: 68 pts, 7.81 ~ 589.31 ft
+  Output: 16.85 ~ 537.71 ft (mean: 145.94)
+
+2024-07-16:
+  Input: 67 pts, 7.81 ~ 589.33 ft
+  Output: 16.73 ~ 523.67 ft (mean: 143.85)
+
+2024-07-17:
+  Input: 67 pts, 7.82 ~ 589.95 ft
+  Output: 16.67 ~ 523.34 ft (mean: 143.68)
+
+2024-07-18:
+  Input: 67 pts, 7.83 ~ 590.09 ft
+  Output: 16.65 ~ 522.83 ft (mean: 143.59)
+
+2024-07-19:
+  Input: 66 pts, 7.86 ~ 590.19 ft
+  Output: 16.64 ~ 523.30 ft (mean: 143.72)
+
+2024-07-20:
+  Input: 66 pts, 7.89 ~ 590.24 ft
+  Output: 16.59 ~ 523.03 ft (mean: 143.55)
+
+2024-07-21:
+  Input: 67 pts, 7.94 ~ 590.31 ft
+  Output: 16.57 ~ 522.89 ft (mean: 143.50)
+
+2024-07-22:
+  Input: 66 pts, 7.99 ~ 590.33 ft
+  Output: 16.61 ~ 523.50 ft (mean: 143.75)
+
+2024-07-23:
+  Input: 66 pts, 8.05 ~ 590.34 ft
+  Output: 16.65 ~ 523.60 ft (mean: 143.85)
+
+2024-07-24:
+  Input: 66 pts, 8.12 ~ 590.70 ft
+  Output: 16.66 ~ 523.13 ft (mean: 143.71)
+
+2024-07-25:
+  Input: 66 pts, 8.19 ~ 590.65 ft
+  Output: 16.70 ~ 523.18 ft (mean: 143.74)
+
+2024-07-26:
+  Input: 66 pts, 8.22 ~ 590.68 ft
+  Output: 16.70 ~ 523.06 ft (mean: 143.72)
+
+2024-07-27:
+  Input: 67 pts, 8.24 ~ 590.76 ft
+  Output: 16.72 ~ 523.18 ft (mean: 143.79)
+
+2024-07-28:
+  Input: 67 pts, 8.26 ~ 590.88 ft
+  Output: 16.71 ~ 523.04 ft (mean: 143.75)
+
+2024-07-29:
+  Input: 67 pts, 8.28 ~ 590.99 ft
+  Output: 16.70 ~ 522.92 ft (mean: 143.74)
+
+2024-07-30:
+  Input: 67 pts, 8.29 ~ 590.96 ft
+  Output: 16.68 ~ 522.62 ft (mean: 143.71)
+
+2024-07-31:
+  Input: 67 pts, 8.30 ~ 591.07 ft
+  Output: 16.69 ~ 522.23 ft (mean: 143.59)
+
+2024-08-01:
+  Input: 67 pts, 8.30 ~ 591.21 ft
+  Output: 16.67 ~ 522.24 ft (mean: 143.66)
+
+2024-08-02:
+  Input: 67 pts, 8.32 ~ 591.29 ft
+  Output: 16.62 ~ 521.95 ft (mean: 143.56)
+
+2024-08-03:
+  Input: 67 pts, 8.32 ~ 591.25 ft
+  Output: 16.58 ~ 521.93 ft (mean: 143.49)
+
+2024-08-04:
+  Input: 67 pts, 8.32 ~ 591.27 ft
+  Output: 16.57 ~ 522.07 ft (mean: 143.45)
+
+2024-08-05:
+  Input: 67 pts, 8.34 ~ 591.32 ft
+  Output: 16.59 ~ 522.14 ft (mean: 143.51)
+
+2024-08-06:
+  Input: 67 pts, 8.35 ~ 591.45 ft
+  Output: 16.61 ~ 521.81 ft (mean: 143.54)
+
+2024-08-07:
+  Input: 67 pts, 8.37 ~ 591.51 ft
+  Output: 16.66 ~ 522.25 ft (mean: 143.73)
+
+2024-08-08:
+  Input: 67 pts, 8.35 ~ 591.49 ft
+  Output: 16.67 ~ 521.85 ft (mean: 143.55)
+
+2024-08-09:
+  Input: 67 pts, 8.36 ~ 591.44 ft
+  Output: 16.64 ~ 521.55 ft (mean: 143.38)
+
+2024-08-10:
+  Input: 67 pts, 8.37 ~ 591.54 ft
+  Output: 16.68 ~ 521.79 ft (mean: 143.42)
+
+2024-08-11:
+  Input: 67 pts, 8.39 ~ 591.66 ft
+  Output: 16.73 ~ 521.95 ft (mean: 143.55)
+
+2024-08-12:
+  Input: 67 pts, 8.40 ~ 591.65 ft
+  Output: 16.74 ~ 521.73 ft (mean: 143.55)
+
+2024-08-13:
+  Input: 67 pts, 8.41 ~ 591.70 ft
+  Output: 16.77 ~ 521.47 ft (mean: 143.54)
+
+2024-08-14:
+  Input: 67 pts, 8.43 ~ 591.78 ft
+  Output: 16.78 ~ 521.31 ft (mean: 143.45)
+
+2024-08-15:
+  Input: 67 pts, 8.41 ~ 591.74 ft
+  Output: 16.77 ~ 521.17 ft (mean: 143.39)
+
+2024-08-16:
+  Input: 67 pts, 8.41 ~ 591.76 ft
+  Output: 16.76 ~ 521.25 ft (mean: 143.39)
+
+2024-08-17:
+  Input: 67 pts, 8.40 ~ 591.84 ft
+  Output: 16.72 ~ 521.19 ft (mean: 143.38)
+
+2024-08-18:
+  Input: 67 pts, 8.41 ~ 591.90 ft
+  Output: 16.68 ~ 521.32 ft (mean: 143.35)
+
+2024-08-19:
+  Input: 67 pts, 8.43 ~ 591.89 ft
+  Output: 16.66 ~ 521.52 ft (mean: 143.32)
+
+2024-08-20:
+  Input: 67 pts, 8.44 ~ 591.96 ft
+  Output: 16.63 ~ 521.48 ft (mean: 143.28)
+
+2024-08-21:
+  Input: 67 pts, 8.46 ~ 591.98 ft
+  Output: 16.62 ~ 521.45 ft (mean: 143.25)
+
+2024-08-22:
+  Input: 67 pts, 8.46 ~ 591.98 ft
+  Output: 16.60 ~ 521.14 ft (mean: 143.20)
+
+2024-08-23:
+  Input: 67 pts, 8.47 ~ 592.06 ft
+  Output: 16.59 ~ 520.83 ft (mean: 143.20)
+
+2024-08-24:
+  Input: 67 pts, 8.49 ~ 592.15 ft
+  Output: 16.60 ~ 520.62 ft (mean: 143.18)
+
+2024-08-25:
+  Input: 67 pts, 8.50 ~ 592.23 ft
+  Output: 16.60 ~ 520.18 ft (mean: 143.08)
+
+2024-08-26:
+  Input: 67 pts, 8.51 ~ 592.24 ft
+  Output: 16.61 ~ 520.13 ft (mean: 143.05)
+
+2024-08-27:
+  Input: 67 pts, 8.50 ~ 592.21 ft
+  Output: 16.59 ~ 520.19 ft (mean: 143.05)
+
+2024-08-28:
+  Input: 67 pts, 8.49 ~ 592.13 ft
+  Output: 16.57 ~ 520.05 ft (mean: 143.02)
+
+2024-08-29:
+  Input: 67 pts, 8.49 ~ 592.29 ft
+  Output: 16.56 ~ 519.81 ft (mean: 143.00)
+
+2024-08-30:
+  Input: 69 pts, 8.49 ~ 592.33 ft
+  Output: 16.68 ~ 541.22 ft (mean: 145.97)
+
+2024-08-31:
+  Input: 69 pts, 8.49 ~ 592.31 ft
+  Output: 16.65 ~ 541.14 ft (mean: 145.78)
+
+2024-09-01:
+  Input: 69 pts, 8.48 ~ 592.28 ft
+  Output: 16.62 ~ 540.81 ft (mean: 145.67)
+
+2024-09-02:
+  Input: 69 pts, 8.49 ~ 592.30 ft
+  Output: 16.61 ~ 540.75 ft (mean: 145.66)
+
+2024-09-03:
+  Input: 69 pts, 8.49 ~ 592.33 ft
+  Output: 16.62 ~ 540.77 ft (mean: 145.74)
+
+2024-09-04:
+  Input: 69 pts, 8.50 ~ 592.39 ft
+  Output: 16.67 ~ 541.17 ft (mean: 145.93)
+
+2024-09-05:
+  Input: 69 pts, 8.50 ~ 592.37 ft
+  Output: 16.69 ~ 541.20 ft (mean: 145.93)
+
+2024-09-06:
+  Input: 69 pts, 8.50 ~ 592.37 ft
+  Output: 16.69 ~ 541.12 ft (mean: 145.92)
+
+2024-09-07:
+  Input: 69 pts, 8.50 ~ 592.35 ft
+  Output: 16.71 ~ 541.19 ft (mean: 145.96)
+
+2024-09-08:
+  Input: 69 pts, 8.51 ~ 592.39 ft
+  Output: 16.71 ~ 540.99 ft (mean: 145.90)
+
+2024-09-09:
+  Input: 69 pts, 8.49 ~ 592.45 ft
+  Output: 16.72 ~ 540.87 ft (mean: 145.87)
+
+2024-09-10:
+  Input: 69 pts, 8.47 ~ 592.45 ft
+  Output: 16.76 ~ 540.91 ft (mean: 145.93)
+
+2024-09-11:
+  Input: 69 pts, 8.43 ~ 592.39 ft
+  Output: 16.77 ~ 540.61 ft (mean: 145.79)
+
+2024-09-12:
+  Input: 69 pts, 8.41 ~ 592.38 ft
+  Output: 16.79 ~ 540.44 ft (mean: 145.76)
+
+2024-09-13:
+  Input: 69 pts, 8.41 ~ 592.47 ft
+  Output: 16.82 ~ 540.27 ft (mean: 145.77)
+
+2024-09-14:
+  Input: 69 pts, 8.42 ~ 592.55 ft
+  Output: 16.83 ~ 540.15 ft (mean: 145.78)
+
+2024-09-15:
+  Input: 69 pts, 8.42 ~ 592.55 ft
+  Output: 16.83 ~ 540.05 ft (mean: 145.70)
+
+2024-09-16:
+  Input: 69 pts, 8.42 ~ 592.59 ft
+  Output: 16.84 ~ 540.02 ft (mean: 145.66)
+
+2024-09-17:
+  Input: 69 pts, 8.42 ~ 592.67 ft
+  Output: 16.90 ~ 539.95 ft (mean: 145.68)
+
+2024-09-18:
+  Input: 69 pts, 8.39 ~ 592.59 ft
+  Output: 16.92 ~ 539.61 ft (mean: 145.62)
+
+2024-09-19:
+  Input: 69 pts, 8.38 ~ 592.62 ft
+  Output: 16.86 ~ 539.62 ft (mean: 145.59)
+
+2024-09-20:
+  Input: 69 pts, 8.36 ~ 592.66 ft
+  Output: 16.79 ~ 539.27 ft (mean: 145.49)
+
+2024-09-21:
+  Input: 69 pts, 8.36 ~ 592.72 ft
+  Output: 16.72 ~ 539.05 ft (mean: 145.44)
+
+2024-09-22:
+  Input: 69 pts, 8.34 ~ 592.67 ft
+  Output: 16.62 ~ 538.77 ft (mean: 145.35)
+
+2024-09-23:
+  Input: 69 pts, 8.31 ~ 592.62 ft
+  Output: 16.55 ~ 538.87 ft (mean: 145.33)
+
+2024-09-24:
+  Input: 67 pts, 8.31 ~ 592.64 ft
+  Output: 15.65 ~ 536.65 ft (mean: 149.88)
+
+2024-09-25:
+  Input: 68 pts, 8.30 ~ 592.59 ft
+  Output: 17.32 ~ 539.25 ft (mean: 149.45)
+
+2024-09-26:
+  Input: 69 pts, 8.31 ~ 592.55 ft
+  Output: 16.67 ~ 539.12 ft (mean: 145.40)
+
+2024-09-27:
+  Input: 69 pts, 8.32 ~ 592.52 ft
+  Output: 16.64 ~ 539.07 ft (mean: 145.39)
+
+2024-09-28:
+  Input: 69 pts, 8.32 ~ 592.26 ft
+  Output: 16.63 ~ 539.01 ft (mean: 145.35)
+
+2024-09-29:
+  Input: 69 pts, 8.35 ~ 592.19 ft
+  Output: 16.56 ~ 539.15 ft (mean: 145.34)
+
+2024-09-30:
+  Input: 69 pts, 8.35 ~ 591.56 ft
+  Output: 16.54 ~ 539.11 ft (mean: 145.30)
+
+2024-10-01:
+  Input: 68 pts, 8.38 ~ 591.45 ft
+  Output: 17.03 ~ 525.68 ft (mean: 143.88)
+
+2024-10-02:
+  Input: 68 pts, 8.37 ~ 591.21 ft
+  Output: 17.02 ~ 525.55 ft (mean: 143.81)
+
+2024-10-03:
+  Input: 68 pts, 8.37 ~ 591.12 ft
+  Output: 17.02 ~ 525.51 ft (mean: 143.80)
+
+2024-10-04:
+  Input: 68 pts, 8.39 ~ 591.15 ft
+  Output: 17.02 ~ 525.55 ft (mean: 143.88)
+
+2024-10-05:
+  Input: 68 pts, 8.39 ~ 591.09 ft
+  Output: 17.02 ~ 525.58 ft (mean: 143.89)
+
+2024-10-06:
+  Input: 68 pts, 8.37 ~ 590.96 ft
+  Output: 16.98 ~ 525.53 ft (mean: 143.83)
+
+2024-10-07:
+  Input: 68 pts, 8.36 ~ 590.86 ft
+  Output: 16.96 ~ 525.45 ft (mean: 143.82)
+
+2024-10-08:
+  Input: 68 pts, 8.36 ~ 590.76 ft
+  Output: 16.94 ~ 525.41 ft (mean: 143.86)
+
+2024-10-09:
+  Input: 68 pts, 8.37 ~ 590.78 ft
+  Output: 16.97 ~ 525.42 ft (mean: 143.86)
+
+2024-10-10:
+  Input: 68 pts, 8.40 ~ 590.79 ft
+  Output: 16.95 ~ 525.29 ft (mean: 143.85)
+
+2024-10-11:
+  Input: 68 pts, 8.42 ~ 590.76 ft
+  Output: 16.94 ~ 525.29 ft (mean: 143.87)
+
+2024-10-12:
+  Input: 68 pts, 8.42 ~ 590.71 ft
+  Output: 16.94 ~ 525.21 ft (mean: 143.87)
+
+2024-10-13:
+  Input: 68 pts, 8.40 ~ 590.61 ft
+  Output: 16.93 ~ 525.20 ft (mean: 143.77)
+
+2024-10-14:
+  Input: 68 pts, 8.41 ~ 590.57 ft
+  Output: 16.94 ~ 525.19 ft (mean: 143.73)
+
+2024-10-15:
+  Input: 68 pts, 8.40 ~ 590.45 ft
+  Output: 16.89 ~ 524.48 ft (mean: 143.49)
+
+2024-10-16:
+  Input: 68 pts, 8.37 ~ 590.32 ft
+  Output: 16.86 ~ 524.19 ft (mean: 143.41)
+
+2024-10-17:
+  Input: 68 pts, 8.35 ~ 590.17 ft
+  Output: 16.82 ~ 523.99 ft (mean: 143.31)
+
+2024-10-18:
+  Input: 68 pts, 8.34 ~ 590.18 ft
+  Output: 16.89 ~ 524.82 ft (mean: 143.59)
+
+2024-10-19:
+  Input: 68 pts, 8.38 ~ 590.28 ft
+  Output: 16.91 ~ 524.87 ft (mean: 143.64)
+
+2024-10-20:
+  Input: 68 pts, 8.40 ~ 590.26 ft
+  Output: 16.92 ~ 524.73 ft (mean: 143.58)
+
+2024-10-21:
+  Input: 68 pts, 8.39 ~ 590.17 ft
+  Output: 16.94 ~ 524.64 ft (mean: 143.51)
+
+2024-10-22:
+  Input: 68 pts, 8.39 ~ 590.10 ft
+  Output: 17.01 ~ 524.67 ft (mean: 143.54)
+
+2024-10-23:
+  Input: 68 pts, 8.40 ~ 590.07 ft
+  Output: 17.06 ~ 524.57 ft (mean: 143.54)
+
+2024-10-24:
+  Input: 68 pts, 8.37 ~ 589.90 ft
+  Output: 17.07 ~ 524.45 ft (mean: 143.46)
+
+2024-10-25:
+  Input: 68 pts, 8.38 ~ 589.97 ft
+  Output: 17.09 ~ 524.47 ft (mean: 143.48)
+
+2024-10-26:
+  Input: 69 pts, 8.39 ~ 589.96 ft
+  Output: 16.60 ~ 538.06 ft (mean: 144.94)
+
+2024-10-27:
+  Input: 69 pts, 8.39 ~ 589.87 ft
+  Output: 16.12 ~ 537.51 ft (mean: 144.63)
+
+2024-10-28:
+  Input: 69 pts, 8.36 ~ 589.68 ft
+  Output: 15.96 ~ 537.25 ft (mean: 144.45)
+
+2024-10-29:
+  Input: 69 pts, 8.36 ~ 589.75 ft
+  Output: 15.99 ~ 536.94 ft (mean: 144.41)
+
+2024-10-30:
+  Input: 69 pts, 8.38 ~ 589.87 ft
+  Output: 16.02 ~ 536.99 ft (mean: 144.44)
+
+2024-10-31:
+  Input: 69 pts, 8.36 ~ 589.77 ft
+  Output: 15.82 ~ 537.02 ft (mean: 144.35)
+
+2024-11-01:
+  Input: 69 pts, 8.34 ~ 589.62 ft
+  Output: 15.70 ~ 536.77 ft (mean: 144.27)
+
+2024-11-02:
+  Input: 69 pts, 8.33 ~ 589.60 ft
+  Output: 15.77 ~ 536.80 ft (mean: 144.27)
+
+2024-11-03:
+  Input: 69 pts, 8.30 ~ 589.48 ft
+  Output: 15.68 ~ 536.57 ft (mean: 144.20)
+
+2024-11-04:
+  Input: 69 pts, 8.34 ~ 589.68 ft
+  Output: 16.05 ~ 536.97 ft (mean: 144.45)
+
+2024-11-05:
+  Input: 69 pts, 8.30 ~ 589.48 ft
+  Output: 16.23 ~ 537.11 ft (mean: 144.51)
+
+2024-11-06:
+  Input: 69 pts, 8.29 ~ 589.49 ft
+  Output: 15.93 ~ 536.79 ft (mean: 144.35)
+
+2024-11-07:
+  Input: 69 pts, 8.34 ~ 589.71 ft
+  Output: 15.92 ~ 536.78 ft (mean: 144.40)
+
+2024-11-08:
+  Input: 69 pts, 8.33 ~ 589.60 ft
+  Output: 15.94 ~ 536.61 ft (mean: 144.36)
+
+2024-11-09:
+  Input: 69 pts, 8.31 ~ 589.48 ft
+  Output: 15.91 ~ 536.65 ft (mean: 144.35)
+
+2024-11-10:
+  Input: 69 pts, 8.32 ~ 589.48 ft
+  Output: 15.90 ~ 536.79 ft (mean: 144.35)
+
+2024-11-11:
+  Input: 69 pts, 8.33 ~ 589.46 ft
+  Output: 15.81 ~ 536.73 ft (mean: 144.32)
+
+2024-11-12:
+  Input: 69 pts, 8.32 ~ 589.48 ft
+  Output: 16.17 ~ 537.15 ft (mean: 144.54)
+
+2024-11-13:
+  Input: 69 pts, 8.31 ~ 589.46 ft
+  Output: 16.07 ~ 537.03 ft (mean: 144.49)
+
+2024-11-14:
+  Input: 69 pts, 8.27 ~ 589.24 ft
+  Output: 15.92 ~ 536.85 ft (mean: 144.38)
+
+2024-11-15:
+  Input: 69 pts, 8.26 ~ 589.18 ft
+  Output: 15.84 ~ 536.44 ft (mean: 144.26)
+
+2024-11-16:
+  Input: 69 pts, 8.25 ~ 589.20 ft
+  Output: 15.56 ~ 536.22 ft (mean: 143.78)
+
+2024-11-17:
+  Input: 69 pts, 8.26 ~ 589.22 ft
+  Output: 15.48 ~ 536.26 ft (mean: 143.78)
+
+2024-11-18:
+  Input: 69 pts, 8.26 ~ 589.21 ft
+  Output: 15.52 ~ 536.20 ft (mean: 143.79)
+
+2024-11-19:
+  Input: 69 pts, 8.28 ~ 589.29 ft
+  Output: 15.54 ~ 536.28 ft (mean: 143.85)
+
+2024-11-20:
+  Input: 69 pts, 8.30 ~ 589.40 ft
+  Output: 15.69 ~ 536.37 ft (mean: 143.94)
+
+2024-11-21:
+  Input: 69 pts, 8.27 ~ 589.34 ft
+  Output: 15.57 ~ 536.24 ft (mean: 143.86)
+
+2024-11-22:
+  Input: 69 pts, 8.24 ~ 589.25 ft
+  Output: 15.56 ~ 536.11 ft (mean: 143.80)
+
+2024-11-23:
+  Input: 69 pts, 8.23 ~ 589.15 ft
+  Output: 15.42 ~ 536.12 ft (mean: 143.75)
+
+2024-11-24:
+  Input: 69 pts, 8.25 ~ 589.19 ft
+  Output: 15.40 ~ 535.97 ft (mean: 143.70)
+
+2024-11-25:
+  Input: 69 pts, 8.27 ~ 589.27 ft
+  Output: 15.40 ~ 535.88 ft (mean: 143.70)
+
+2024-11-26:
+  Input: 67 pts, 8.25 ~ 589.23 ft
+  Output: 15.39 ~ 535.98 ft (mean: 143.94)
+
+2024-11-27:
+  Input: 67 pts, 8.23 ~ 589.07 ft
+  Output: 15.22 ~ 535.80 ft (mean: 143.82)
+
+2024-11-28:
+  Input: 67 pts, 8.21 ~ 589.09 ft
+  Output: 15.20 ~ 535.81 ft (mean: 143.81)
+
+2024-11-29:
+  Input: 67 pts, 8.21 ~ 589.07 ft
+  Output: 15.22 ~ 535.57 ft (mean: 143.77)
+
+2024-11-30:
+  Input: 69 pts, 8.21 ~ 589.07 ft
+  Output: 15.48 ~ 535.56 ft (mean: 143.59)
+
+2024-12-01:
+  Input: 69 pts, 8.23 ~ 589.10 ft
+  Output: 15.46 ~ 535.52 ft (mean: 143.59)
+
+2024-12-02:
+  Input: 69 pts, 8.22 ~ 589.06 ft
+  Output: 15.46 ~ 535.58 ft (mean: 143.60)
+
+2024-12-03:
+  Input: 69 pts, 8.23 ~ 589.06 ft
+  Output: 15.64 ~ 535.59 ft (mean: 143.66)
+
+2024-12-04:
+  Input: 69 pts, 8.24 ~ 589.08 ft
+  Output: 15.89 ~ 535.79 ft (mean: 143.82)
+
+2024-12-05:
+  Input: 69 pts, 8.23 ~ 588.99 ft
+  Output: 15.80 ~ 535.67 ft (mean: 143.75)
+
+2024-12-06:
+  Input: 69 pts, 8.23 ~ 588.97 ft
+  Output: 15.76 ~ 535.52 ft (mean: 143.69)
+
+2024-12-07:
+  Input: 69 pts, 8.24 ~ 588.98 ft
+  Output: 15.60 ~ 535.47 ft (mean: 143.63)
+
+2024-12-08:
+  Input: 69 pts, 8.24 ~ 588.93 ft
+  Output: 15.54 ~ 535.40 ft (mean: 143.58)
+
+2024-12-09:
+  Input: 69 pts, 8.24 ~ 588.93 ft
+  Output: 15.54 ~ 535.43 ft (mean: 143.59)
+
+2024-12-10:
+  Input: 69 pts, 8.28 ~ 589.12 ft
+  Output: 15.87 ~ 535.63 ft (mean: 143.78)
+
+2024-12-11:
+  Input: 69 pts, 8.23 ~ 588.84 ft
+  Output: 15.90 ~ 535.25 ft (mean: 143.68)
+
+2024-12-12:
+  Input: 69 pts, 8.21 ~ 588.74 ft
+  Output: 15.66 ~ 534.98 ft (mean: 143.54)
+
+2024-12-13:
+  Input: 69 pts, 8.23 ~ 588.88 ft
+  Output: 15.77 ~ 535.08 ft (mean: 143.61)
+
+2024-12-14:
+  Input: 69 pts, 8.23 ~ 588.89 ft
+  Output: 15.61 ~ 535.08 ft (mean: 143.58)
+
+2024-12-15:
+  Input: 69 pts, 8.22 ~ 588.83 ft
+  Output: 15.52 ~ 535.08 ft (mean: 143.55)
+
+2024-12-16:
+  Input: 69 pts, 8.19 ~ 588.81 ft
+  Output: 15.51 ~ 535.15 ft (mean: 143.55)
+
+2024-12-17:
+  Input: 68 pts, 8.18 ~ 588.75 ft
+  Output: 13.72 ~ 534.69 ft (mean: 144.28)
+
+2024-12-18:
+  Input: 68 pts, 8.18 ~ 588.77 ft
+  Output: 13.64 ~ 534.70 ft (mean: 144.28)
+
+2024-12-19:
+  Input: 69 pts, 8.18 ~ 588.76 ft
+  Output: 15.58 ~ 535.26 ft (mean: 143.58)
+
+2024-12-20:
+  Input: 69 pts, 8.19 ~ 588.76 ft
+  Output: 15.69 ~ 535.29 ft (mean: 143.60)
+
+2024-12-21:
+  Input: 69 pts, 8.20 ~ 588.73 ft
+  Output: 15.62 ~ 535.45 ft (mean: 143.59)
+
+2024-12-22:
+  Input: 69 pts, 8.19 ~ 588.65 ft
+  Output: 15.60 ~ 535.32 ft (mean: 143.53)
+
+2024-12-23:
+  Input: 69 pts, 8.20 ~ 588.63 ft
+  Output: 15.62 ~ 535.31 ft (mean: 143.53)
+
+2024-12-24:
+  Input: 69 pts, 8.19 ~ 588.54 ft
+  Output: 15.77 ~ 535.22 ft (mean: 143.54)
+
+2024-12-25:
+  Input: 69 pts, 8.19 ~ 588.52 ft
+  Output: 15.64 ~ 535.14 ft (mean: 143.50)
+
+2024-12-26:
+  Input: 69 pts, 8.18 ~ 588.49 ft
+  Output: 15.60 ~ 535.06 ft (mean: 143.46)
+
+2024-12-27:
+  Input: 69 pts, 8.20 ~ 588.49 ft
+  Output: 15.78 ~ 535.06 ft (mean: 143.51)
+
+2024-12-28:
+  Input: 69 pts, 8.21 ~ 588.50 ft
+  Output: 15.72 ~ 534.85 ft (mean: 143.50)
+
+2024-12-29:
+  Input: 69 pts, 8.22 ~ 588.48 ft
+  Output: 15.69 ~ 534.79 ft (mean: 143.47)
+
+2024-12-30:
+  Input: 69 pts, 8.20 ~ 588.37 ft
+  Output: 15.67 ~ 534.78 ft (mean: 143.43)
+
+2024-12-31:
+  Input: 69 pts, 8.20 ~ 588.34 ft
+  Output: 15.77 ~ 534.93 ft (mean: 143.48)
+
+2025-01-01:
+  Input: 69 pts, 8.20 ~ 588.36 ft
+  Output: 15.73 ~ 535.01 ft (mean: 143.49)
+
+2025-01-02:
+  Input: 69 pts, 8.19 ~ 588.33 ft
+  Output: 15.70 ~ 534.64 ft (mean: 143.44)
+
+2025-01-03:
+  Input: 69 pts, 8.17 ~ 588.31 ft
+  Output: 15.77 ~ 534.62 ft (mean: 143.44)
+
+2025-01-04:
+  Input: 69 pts, 8.17 ~ 588.32 ft
+  Output: 15.91 ~ 535.19 ft (mean: 143.62)
+
+2025-01-05:
+  Input: 69 pts, 8.16 ~ 588.34 ft
+  Output: 15.84 ~ 534.93 ft (mean: 143.57)
+
+2025-01-06:
+  Input: 69 pts, 8.14 ~ 588.17 ft
+  Output: 15.85 ~ 534.54 ft (mean: 143.50)
+
+2025-01-07:
+  Input: 69 pts, 8.12 ~ 588.14 ft
+  Output: 16.46 ~ 535.30 ft (mean: 143.88)
+
+2025-01-08:
+  Input: 69 pts, 8.14 ~ 588.25 ft
+  Output: 16.12 ~ 534.36 ft (mean: 143.59)
+
+2025-01-09:
+  Input: 69 pts, 8.14 ~ 588.25 ft
+  Output: 16.19 ~ 534.21 ft (mean: 143.60)
+
+2025-01-10:
+  Input: 69 pts, 8.18 ~ 588.32 ft
+  Output: 16.54 ~ 534.93 ft (mean: 143.84)
+
+2025-01-11:
+  Input: 69 pts, 8.13 ~ 588.08 ft
+  Output: 16.79 ~ 535.82 ft (mean: 144.08)
+
+2025-01-12:
+  Input: 69 pts, 8.14 ~ 588.13 ft
+  Output: 17.12 ~ 536.09 ft (mean: 144.27)
+
+2025-01-13:
+  Input: 69 pts, 8.16 ~ 588.27 ft
+  Output: 17.27 ~ 536.15 ft (mean: 144.37)
+
+2025-01-14:
+  Input: 68 pts, 8.16 ~ 588.31 ft
+  Output: 18.29 ~ 535.67 ft (mean: 148.53)
+
+2025-01-15:
+  Input: 68 pts, 8.14 ~ 588.23 ft
+  Output: 18.37 ~ 535.78 ft (mean: 148.58)
+
+2025-01-16:
+  Input: 68 pts, 8.12 ~ 588.13 ft
+  Output: 18.39 ~ 535.97 ft (mean: 148.59)
+
+2025-01-17:
+  Input: 68 pts, 8.12 ~ 588.16 ft
+  Output: 18.21 ~ 535.59 ft (mean: 148.45)
+
+2025-01-18:
+  Input: 68 pts, 8.11 ~ 588.18 ft
+  Output: 18.23 ~ 535.61 ft (mean: 148.50)
+
+2025-01-19:
+  Input: 68 pts, 8.08 ~ 588.02 ft
+  Output: 18.15 ~ 535.35 ft (mean: 148.40)
+
+2025-01-20:
+  Input: 68 pts, 8.08 ~ 588.03 ft
+  Output: 18.32 ~ 535.68 ft (mean: 148.55)
+
+2025-01-21:
+  Input: 68 pts, 8.13 ~ 588.26 ft
+  Output: 18.67 ~ 535.95 ft (mean: 148.75)
+
+2025-01-22:
+  Input: 68 pts, 8.11 ~ 588.18 ft
+  Output: 18.54 ~ 535.70 ft (mean: 148.64)
+
+2025-01-23:
+  Input: 68 pts, 8.12 ~ 588.16 ft
+  Output: 18.34 ~ 535.45 ft (mean: 148.54)
+
+2025-01-24:
+  Input: 69 pts, 8.08 ~ 587.81 ft
+  Output: 17.55 ~ 535.02 ft (mean: 144.30)
+
+2025-01-25:
+  Input: 69 pts, 8.07 ~ 587.70 ft
+  Output: 17.70 ~ 535.27 ft (mean: 144.44)
+
+2025-01-26:
+  Input: 69 pts, 8.08 ~ 587.79 ft
+  Output: 17.67 ~ 534.87 ft (mean: 144.40)
+
+2025-01-27:
+  Input: 69 pts, 7.73 ~ 587.84 ft
+  Output: 17.33 ~ 534.48 ft (mean: 144.10)
+
+2025-01-28:
+  Input: 69 pts, 7.85 ~ 587.76 ft
+  Output: 17.51 ~ 534.68 ft (mean: 144.23)
+
+2025-01-29:
+  Input: 68 pts, 7.89 ~ 587.82 ft
+  Output: 17.48 ~ 534.51 ft (mean: 144.23)
+
+2025-01-30:
+  Input: 68 pts, 7.94 ~ 587.93 ft
+  Output: 17.48 ~ 534.52 ft (mean: 144.29)
+
+2025-01-31:
+  Input: 68 pts, 7.96 ~ 587.90 ft
+  Output: 17.49 ~ 534.28 ft (mean: 144.27)
+
+2025-02-01:
+  Input: 68 pts, 7.95 ~ 587.77 ft
+  Output: 17.48 ~ 534.30 ft (mean: 144.25)
+
+2025-02-02:
+  Input: 68 pts, 7.95 ~ 587.70 ft
+  Output: 17.47 ~ 534.19 ft (mean: 144.21)
+
+2025-02-03:
+  Input: 68 pts, 7.93 ~ 587.54 ft
+  Output: 17.46 ~ 534.63 ft (mean: 144.28)
+
+2025-02-04:
+  Input: 68 pts, 7.95 ~ 587.60 ft
+  Output: 17.48 ~ 534.26 ft (mean: 144.30)
+
+2025-02-05:
+  Input: 68 pts, 7.95 ~ 587.61 ft
+  Output: 17.47 ~ 534.18 ft (mean: 144.33)
+
+2025-02-06:
+  Input: 68 pts, 7.96 ~ 587.60 ft
+  Output: 17.45 ~ 533.89 ft (mean: 144.30)
+
+2025-02-07:
+  Input: 68 pts, 7.97 ~ 587.62 ft
+  Output: 17.43 ~ 533.87 ft (mean: 144.33)
+
+2025-02-08:
+  Input: 68 pts, 7.94 ~ 587.59 ft
+  Output: 17.42 ~ 534.07 ft (mean: 144.30)
+
+2025-02-09:
+  Input: 68 pts, 7.92 ~ 587.49 ft
+  Output: 17.40 ~ 533.97 ft (mean: 144.26)
+
+2025-02-10:
+  Input: 66 pts, 7.91 ~ 587.43 ft
+  Output: 17.68 ~ 533.95 ft (mean: 144.45)
+
+2025-02-11:
+  Input: 66 pts, 7.88 ~ 587.30 ft
+  Output: 17.71 ~ 533.87 ft (mean: 144.42)
+
+2025-02-12:
+  Input: 68 pts, 7.87 ~ 587.31 ft
+  Output: 17.41 ~ 533.65 ft (mean: 144.22)
+
+2025-02-13:
+  Input: 68 pts, 5.17 ~ 587.34 ft
+  Output: 17.17 ~ 533.48 ft (mean: 143.88)
+
+2025-02-14:
+  Input: 66 pts, 5.65 ~ 587.63 ft
+  Output: 16.97 ~ 532.85 ft (mean: 143.82)
+
+2025-02-15:
+  Input: 66 pts, 6.49 ~ 587.61 ft
+  Output: 17.02 ~ 532.78 ft (mean: 143.91)
+
+2025-02-16:
+  Input: 66 pts, 6.62 ~ 587.63 ft
+  Output: 16.92 ~ 532.50 ft (mean: 143.81)
+
+2025-02-17:
+  Input: 66 pts, 6.65 ~ 587.23 ft
+  Output: 16.88 ~ 532.33 ft (mean: 143.76)
+
+2025-02-18:
+  Input: 66 pts, 6.68 ~ 587.28 ft
+  Output: 16.96 ~ 532.27 ft (mean: 143.81)
+
+2025-02-19:
+  Input: 65 pts, 6.72 ~ 587.30 ft
+  Output: 16.45 ~ 532.28 ft (mean: 144.37)
+
+2025-02-20:
+  Input: 67 pts, 6.75 ~ 587.22 ft
+  Output: 16.71 ~ 532.22 ft (mean: 144.18)
+
+2025-02-21:
+  Input: 67 pts, 6.80 ~ 587.32 ft
+  Output: 16.59 ~ 532.04 ft (mean: 144.12)
+
+2025-02-22:
+  Input: 67 pts, 6.93 ~ 587.42 ft
+  Output: 16.72 ~ 532.22 ft (mean: 144.22)
+
+2025-02-23:
+  Input: 67 pts, 7.05 ~ 587.38 ft
+  Output: 16.89 ~ 532.41 ft (mean: 144.37)
+
+2025-02-24:
+  Input: 67 pts, 7.07 ~ 587.25 ft
+  Output: 17.00 ~ 532.61 ft (mean: 144.43)
+
+2025-02-25:
+  Input: 67 pts, 7.07 ~ 587.09 ft
+  Output: 16.96 ~ 532.54 ft (mean: 144.36)
+
+2025-02-26:
+  Input: 67 pts, 7.10 ~ 587.13 ft
+  Output: 16.95 ~ 532.47 ft (mean: 144.35)
+
+2025-02-27:
+  Input: 67 pts, 7.14 ~ 587.18 ft
+  Output: 17.04 ~ 532.70 ft (mean: 144.43)
+
+2025-02-28:
+  Input: 67 pts, 7.15 ~ 587.05 ft
+  Output: 17.08 ~ 532.30 ft (mean: 144.37)
+
+2025-03-01:
+  Input: 67 pts, 7.17 ~ 587.09 ft
+  Output: 17.04 ~ 532.15 ft (mean: 144.35)
+
+2025-03-02:
+  Input: 67 pts, 6.92 ~ 587.11 ft
+  Output: 16.90 ~ 531.70 ft (mean: 144.25)
+
+2025-03-03:
+  Input: 67 pts, 6.92 ~ 587.08 ft
+  Output: 16.82 ~ 531.54 ft (mean: 144.19)
+
+2025-03-04:
+  Input: 67 pts, 7.07 ~ 587.16 ft
+  Output: 16.86 ~ 531.63 ft (mean: 144.23)
+
+2025-03-05:
+  Input: 67 pts, 6.67 ~ 586.93 ft
+  Output: 16.60 ~ 531.34 ft (mean: 144.04)
+
+2025-03-06:
+  Input: 67 pts, 5.86 ~ 586.95 ft
+  Output: 16.38 ~ 531.18 ft (mean: 143.81)
+
+2025-03-07:
+  Input: 67 pts, 5.86 ~ 587.00 ft
+  Output: 16.43 ~ 531.08 ft (mean: 143.81)
+
+2025-03-08:
+  Input: 67 pts, 6.52 ~ 587.01 ft
+  Output: 16.60 ~ 531.31 ft (mean: 143.99)
+
+2025-03-09:
+  Input: 67 pts, 6.60 ~ 587.11 ft
+  Output: 16.44 ~ 531.27 ft (mean: 143.92)
+
+2025-03-10:
+  Input: 67 pts, 6.60 ~ 587.04 ft
+  Output: 16.33 ~ 531.02 ft (mean: 143.83)
+
+2025-03-11:
+  Input: 67 pts, 6.21 ~ 586.93 ft
+  Output: 16.26 ~ 530.83 ft (mean: 143.72)
+
+2025-03-12:
+  Input: 67 pts, 6.32 ~ 586.89 ft
+  Output: 16.34 ~ 530.83 ft (mean: 143.76)
+
+2025-03-13:
+  Input: 67 pts, 5.03 ~ 586.83 ft
+  Output: 16.14 ~ 530.74 ft (mean: 143.44)
+
+2025-03-14:
+  Input: 67 pts, 6.21 ~ 586.87 ft
+  Output: 16.23 ~ 530.64 ft (mean: 143.52)
+
+2025-03-15:
+  Input: 67 pts, 6.40 ~ 586.83 ft
+  Output: 16.31 ~ 530.66 ft (mean: 143.55)
+
+2025-03-16:
+  Input: 67 pts, 6.48 ~ 586.86 ft
+  Output: 16.32 ~ 530.69 ft (mean: 143.61)
+
+2025-03-17:
+  Input: 67 pts, 6.50 ~ 586.84 ft
+  Output: 16.29 ~ 530.50 ft (mean: 143.58)
+
+2025-03-18:
+  Input: 67 pts, 6.52 ~ 586.82 ft
+  Output: 16.34 ~ 530.62 ft (mean: 143.65)
+
+2025-03-19:
+  Input: 67 pts, 6.56 ~ 586.87 ft
+  Output: 16.28 ~ 530.64 ft (mean: 143.66)
+
+2025-03-20:
+  Input: 67 pts, 6.56 ~ 586.92 ft
+  Output: 16.28 ~ 530.49 ft (mean: 143.64)
+
+2025-03-21:
+  Input: 67 pts, 6.57 ~ 586.87 ft
+  Output: 16.27 ~ 530.44 ft (mean: 143.64)
+
+2025-03-22:
+  Input: 67 pts, 6.57 ~ 586.86 ft
+  Output: 16.32 ~ 530.45 ft (mean: 143.67)
+
+2025-03-23:
+  Input: 67 pts, 6.58 ~ 586.84 ft
+  Output: 16.31 ~ 530.42 ft (mean: 143.68)
+
+2025-03-24:
+  Input: 66 pts, 6.59 ~ 586.84 ft
+  Output: 16.61 ~ 529.94 ft (mean: 143.61)
+
+2025-03-25:
+  Input: 66 pts, 6.59 ~ 586.82 ft
+  Output: 16.69 ~ 530.17 ft (mean: 143.71)
+
+2025-03-26:
+  Input: 67 pts, 6.60 ~ 586.75 ft
+  Output: 16.51 ~ 530.50 ft (mean: 143.84)
+
+2025-03-27:
+  Input: 67 pts, 6.59 ~ 586.66 ft
+  Output: 16.54 ~ 530.65 ft (mean: 143.84)
+
+2025-03-28:
+  Input: 67 pts, 6.59 ~ 586.56 ft
+  Output: 16.54 ~ 530.61 ft (mean: 143.82)
+
+2025-03-29:
+  Input: 67 pts, 6.59 ~ 586.56 ft
+  Output: 16.42 ~ 530.65 ft (mean: 143.80)
+
+2025-03-30:
+  Input: 67 pts, 6.59 ~ 586.66 ft
+  Output: 16.44 ~ 530.63 ft (mean: 143.80)
+
+2025-03-31:
+  Input: 67 pts, 6.59 ~ 586.59 ft
+  Output: 16.37 ~ 530.63 ft (mean: 143.77)
+
+2025-04-01:
+  Input: 67 pts, 6.58 ~ 586.41 ft
+  Output: 16.31 ~ 530.55 ft (mean: 143.72)
+
+2025-04-02:
+  Input: 67 pts, 6.57 ~ 586.33 ft
+  Output: 16.09 ~ 530.48 ft (mean: 143.64)
+
+2025-04-03:
+  Input: 67 pts, 6.57 ~ 586.44 ft
+  Output: 16.07 ~ 530.75 ft (mean: 143.70)
+
+2025-04-04:
+  Input: 67 pts, 6.61 ~ 586.60 ft
+  Output: 16.21 ~ 530.61 ft (mean: 143.73)
+
+2025-04-05:
+  Input: 68 pts, 6.62 ~ 586.75 ft
+  Output: 16.55 ~ 530.66 ft (mean: 143.19)
+
+2025-04-06:
+  Input: 68 pts, 6.62 ~ 586.69 ft
+  Output: 16.42 ~ 530.59 ft (mean: 143.09)
+
+2025-04-07:
+  Input: 66 pts, 6.62 ~ 586.59 ft
+  Output: 16.56 ~ 530.60 ft (mean: 142.84)
+
+2025-04-08:
+  Input: 60 pts, 6.62 ~ 586.53 ft
+  Output: 17.22 ~ 531.16 ft (mean: 144.87)
+
+2025-04-09:
+  Input: 56 pts, 6.64 ~ 586.59 ft
+  Output: 17.20 ~ 531.43 ft (mean: 144.83)
+
+2025-04-10:
+  Input: 56 pts, 6.68 ~ 586.61 ft
+  Output: 17.22 ~ 531.71 ft (mean: 144.91)
+
+2025-04-11:
+  Input: 56 pts, 6.67 ~ 586.47 ft
+  Output: 17.24 ~ 532.12 ft (mean: 145.08)
+
+2025-04-12:
+  Input: 56 pts, 6.68 ~ 586.39 ft
+  Output: 17.25 ~ 531.70 ft (mean: 145.01)
+
+2025-04-13:
+  Input: 56 pts, 6.70 ~ 586.40 ft
+  Output: 17.27 ~ 531.59 ft (mean: 144.98)
+
+2025-04-14:
+  Input: 56 pts, 6.76 ~ 586.45 ft
+  Output: 17.30 ~ 531.63 ft (mean: 145.03)
+
+2025-04-15:
+  Input: 56 pts, 6.83 ~ 586.42 ft
+  Output: 17.37 ~ 531.77 ft (mean: 145.18)
+
+2025-04-16:
+  Input: 56 pts, 6.83 ~ 586.36 ft
+  Output: 17.42 ~ 531.72 ft (mean: 145.17)
+
+2025-04-17:
+  Input: 56 pts, 6.83 ~ 586.36 ft
+  Output: 17.45 ~ 531.32 ft (mean: 145.04)
+
+2025-04-18:
+  Input: 56 pts, 6.86 ~ 586.36 ft
+  Output: 17.50 ~ 531.18 ft (mean: 145.00)
+
+2025-04-19:
+  Input: 56 pts, 6.90 ~ 586.44 ft
+  Output: 17.54 ~ 531.06 ft (mean: 144.96)
+
+2025-04-20:
+  Input: 56 pts, 6.98 ~ 586.37 ft
+  Output: 17.55 ~ 531.11 ft (mean: 144.98)
+
+2025-04-21:
+  Input: 56 pts, 6.97 ~ 586.33 ft
+  Output: 17.55 ~ 531.15 ft (mean: 144.98)
+
+2025-04-22:
+  Input: 62 pts, 7.02 ~ 586.27 ft
+  Output: 16.77 ~ 531.21 ft (mean: 142.24)
+
+2025-04-23:
+  Input: 62 pts, 7.05 ~ 586.29 ft
+  Output: 16.80 ~ 531.16 ft (mean: 142.24)
+
+2025-04-24:
+  Input: 67 pts, 7.08 ~ 586.24 ft
+  Output: 16.66 ~ 530.67 ft (mean: 142.89)
+
+2025-04-25:
+  Input: 69 pts, 7.10 ~ 586.25 ft
+  Output: 16.39 ~ 530.51 ft (mean: 143.12)
+
+2025-04-26:
+  Input: 69 pts, 7.11 ~ 586.21 ft
+  Output: 16.28 ~ 530.23 ft (mean: 142.98)
+
+2025-04-27:
+  Input: 69 pts, 7.14 ~ 586.28 ft
+  Output: 16.21 ~ 529.85 ft (mean: 142.89)
+
+2025-04-28:
+  Input: 69 pts, 7.17 ~ 586.26 ft
+  Output: 16.10 ~ 529.58 ft (mean: 142.84)
+
+2025-04-29:
+  Input: 69 pts, 7.20 ~ 586.21 ft
+  Output: 16.19 ~ 529.40 ft (mean: 142.85)
+
+2025-04-30:
+  Input: 69 pts, 7.21 ~ 586.16 ft
+  Output: 16.19 ~ 529.47 ft (mean: 142.83)
+
+2025-05-01:
+  Input: 69 pts, 7.23 ~ 586.15 ft
+  Output: 16.21 ~ 529.42 ft (mean: 142.84)
+
+2025-05-02:
+  Input: 69 pts, 7.24 ~ 586.12 ft
+  Output: 16.28 ~ 529.36 ft (mean: 142.85)
+
+2025-05-03:
+  Input: 69 pts, 7.24 ~ 586.03 ft
+  Output: 16.26 ~ 529.20 ft (mean: 142.78)
+
+2025-05-04:
+  Input: 69 pts, 7.21 ~ 585.94 ft
+  Output: 16.12 ~ 529.00 ft (mean: 142.63)
+
+2025-05-05:
+  Input: 69 pts, 7.21 ~ 585.94 ft
+  Output: 16.09 ~ 528.87 ft (mean: 142.60)
+
+2025-05-06:
+  Input: 69 pts, 7.24 ~ 586.09 ft
+  Output: 16.18 ~ 528.73 ft (mean: 142.63)
+
+2025-05-07:
+  Input: 69 pts, 7.27 ~ 586.14 ft
+  Output: 16.20 ~ 528.80 ft (mean: 142.65)
+
+2025-05-08:
+  Input: 69 pts, 7.31 ~ 586.17 ft
+  Output: 16.20 ~ 528.70 ft (mean: 142.65)
+
+2025-05-09:
+  Input: 69 pts, 7.33 ~ 586.10 ft
+  Output: 16.22 ~ 528.76 ft (mean: 142.70)
+
+2025-05-10:
+  Input: 69 pts, 7.35 ~ 585.99 ft
+  Output: 16.12 ~ 528.84 ft (mean: 142.72)
+
+2025-05-11:
+  Input: 69 pts, 7.37 ~ 585.96 ft
+  Output: 16.16 ~ 528.89 ft (mean: 142.77)
+
+2025-05-12:
+  Input: 69 pts, 7.40 ~ 585.99 ft
+  Output: 16.21 ~ 529.07 ft (mean: 142.83)
+
+2025-05-13:
+  Input: 69 pts, 7.43 ~ 586.05 ft
+  Output: 16.29 ~ 529.06 ft (mean: 142.88)
+
+2025-05-14:
+  Input: 69 pts, 7.46 ~ 586.06 ft
+  Output: 16.36 ~ 529.13 ft (mean: 142.92)
+
+2025-05-15:
+  Input: 69 pts, 7.48 ~ 586.02 ft
+  Output: 16.41 ~ 529.07 ft (mean: 142.93)
+
+2025-05-16:
+  Input: 69 pts, 7.49 ~ 585.98 ft
+  Output: 16.37 ~ 529.11 ft (mean: 142.94)
+
+2025-05-17:
+  Input: 69 pts, 7.51 ~ 586.00 ft
+  Output: 16.44 ~ 528.85 ft (mean: 142.92)
+
+2025-05-18:
+  Input: 69 pts, 7.52 ~ 586.00 ft
+  Output: 16.44 ~ 528.65 ft (mean: 142.85)
+
+2025-05-19:
+  Input: 69 pts, 7.52 ~ 586.02 ft
+  Output: 16.53 ~ 528.82 ft (mean: 142.94)
+
+2025-05-20:
+  Input: 69 pts, 7.53 ~ 585.98 ft
+  Output: 16.54 ~ 529.00 ft (mean: 142.94)
+
+2025-05-21:
+  Input: 69 pts, 7.56 ~ 586.00 ft
+  Output: 16.59 ~ 529.14 ft (mean: 142.98)
+
+2025-05-22:
+  Input: 69 pts, 7.58 ~ 586.00 ft
+  Output: 16.63 ~ 529.40 ft (mean: 143.07)
+
+2025-05-23:
+  Input: 69 pts, 7.60 ~ 585.98 ft
+  Output: 16.72 ~ 529.62 ft (mean: 143.12)
+
+2025-05-24:
+  Input: 69 pts, 7.63 ~ 586.03 ft
+  Output: 16.78 ~ 529.60 ft (mean: 143.13)
+
+2025-05-25:
+  Input: 69 pts, 7.65 ~ 586.05 ft
+  Output: 16.77 ~ 529.70 ft (mean: 143.16)
+
+2025-05-26:
+  Input: 69 pts, 7.67 ~ 586.00 ft
+  Output: 16.67 ~ 529.71 ft (mean: 143.13)
+
+2025-05-27:
+  Input: 69 pts, 7.68 ~ 585.99 ft
+  Output: 16.82 ~ 529.76 ft (mean: 143.20)
+
+2025-05-28:
+  Input: 69 pts, 7.68 ~ 586.01 ft
+  Output: 17.30 ~ 530.42 ft (mean: 143.54)
+
+2025-05-29:
+  Input: 69 pts, 7.68 ~ 585.95 ft
+  Output: 17.43 ~ 530.47 ft (mean: 143.60)
+
+2025-05-30:
+  Input: 69 pts, 7.69 ~ 585.96 ft
+  Output: 17.24 ~ 530.03 ft (mean: 143.44)
+
+2025-05-31:
+  Input: 69 pts, 7.72 ~ 585.96 ft
+  Output: 17.22 ~ 530.02 ft (mean: 143.43)
+
+2025-06-01:
+  Input: 69 pts, 7.74 ~ 585.92 ft
+  Output: 17.27 ~ 530.01 ft (mean: 143.42)
+
+2025-06-02:
+  Input: 69 pts, 7.76 ~ 585.98 ft
+  Output: 17.17 ~ 529.98 ft (mean: 143.41)
+
+2025-06-03:
+  Input: 69 pts, 6.20 ~ 585.93 ft
+  Output: 17.58 ~ 530.62 ft (mean: 143.61)
+
+2025-06-04:
+  Input: 69 pts, 6.33 ~ 585.87 ft
+  Output: 17.72 ~ 530.87 ft (mean: 143.68)
+
+2025-06-05:
+  Input: 69 pts, 6.77 ~ 585.86 ft
+  Output: 17.57 ~ 530.57 ft (mean: 143.58)
+
+2025-06-06:
+  Input: 69 pts, 7.06 ~ 585.90 ft
+  Output: 17.60 ~ 530.58 ft (mean: 143.60)
+
+2025-06-07:
+  Input: 69 pts, 7.20 ~ 585.94 ft
+  Output: 17.61 ~ 530.72 ft (mean: 143.66)
+
+2025-06-08:
+  Input: 69 pts, 7.27 ~ 585.89 ft
+  Output: 17.62 ~ 530.57 ft (mean: 143.62)
+
+2025-06-09:
+  Input: 69 pts, 7.32 ~ 585.86 ft
+  Output: 17.57 ~ 530.61 ft (mean: 143.62)
+
+2025-06-10:
+  Input: 69 pts, 7.37 ~ 585.87 ft
+  Output: 17.67 ~ 530.65 ft (mean: 143.70)
+
+2025-06-11:
+  Input: 69 pts, 7.41 ~ 585.91 ft
+  Output: 17.80 ~ 530.75 ft (mean: 143.77)
+
+2025-06-12:
+  Input: 69 pts, 7.44 ~ 585.83 ft
+  Output: 17.88 ~ 530.88 ft (mean: 143.81)
+
+2025-06-13:
+  Input: 69 pts, 7.47 ~ 585.83 ft
+  Output: 17.98 ~ 530.77 ft (mean: 143.86)
+
+2025-06-14:
+  Input: 69 pts, 7.50 ~ 585.87 ft
+  Output: 18.01 ~ 530.82 ft (mean: 143.90)
+
+2025-06-15:
+  Input: 69 pts, 7.54 ~ 585.86 ft
+  Output: 18.04 ~ 530.92 ft (mean: 143.92)
+
+2025-06-16:
+  Input: 69 pts, 7.58 ~ 585.86 ft
+  Output: 17.98 ~ 530.85 ft (mean: 143.90)
+
+2025-06-17:
+  Input: 69 pts, 7.61 ~ 585.80 ft
+  Output: 18.13 ~ 531.02 ft (mean: 144.05)
+
+2025-06-18:
+  Input: 69 pts, 7.64 ~ 585.76 ft
+  Output: 18.19 ~ 531.05 ft (mean: 144.10)
+
+2025-06-19:
+  Input: 67 pts, 7.67 ~ 585.78 ft
+  Output: 18.10 ~ 530.95 ft (mean: 144.25)
+
+2025-06-20:
+  Input: 67 pts, 7.69 ~ 585.77 ft
+  Output: 18.08 ~ 530.89 ft (mean: 144.25)
+
+2025-06-21:
+  Input: 67 pts, 7.72 ~ 585.76 ft
+  Output: 18.12 ~ 530.78 ft (mean: 144.24)
+
+2025-06-22:
+  Input: 67 pts, 7.75 ~ 585.81 ft
+  Output: 18.12 ~ 530.58 ft (mean: 144.21)
+
+2025-06-23:
+  Input: 67 pts, 7.78 ~ 585.82 ft
+  Output: 18.02 ~ 530.63 ft (mean: 144.20)
+
+2025-06-24:
+  Input: 60 pts, 7.80 ~ 585.85 ft
+  Output: 18.16 ~ 530.63 ft (mean: 144.68)
+
+2025-06-25:
+  Input: 60 pts, 7.82 ~ 585.81 ft
+  Output: 18.15 ~ 530.59 ft (mean: 144.69)
+
+2025-06-26:
+  Input: 60 pts, 7.84 ~ 585.77 ft
+  Output: 18.17 ~ 530.53 ft (mean: 144.67)
+
+2025-06-27:
+  Input: 60 pts, 7.85 ~ 585.80 ft
+  Output: 18.17 ~ 530.52 ft (mean: 144.70)
+
+2025-06-28:
+  Input: 60 pts, 7.89 ~ 585.81 ft
+  Output: 18.18 ~ 530.50 ft (mean: 144.74)
+
+2025-06-29:
+  Input: 60 pts, 7.91 ~ 585.76 ft
+  Output: 18.18 ~ 530.50 ft (mean: 144.70)
+
+2025-06-30:
+  Input: 60 pts, 7.92 ~ 585.72 ft
+  Output: 18.21 ~ 530.64 ft (mean: 144.77)
+
+2025-07-01:
+  Input: 60 pts, 7.93 ~ 585.69 ft
+  Output: 18.25 ~ 530.70 ft (mean: 144.84)
+
+2025-07-02:
+  Input: 56 pts, 7.94 ~ 585.74 ft
+  Output: 18.28 ~ 530.77 ft (mean: 144.70)
+
+2025-07-03:
+  Input: 60 pts, 7.94 ~ 585.76 ft
+  Output: 18.32 ~ 530.67 ft (mean: 144.91)
+
+2025-07-04:
+  Input: 60 pts, 7.95 ~ 585.85 ft
+  Output: 18.35 ~ 530.73 ft (mean: 144.97)
+
+2025-07-05:
+  Input: 60 pts, 7.97 ~ 585.89 ft
+  Output: 18.35 ~ 530.72 ft (mean: 144.95)
+
+2025-07-06:
+  Input: 60 pts, 7.98 ~ 585.76 ft
+  Output: 18.34 ~ 530.63 ft (mean: 144.88)
+
+2025-07-07:
+  Input: 60 pts, 8.00 ~ 585.79 ft
+  Output: 18.35 ~ 530.66 ft (mean: 144.89)
+
+2025-07-08:
+  Input: 60 pts, 8.02 ~ 585.89 ft
+  Output: 18.37 ~ 530.75 ft (mean: 144.97)
+
+2025-07-09:
+  Input: 60 pts, 8.02 ~ 585.82 ft
+  Output: 18.40 ~ 530.62 ft (mean: 144.96)
+
+2025-07-10:
+  Input: 60 pts, 8.02 ~ 585.74 ft
+  Output: 18.39 ~ 530.43 ft (mean: 144.93)
+
+2025-07-11:
+  Input: 60 pts, 8.05 ~ 585.76 ft
+  Output: 18.41 ~ 530.45 ft (mean: 144.97)
+
+2025-07-12:
+  Input: 69 pts, 8.06 ~ 585.80 ft
+  Output: 18.42 ~ 530.30 ft (mean: 144.35)
+
+2025-07-13:
+  Input: 69 pts, 8.08 ~ 585.78 ft
+  Output: 18.43 ~ 530.27 ft (mean: 144.33)
+
+2025-07-14:
+  Input: 69 pts, 8.08 ~ 585.73 ft
+  Output: 18.46 ~ 530.18 ft (mean: 144.31)
+
+2025-07-15:
+  Input: 69 pts, 8.09 ~ 585.73 ft
+  Output: 18.49 ~ 530.25 ft (mean: 144.35)
+
+2025-07-16:
+  Input: 69 pts, 8.11 ~ 585.71 ft
+  Output: 18.51 ~ 530.13 ft (mean: 144.35)
+
+2025-07-17:
+  Input: 69 pts, 8.13 ~ 585.79 ft
+  Output: 18.52 ~ 529.86 ft (mean: 144.34)
+
+2025-07-18:
+  Input: 69 pts, 8.13 ~ 585.78 ft
+  Output: 18.52 ~ 529.60 ft (mean: 144.33)
+
+2025-07-19:
+  Input: 69 pts, 8.14 ~ 585.79 ft
+  Output: 18.52 ~ 529.58 ft (mean: 144.32)
+
+2025-07-20:
+  Input: 69 pts, 8.15 ~ 585.73 ft
+  Output: 18.48 ~ 529.96 ft (mean: 144.35)
+
+2025-07-21:
+  Input: 69 pts, 8.17 ~ 585.76 ft
+  Output: 18.46 ~ 529.94 ft (mean: 144.27)
+
+2025-07-22:
+  Input: 69 pts, 8.17 ~ 585.75 ft
+  Output: 18.50 ~ 530.41 ft (mean: 144.50)
+
+2025-07-23:
+  Input: 69 pts, 8.18 ~ 585.86 ft
+  Output: 18.49 ~ 530.25 ft (mean: 144.46)
+
+2025-07-24:
+  Input: 69 pts, 8.21 ~ 585.83 ft
+  Output: 18.48 ~ 530.25 ft (mean: 144.49)
+
+2025-07-25:
+  Input: 69 pts, 8.21 ~ 585.74 ft
+  Output: 18.51 ~ 530.07 ft (mean: 144.48)
+
+2025-07-26:
+  Input: 69 pts, 8.21 ~ 585.72 ft
+  Output: 18.55 ~ 529.90 ft (mean: 144.47)
+
+2025-07-27:
+  Input: 66 pts, 8.22 ~ 585.74 ft
+  Output: 18.58 ~ 529.60 ft (mean: 144.34)
+
+2025-07-28:
+  Input: 69 pts, 8.25 ~ 585.78 ft
+  Output: 18.60 ~ 529.72 ft (mean: 144.49)
+
+2025-07-29:
+  Input: 69 pts, 8.27 ~ 585.77 ft
+  Output: 18.66 ~ 530.02 ft (mean: 144.57)
+
+2025-07-30:
+  Input: 69 pts, 8.27 ~ 585.71 ft
+  Output: 18.63 ~ 530.02 ft (mean: 144.58)
+
+2025-07-31:
+  Input: 69 pts, 8.28 ~ 585.72 ft
+  Output: 18.60 ~ 529.60 ft (mean: 144.42)
+
+2025-08-01:
+  Input: 69 pts, 8.30 ~ 585.82 ft
+  Output: 18.69 ~ 530.01 ft (mean: 144.66)
+
+2025-08-02:
+  Input: 69 pts, 8.30 ~ 585.80 ft
+  Output: 18.73 ~ 530.04 ft (mean: 144.69)
+
+2025-08-03:
+  Input: 69 pts, 8.30 ~ 585.69 ft
+  Output: 18.71 ~ 530.03 ft (mean: 144.69)
+
+2025-08-04:
+  Input: 69 pts, 8.31 ~ 585.65 ft
+  Output: 18.69 ~ 530.07 ft (mean: 144.71)
+
+2025-08-05:
+  Input: 64 pts, 8.34 ~ 585.71 ft
+  Output: 16.80 ~ 489.94 ft (mean: 108.70)
+
+2025-08-06:
+  Input: 65 pts, 8.36 ~ 585.73 ft
+  Output: 16.62 ~ 490.02 ft (mean: 107.22)
+
+2025-08-07:
+  Input: 65 pts, 8.36 ~ 585.64 ft
+  Output: 16.57 ~ 489.98 ft (mean: 107.21)
+
+2025-08-08:
+  Input: 65 pts, 8.35 ~ 585.60 ft
+  Output: 16.56 ~ 489.96 ft (mean: 107.27)
+
+2025-08-09:
+  Input: 65 pts, 8.37 ~ 585.56 ft
+  Output: 16.56 ~ 489.92 ft (mean: 107.30)
+
+2025-08-10:
+  Input: 65 pts, 8.42 ~ 585.63 ft
+  Output: 16.56 ~ 490.03 ft (mean: 107.35)
+
+2025-08-11:
+  Input: 65 pts, 8.49 ~ 585.59 ft
+  Output: 16.57 ~ 489.96 ft (mean: 107.33)
+
+2025-08-12:
+  Input: 64 pts, 8.56 ~ 585.57 ft
+  Output: 16.59 ~ 490.07 ft (mean: 107.21)
+
+2025-08-13:
+  Input: 64 pts, 8.63 ~ 585.56 ft
+  Output: 16.59 ~ 490.12 ft (mean: 107.45)
+
+2025-08-14:
+  Input: 65 pts, 8.68 ~ 585.53 ft
+  Output: 16.54 ~ 489.92 ft (mean: 107.43)
+
+2025-08-15:
+  Input: 63 pts, 8.70 ~ 585.62 ft
+  Output: 16.52 ~ 489.59 ft (mean: 108.31)
+
+2025-08-16:
+  Input: 63 pts, 8.73 ~ 585.65 ft
+  Output: 16.54 ~ 489.59 ft (mean: 108.35)
+
+2025-08-17:
+  Input: 63 pts, 8.74 ~ 585.59 ft
+  Output: 16.51 ~ 489.55 ft (mean: 108.26)
+
+2025-08-18:
+  Input: 63 pts, 8.74 ~ 585.56 ft
+  Output: 16.51 ~ 489.59 ft (mean: 108.27)
+
+2025-08-19:
+  Input: 63 pts, 8.75 ~ 585.61 ft
+  Output: 16.49 ~ 489.67 ft (mean: 108.34)
+
+2025-08-20:
+  Input: 63 pts, 8.74 ~ 585.51 ft
+  Output: 16.45 ~ 489.58 ft (mean: 108.18)
+
+2025-08-21:
+  Input: 63 pts, 8.74 ~ 585.44 ft
+  Output: 16.44 ~ 489.54 ft (mean: 108.34)
+
+2025-08-22:
+  Input: 63 pts, 8.75 ~ 585.43 ft
+  Output: 16.44 ~ 489.55 ft (mean: 108.36)
+
+2025-08-23:
+  Input: 63 pts, 8.75 ~ 585.46 ft
+  Output: 16.44 ~ 489.55 ft (mean: 108.30)
+
+2025-08-24:
+  Input: 63 pts, 8.76 ~ 585.45 ft
+  Output: 16.45 ~ 489.54 ft (mean: 108.21)
+
+2025-08-25:
+  Input: 63 pts, 8.76 ~ 585.45 ft
+  Output: 16.46 ~ 489.53 ft (mean: 108.22)
+
+2025-08-26:
+  Input: 63 pts, 8.78 ~ 585.54 ft
+  Output: 16.42 ~ 489.63 ft (mean: 107.86)
+
+2025-08-27:
+  Input: 63 pts, 8.80 ~ 585.59 ft
+  Output: 16.49 ~ 489.75 ft (mean: 108.39)
+
+2025-08-28:
+  Input: 63 pts, 8.78 ~ 585.60 ft
+  Output: 16.47 ~ 489.83 ft (mean: 108.34)
+
+2025-08-29:
+  Input: 63 pts, 8.78 ~ 585.54 ft
+  Output: 16.44 ~ 489.74 ft (mean: 108.31)
+
+2025-08-30:
+  Input: 63 pts, 8.80 ~ 585.45 ft
+  Output: 16.45 ~ 489.64 ft (mean: 108.38)
+
+2025-08-31:
+  Input: 62 pts, 8.84 ~ 585.44 ft
+  Output: 16.47 ~ 489.67 ft (mean: 108.43)
+
+2025-09-01:
+  Input: 62 pts, 8.88 ~ 585.45 ft
+  Output: 16.48 ~ 489.71 ft (mean: 108.40)
+
+2025-09-02:
+  Input: 62 pts, 8.91 ~ 585.46 ft
+  Output: 16.43 ~ 489.71 ft (mean: 108.15)
+
+2025-09-03:
+  Input: 62 pts, 8.95 ~ 585.43 ft
+  Output: 16.44 ~ 489.68 ft (mean: 108.37)
+
+2025-09-04:
+  Input: 62 pts, 8.98 ~ 585.33 ft
+  Output: 16.41 ~ 489.61 ft (mean: 108.26)
+
+2025-09-05:
+  Input: 62 pts, 9.01 ~ 585.34 ft
+  Output: 16.39 ~ 489.66 ft (mean: 108.27)
+
+2025-09-06:
+  Input: 62 pts, 9.04 ~ 585.48 ft
+  Output: 16.39 ~ 489.85 ft (mean: 108.30)
+
+2025-09-07:
+  Input: 62 pts, 9.10 ~ 585.54 ft
+  Output: 16.40 ~ 489.98 ft (mean: 108.35)
+
+2025-09-08:
+  Input: 62 pts, 9.13 ~ 585.49 ft
+  Output: 16.40 ~ 489.96 ft (mean: 108.28)
+
+2025-09-09:
+  Input: 62 pts, 9.13 ~ 585.36 ft
+  Output: 16.39 ~ 489.84 ft (mean: 108.32)
+
+2025-09-10:
+  Input: 62 pts, 9.14 ~ 585.39 ft
+  Output: 16.38 ~ 489.88 ft (mean: 108.26)
+
+2025-09-11:
+  Input: 62 pts, 9.17 ~ 585.41 ft
+  Output: 16.36 ~ 489.92 ft (mean: 108.24)
+
+2025-09-12:
+  Input: 62 pts, 9.19 ~ 585.38 ft
+  Output: 16.36 ~ 489.90 ft (mean: 108.24)
+
+2025-09-13:
+  Input: 61 pts, 9.21 ~ 585.36 ft
+  Output: 16.22 ~ 489.55 ft (mean: 109.28)
+
+2025-09-14:
+  Input: 62 pts, 9.23 ~ 585.31 ft
+  Output: 16.33 ~ 489.87 ft (mean: 108.05)
+
+2025-09-15:
+  Input: 62 pts, 9.26 ~ 585.36 ft
+  Output: 16.32 ~ 489.91 ft (mean: 108.02)
+
+2025-09-16:
+  Input: 62 pts, 9.29 ~ 585.38 ft
+  Output: 16.31 ~ 489.57 ft (mean: 108.06)
+
+2025-09-17:
+  Input: 62 pts, 9.26 ~ 585.32 ft
+  Output: 16.25 ~ 489.55 ft (mean: 108.02)
+
+2025-09-18:
+  Input: 62 pts, 9.19 ~ 585.28 ft
+  Output: 16.15 ~ 489.54 ft (mean: 107.79)
+
+2025-09-19:
+  Input: 62 pts, 9.18 ~ 585.34 ft
+  Output: 16.05 ~ 489.60 ft (mean: 107.12)
+
+2025-09-20:
+  Input: 62 pts, 9.19 ~ 585.37 ft
+  Output: 16.04 ~ 489.65 ft (mean: 107.06)
+
+2025-09-21:
+  Input: 62 pts, 9.17 ~ 585.33 ft
+  Output: 16.08 ~ 489.63 ft (mean: 107.56)
+
+2025-09-22:
+  Input: 62 pts, 9.18 ~ 585.23 ft
+  Output: 16.06 ~ 489.49 ft (mean: 107.52)
+
+2025-09-23:
+  Input: 62 pts, 9.19 ~ 585.29 ft
+  Output: 16.05 ~ 489.51 ft (mean: 107.54)
+
+2025-09-24:
+  Input: 62 pts, 9.21 ~ 585.39 ft
+  Output: 16.05 ~ 489.70 ft (mean: 107.57)
+
+2025-09-25:
+  Input: 62 pts, 9.20 ~ 585.34 ft
+  Output: 16.05 ~ 489.76 ft (mean: 107.60)
+
+2025-09-26:
+  Input: 62 pts, 9.18 ~ 585.27 ft
+  Output: 15.98 ~ 489.71 ft (mean: 107.19)
+
+2025-09-27:
+  Input: 62 pts, 9.18 ~ 585.27 ft
+  Output: 16.00 ~ 489.74 ft (mean: 107.44)
+
+2025-09-28:
+  Input: 62 pts, 9.19 ~ 585.37 ft
+  Output: 16.00 ~ 489.79 ft (mean: 107.46)
+
+2025-09-29:
+  Input: 62 pts, 9.17 ~ 585.33 ft
+  Output: 15.99 ~ 489.76 ft (mean: 107.41)
+
+2025-09-30:
+  Input: 62 pts, 9.16 ~ 585.38 ft
+  Output: 16.00 ~ 489.75 ft (mean: 107.43)
+
+2025-10-01:
+  Input: 62 pts, 9.14 ~ 585.37 ft
+  Output: 15.97 ~ 489.75 ft (mean: 107.43)
+
+2025-10-02:
+  Input: 62 pts, 9.13 ~ 585.34 ft
+  Output: 15.96 ~ 489.76 ft (mean: 107.36)
+
+2025-10-03:
+  Input: 62 pts, 9.12 ~ 585.28 ft
+  Output: 15.92 ~ 489.71 ft (mean: 107.23)
+
+2025-10-04:
+  Input: 62 pts, 9.10 ~ 585.16 ft
+  Output: 15.90 ~ 489.57 ft (mean: 107.30)
+
+2025-10-05:
+  Input: 62 pts, 9.09 ~ 585.07 ft
+  Output: 15.87 ~ 489.52 ft (mean: 107.23)
+
+2025-10-06:
+  Input: 62 pts, 9.09 ~ 585.11 ft
+  Output: 15.84 ~ 489.57 ft (mean: 107.23)
+
+2025-10-07:
+  Input: 62 pts, 9.09 ~ 585.15 ft
+  Output: 15.85 ~ 489.63 ft (mean: 107.45)
+
+2025-10-08:
+  Input: 62 pts, 9.10 ~ 585.18 ft
+  Output: 15.85 ~ 489.67 ft (mean: 107.45)
+
+2025-10-09:
+  Input: 62 pts, 9.10 ~ 585.18 ft
+  Output: 15.83 ~ 489.70 ft (mean: 107.40)
+
+2025-10-10:
+  Input: 62 pts, 9.10 ~ 585.10 ft
+  Output: 15.79 ~ 489.66 ft (mean: 107.33)
+
+2025-10-11:
+  Input: 62 pts, 9.09 ~ 585.03 ft
+  Output: 15.78 ~ 489.58 ft (mean: 107.34)
+
+2025-10-12:
+  Input: 62 pts, 9.11 ~ 584.94 ft
+  Output: 15.76 ~ 489.48 ft (mean: 107.34)
+
+2025-10-13:
+  Input: 62 pts, 9.14 ~ 585.02 ft
+  Output: 15.77 ~ 489.56 ft (mean: 107.34)
+
+2025-10-14:
+  Input: 62 pts, 6.96 ~ 585.10 ft
+  Output: 15.61 ~ 489.68 ft (mean: 106.92)
+
+2025-10-15:
+  Input: 62 pts, 7.07 ~ 585.21 ft
+  Output: 15.60 ~ 489.82 ft (mean: 106.88)
+
+2025-10-16:
+  Input: 62 pts, 8.04 ~ 585.15 ft
+  Output: 15.51 ~ 489.74 ft (mean: 106.30)
+
+2025-10-17:
+  Input: 62 pts, 8.32 ~ 585.12 ft
+  Output: 15.51 ~ 489.73 ft (mean: 106.27)
+
+2025-10-18:
+  Input: 62 pts, 8.47 ~ 585.19 ft
+  Output: 15.50 ~ 489.78 ft (mean: 106.33)
+
+2025-10-19:
+  Input: 62 pts, 8.57 ~ 585.20 ft
+  Output: 15.50 ~ 489.80 ft (mean: 106.32)
+
+2025-10-20:
+  Input: 62 pts, 8.64 ~ 585.23 ft
+  Output: 15.51 ~ 489.80 ft (mean: 106.53)
+
+2025-10-21:
+  Input: 62 pts, 8.69 ~ 585.13 ft
+  Output: 15.52 ~ 489.70 ft (mean: 106.69)
+
+2025-10-22:
+  Input: 62 pts, 8.72 ~ 585.16 ft
+  Output: 15.50 ~ 489.74 ft (mean: 106.61)
+
+2025-10-23:
+  Input: 62 pts, 8.75 ~ 585.12 ft
+  Output: 15.51 ~ 489.69 ft (mean: 106.58)
+
+2025-10-24:
+  Input: 62 pts, 8.76 ~ 585.09 ft
+  Output: 15.51 ~ 489.66 ft (mean: 106.59)
+
+2025-10-25:
+  Input: 62 pts, 8.77 ~ 585.10 ft
+  Output: 15.52 ~ 489.64 ft (mean: 106.61)
+
+2025-10-26:
+  Input: 62 pts, 8.77 ~ 585.09 ft
+  Output: 15.54 ~ 489.63 ft (mean: 106.67)
+
+2025-10-27:
+  Input: 62 pts, 8.75 ~ 585.00 ft
+  Output: 15.52 ~ 489.56 ft (mean: 106.60)
+
+2025-10-28:
+  Input: 62 pts, 8.77 ~ 585.06 ft
+  Output: 15.59 ~ 489.63 ft (mean: 107.12)
+
+2025-10-29:
+  Input: 63 pts, 8.77 ~ 585.03 ft
+  Output: 15.58 ~ 489.58 ft (mean: 107.09)
+
+2025-10-30:
+  Input: 63 pts, 8.77 ~ 584.95 ft
+  Output: 15.58 ~ 489.51 ft (mean: 107.08)
+
+2025-10-31:
+  Input: 63 pts, 8.77 ~ 584.97 ft
+  Output: 15.53 ~ 489.52 ft (mean: 106.71)
+
+2025-11-01:
+  Input: 63 pts, 8.77 ~ 584.98 ft
+  Output: 15.59 ~ 489.57 ft (mean: 107.11)
+
+2025-11-02:
+  Input: 63 pts, 8.77 ~ 584.98 ft
+  Output: 15.57 ~ 489.60 ft (mean: 107.07)
+
+2025-11-03:
+  Input: 63 pts, 8.78 ~ 584.98 ft
+  Output: 15.54 ~ 489.60 ft (mean: 107.09)
+
+2025-11-04:
+  Input: 63 pts, 8.79 ~ 585.04 ft
+  Output: 15.52 ~ 489.68 ft (mean: 107.18)
+
+2025-11-05:
+  Input: 63 pts, 8.80 ~ 585.13 ft
+  Output: 15.52 ~ 489.75 ft (mean: 107.17)
+
+2025-11-06:
+  Input: 63 pts, 8.75 ~ 584.98 ft
+  Output: 15.49 ~ 489.59 ft (mean: 107.12)
+
+2025-11-07:
+  Input: 63 pts, 8.71 ~ 584.81 ft
+  Output: 15.45 ~ 489.44 ft (mean: 107.04)
+
+2025-11-08:
+  Input: 62 pts, 8.70 ~ 584.83 ft
+  Output: 20.66 ~ 489.55 ft (mean: 110.84)
+
+2025-11-09:
+  Input: 62 pts, 8.72 ~ 584.99 ft
+  Output: 20.69 ~ 489.70 ft (mean: 110.92)
+
+2025-11-10:
+  Input: 62 pts, 8.72 ~ 585.02 ft
+  Output: 20.67 ~ 489.74 ft (mean: 110.94)
+
+2025-11-11:
+  Input: 62 pts, 8.71 ~ 584.94 ft
+  Output: 20.67 ~ 489.69 ft (mean: 110.99)
+
+2025-11-12:
+  Input: 62 pts, 8.72 ~ 584.94 ft
+  Output: 20.63 ~ 489.68 ft (mean: 110.94)
+
+2025-11-13:
+  Input: 62 pts, 8.71 ~ 584.88 ft
+  Output: 20.61 ~ 489.64 ft (mean: 110.82)
+
+2025-11-14:
+  Input: 63 pts, 8.69 ~ 584.82 ft
+  Output: 15.30 ~ 489.52 ft (mean: 106.32)
+
+2025-11-15:
+  Input: 63 pts, 5.86 ~ 584.67 ft
+  Output: 14.98 ~ 489.40 ft (mean: 105.80)
+
+2025-11-16:
+  Input: 62 pts, 5.90 ~ 584.73 ft
+  Output: 14.97 ~ 489.46 ft (mean: 106.18)
+
+2025-11-17:
+  Input: 63 pts, 6.56 ~ 584.72 ft
+  Output: 14.71 ~ 489.41 ft (mean: 105.71)
+
+2025-11-18:
+  Input: 63 pts, 5.69 ~ 584.67 ft
+  Output: 14.60 ~ 489.43 ft (mean: 105.67)
+
+2025-11-19:
+  Input: 63 pts, 6.57 ~ 584.66 ft
+  Output: 14.61 ~ 489.51 ft (mean: 105.74)
+
+2025-11-20:
+  Input: 63 pts, 6.78 ~ 584.60 ft
+  Output: 14.54 ~ 489.45 ft (mean: 105.74)
+
+2025-11-21:
+  Input: 63 pts, 6.96 ~ 584.62 ft
+  Output: 14.39 ~ 489.42 ft (mean: 105.69)
+
+2025-11-22:
+  Input: 61 pts, 7.10 ~ 584.59 ft
+  Output: 16.86 ~ 490.13 ft (mean: 109.60)
+
+2025-11-23:
+  Input: 61 pts, 7.20 ~ 584.66 ft
+  Output: 16.91 ~ 490.19 ft (mean: 109.69)
+
+2025-11-24:
+  Input: 61 pts, 7.31 ~ 584.73 ft
+  Output: 16.95 ~ 490.25 ft (mean: 109.75)
+
+2025-11-25:
+  Input: 61 pts, 7.38 ~ 584.69 ft
+  Output: 16.96 ~ 490.23 ft (mean: 109.72)
+
+2025-11-26:
+  Input: 61 pts, 7.45 ~ 584.68 ft
+  Output: 16.98 ~ 490.23 ft (mean: 109.74)
+
+2025-11-27:
+  Input: 61 pts, 7.51 ~ 584.64 ft
+  Output: 17.01 ~ 490.21 ft (mean: 109.76)
+
+2025-11-28:
+  Input: 61 pts, 7.56 ~ 584.56 ft
+  Output: 17.02 ~ 490.18 ft (mean: 109.77)
+
+2025-11-29:
+  Input: 61 pts, 7.59 ~ 584.54 ft
+  Output: 17.03 ~ 490.10 ft (mean: 109.75)
+
+2025-11-30:
+  Input: 61 pts, 7.64 ~ 584.47 ft
+  Output: 17.02 ~ 489.98 ft (mean: 109.75)
+
+2025-12-01:
+  Input: 61 pts, 7.70 ~ 584.51 ft
+  Output: 17.02 ~ 490.00 ft (mean: 109.88)
+
+2025-12-02:
+  Input: 61 pts, 7.76 ~ 584.46 ft
+  Output: 17.01 ~ 490.01 ft (mean: 109.93)
+
+2025-12-03:
+  Input: 61 pts, 7.80 ~ 584.43 ft
+  Output: 16.97 ~ 489.98 ft (mean: 109.85)
+
+2025-12-04:
+  Input: 60 pts, 7.86 ~ 584.59 ft
+  Output: 16.96 ~ 489.76 ft (mean: 109.91)
+
+2025-12-05:
+  Input: 58 pts, 7.90 ~ 584.49 ft
+  Output: 16.96 ~ 489.43 ft (mean: 110.60)
+
+2025-12-06:
+  Input: 58 pts, 7.94 ~ 584.45 ft
+  Output: 17.00 ~ 489.45 ft (mean: 110.65)
+
+2025-12-07:
+  Input: 57 pts, 7.98 ~ 584.52 ft
+  Output: 17.05 ~ 489.80 ft (mean: 111.00)
+
+2025-12-08:
+  Input: 56 pts, 8.02 ~ 584.56 ft
+  Output: 17.18 ~ 489.79 ft (mean: 111.98)
+
+2025-12-09:
+  Input: 56 pts, 8.04 ~ 584.43 ft
+  Output: 17.21 ~ 489.72 ft (mean: 112.16)
+
+2025-12-10:
+  Input: 56 pts, 8.07 ~ 584.38 ft
+  Output: 17.24 ~ 489.65 ft (mean: 112.27)
+
+2025-12-11:
+  Input: 53 pts, 8.10 ~ 415.66 ft
+  Output: 15.32 ~ 384.82 ft (mean: 103.08)
+
+2025-12-12:
+  Input: 51 pts, 8.12 ~ 415.65 ft
+  Output: 15.34 ~ 385.02 ft (mean: 102.88)
+
+2025-12-13:
+  Input: 51 pts, 8.16 ~ 415.64 ft
+  Output: 15.38 ~ 385.03 ft (mean: 103.16)
+
+2025-12-14:
+  Input: 51 pts, 8.18 ~ 415.68 ft
+  Output: 15.36 ~ 385.08 ft (mean: 103.06)
+
+2025-12-15:
+  Input: 51 pts, 8.20 ~ 415.68 ft
+  Output: 15.37 ~ 385.08 ft (mean: 103.13)
+
+2025-12-16:
+  Input: 51 pts, 8.21 ~ 415.62 ft
+  Output: 15.36 ~ 385.04 ft (mean: 103.13)
+
+2025-12-17:
+  Input: 50 pts, 8.20 ~ 415.54 ft
+  Output: 15.39 ~ 383.43 ft (mean: 106.50)
+
+2025-12-18:
+  Input: 49 pts, 8.20 ~ 415.52 ft
+  Output: 15.49 ~ 387.13 ft (mean: 107.35)
+
+2025-12-19:
+  Input: 45 pts, 8.21 ~ 415.53 ft
+  Output: 15.57 ~ 392.51 ft (mean: 109.48)
+
+2025-12-20:
+  Input: 45 pts, 8.23 ~ 415.58 ft
+  Output: 15.58 ~ 392.54 ft (mean: 109.48)
+
+2025-12-21:
+  Input: 45 pts, 8.22 ~ 415.57 ft
+  Output: 15.58 ~ 392.54 ft (mean: 109.48)
+
+2025-12-22:
+  Input: 44 pts, 8.19 ~ 415.28 ft
+  Output: 15.68 ~ 394.49 ft (mean: 110.16)
+
+2025-12-23:
+  Input: 44 pts, 8.17 ~ 415.23 ft
+  Output: 15.69 ~ 394.46 ft (mean: 110.12)
+
+2025-12-24:
+  Input: 44 pts, 5.88 ~ 415.14 ft
+  Output: 15.33 ~ 394.39 ft (mean: 109.79)
+
+2025-12-25:
+  Input: 41 pts, 6.35 ~ 415.29 ft
+  Output: 15.57 ~ 394.53 ft (mean: 110.73)
+
+2025-12-26:
+  Input: 44 pts, 6.22 ~ 415.18 ft
+  Output: 15.38 ~ 394.38 ft (mean: 109.76)
+
+2025-12-27:
+  Input: 44 pts, 6.23 ~ 415.21 ft
+  Output: 15.37 ~ 394.36 ft (mean: 109.74)
+
+2025-12-28:
+  Input: 41 pts, 6.73 ~ 415.29 ft
+  Output: 15.53 ~ 394.41 ft (mean: 110.72)
+
+2025-12-29:
+  Input: 41 pts, 6.82 ~ 415.23 ft
+  Output: 15.54 ~ 394.35 ft (mean: 110.74)
+
+2025-12-30:
+  Input: 43 pts, 6.87 ~ 415.16 ft
+  Output: 15.43 ~ 394.31 ft (mean: 109.99)
+
+2025-12-31:
+  Input: 43 pts, 6.45 ~ 415.05 ft
+  Output: 15.37 ~ 394.18 ft (mean: 109.90)
+

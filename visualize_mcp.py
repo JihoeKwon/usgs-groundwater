@@ -38,6 +38,12 @@ try:
 except ImportError:
     MATPLOTLIB_AVAILABLE = False
 
+try:
+    import contextily as cx
+    CONTEXTILY_AVAILABLE = True
+except ImportError:
+    CONTEXTILY_AVAILABLE = False
+
 # Create MCP server
 mcp = FastMCP("visualize-kriging")
 
@@ -156,6 +162,64 @@ def _get_bbox_string(lon_grid, lat_grid):
     return f"[{lon_min:.1f}, {lat_min:.1f}, {lon_max:.1f}, {lat_max:.1f}]"
 
 
+def _get_basemap_provider(provider_name: str):
+    """Get contextily basemap provider by name."""
+    if not CONTEXTILY_AVAILABLE:
+        return None
+
+    providers = {
+        "OpenStreetMap": cx.providers.OpenStreetMap.Mapnik,
+        "CartoDB.Positron": cx.providers.CartoDB.Positron,
+        "CartoDB.Voyager": cx.providers.CartoDB.Voyager,
+        "Esri.WorldImagery": cx.providers.Esri.WorldImagery,
+        "Esri.WorldStreetMap": cx.providers.Esri.WorldStreetMap,
+        "Stamen.Terrain": cx.providers.Stadia.StamenTerrain,
+    }
+    return providers.get(provider_name, cx.providers.OpenStreetMap.Mapnik)
+
+
+def _add_basemap(ax, lon_grid, lat_grid, provider_name: str = "OpenStreetMap",
+                 alpha: float = 0.5, zoom_buffer: float = 0.1):
+    """
+    Add basemap to matplotlib axis with buffered extent.
+
+    Args:
+        ax: Matplotlib axis
+        lon_grid: Longitude grid
+        lat_grid: Latitude grid
+        provider_name: Basemap provider name
+        alpha: Basemap transparency
+        zoom_buffer: Buffer around bbox as fraction
+    """
+    if not CONTEXTILY_AVAILABLE:
+        return False
+
+    # Calculate buffered extent
+    lon_min, lon_max = lon_grid.min(), lon_grid.max()
+    lat_min, lat_max = lat_grid.min(), lat_grid.max()
+
+    lon_range = lon_max - lon_min
+    lat_range = lat_max - lat_min
+
+    # Add buffer
+    lon_min_buf = lon_min - lon_range * zoom_buffer
+    lon_max_buf = lon_max + lon_range * zoom_buffer
+    lat_min_buf = lat_min - lat_range * zoom_buffer
+    lat_max_buf = lat_max + lat_range * zoom_buffer
+
+    # Set axis limits with buffer
+    ax.set_xlim(lon_min_buf, lon_max_buf)
+    ax.set_ylim(lat_min_buf, lat_max_buf)
+
+    try:
+        provider = _get_basemap_provider(provider_name)
+        cx.add_basemap(ax, crs="EPSG:4326", source=provider, alpha=alpha, zorder=0)
+        return True
+    except Exception as e:
+        print(f"Warning: Failed to add basemap: {e}")
+        return False
+
+
 @mcp.tool()
 def visualize_kriging_result(
     input_file: str,
@@ -166,7 +230,11 @@ def visualize_kriging_result(
     show_points: bool = True,
     frame: int = None,
     fps: int = 2,
-    output_dir: str = None
+    output_dir: str = None,
+    show_basemap: bool = True,
+    basemap_provider: str = "OpenStreetMap",
+    basemap_alpha: float = 0.5,
+    basemap_zoom_buffer: float = 0.1
 ) -> str:
     """
     Visualize kriging interpolation results.
@@ -182,6 +250,10 @@ def visualize_kriging_result(
         frame: Specific frame index to render as PNG (optional)
         fps: Frames per second for GIF animation (default: 2)
         output_dir: Optional output directory (created if not exists)
+        show_basemap: Whether to show OpenStreetMap basemap (default: True)
+        basemap_provider: Basemap provider - 'OpenStreetMap', 'CartoDB.Positron', 'CartoDB.Voyager', 'Esri.WorldImagery'
+        basemap_alpha: Basemap transparency 0-1 (default: 0.5)
+        basemap_zoom_buffer: Buffer around bbox as fraction (default: 0.1 = 10%)
 
     Returns:
         JSON string with output file paths
@@ -240,11 +312,19 @@ def visualize_kriging_result(
 
         # Depth plot
         levels = np.linspace(z_grid.min(), z_grid.max(), 20)
-        cf1 = axes[0].contourf(lon_grid, lat_grid, z_grid, levels=levels, cmap=colormap)
+        contour_alpha = 0.7 if show_basemap else 1.0
+        cf1 = axes[0].contourf(lon_grid, lat_grid, z_grid, levels=levels, cmap=colormap,
+                               alpha=contour_alpha, zorder=1)
         plt.colorbar(cf1, ax=axes[0], label='Depth to Water (ft)', shrink=0.8)
         cs1 = axes[0].contour(lon_grid, lat_grid, z_grid, levels=10, colors='black',
-                              linewidths=0.5, alpha=0.5)
+                              linewidths=0.5, alpha=0.5, zorder=2)
         axes[0].clabel(cs1, inline=True, fontsize=8, fmt='%.0f')
+
+        # Add basemap if requested
+        basemap_added = False
+        if show_basemap:
+            basemap_added = _add_basemap(axes[0], lon_grid, lat_grid,
+                                         basemap_provider, basemap_alpha, basemap_zoom_buffer)
 
         if orig_data:
             axes[0].scatter(orig_data['lon'], orig_data['lat'], c='red',
@@ -256,7 +336,8 @@ def visualize_kriging_result(
             axes[0].set_title(f'{region_name}\nGroundwater Depth - {date_str}')
         else:
             axes[0].set_title(f'Groundwater Depth - {date_str}')
-        axes[0].grid(True, alpha=0.3, linestyle='--')
+        if not show_basemap:
+            axes[0].grid(True, alpha=0.3, linestyle='--')
 
         # Stats box
         stats_text = f'Min: {z_grid.min():.1f} ft\nMax: {z_grid.max():.1f} ft\nMean: {z_grid.mean():.1f} ft'
@@ -265,15 +346,21 @@ def visualize_kriging_result(
 
         # Variance plot
         if var_grid is not None and var_grid.max() > 0:
-            cf2 = axes[1].contourf(lon_grid, lat_grid, var_grid, levels=20, cmap='Reds')
+            cf2 = axes[1].contourf(lon_grid, lat_grid, var_grid, levels=20, cmap='Reds',
+                                   alpha=contour_alpha, zorder=1)
             plt.colorbar(cf2, ax=axes[1], label='Kriging Variance')
             if orig_data:
                 axes[1].scatter(orig_data['lon'], orig_data['lat'], c='blue',
                                edgecolors='white', s=50, zorder=5)
+        # Add basemap to variance plot too
+        if show_basemap:
+            _add_basemap(axes[1], lon_grid, lat_grid,
+                        basemap_provider, basemap_alpha, basemap_zoom_buffer)
         axes[1].set_xlabel('Longitude')
         axes[1].set_ylabel('Latitude')
         axes[1].set_title(f'Uncertainty - {date_str}')
-        axes[1].grid(True, alpha=0.3)
+        if not show_basemap:
+            axes[1].grid(True, alpha=0.3)
 
         # Main title
         if region_name:
@@ -308,10 +395,20 @@ def visualize_kriging_result(
 
         fig, ax = plt.subplots(figsize=(12, 10))
 
+        # Add basemap FIRST (before contours) so it's in the background
+        basemap_added = False
+        contour_alpha = 1.0
+        if show_basemap:
+            basemap_added = _add_basemap(ax, lon_grid, lat_grid,
+                                         basemap_provider, basemap_alpha, basemap_zoom_buffer)
+            if basemap_added:
+                contour_alpha = 0.7  # Make contours semi-transparent over basemap
+
         # Initial contour
         z_grid = depth[:, 0].reshape(grid_h, grid_w)
         levels = np.linspace(vmin, vmax, 20)
-        cf = ax.contourf(lon_grid, lat_grid, z_grid, levels=levels, cmap=colormap, extend='both')
+        cf = ax.contourf(lon_grid, lat_grid, z_grid, levels=levels, cmap=colormap,
+                         extend='both', alpha=contour_alpha, zorder=1)
         cbar = plt.colorbar(cf, ax=ax, label='Depth to Water (ft)', shrink=0.8)
 
         # Title
@@ -323,17 +420,22 @@ def visualize_kriging_result(
 
         ax.set_xlabel('Longitude')
         ax.set_ylabel('Latitude')
-        ax.grid(True, alpha=0.3, linestyle='--')
+        if not basemap_added:
+            ax.grid(True, alpha=0.3, linestyle='--')
 
         stats_text = ax.text(0.02, 0.98, '', transform=ax.transAxes, fontsize=9,
                              verticalalignment='top',
                              bbox=dict(boxstyle='round', facecolor='white', alpha=0.8))
 
+        # Store initial number of images (basemap) to preserve them during animation
+        n_basemap_images = len(ax.images)
+
         def update(frame_idx):
             nonlocal cf
 
-            for c in ax.collections:
-                c.remove()
+            # Remove only contour collections, not basemap
+            while len(ax.collections) > 0:
+                ax.collections[0].remove()
             for t in ax.texts:
                 if t != stats_text:
                     t.remove()
@@ -341,9 +443,10 @@ def visualize_kriging_result(
             z_grid = depth[:, frame_idx].reshape(grid_h, grid_w)
             date_str = dates[frame_idx]
 
-            cf = ax.contourf(lon_grid, lat_grid, z_grid, levels=levels, cmap=colormap, extend='both')
+            cf = ax.contourf(lon_grid, lat_grid, z_grid, levels=levels, cmap=colormap,
+                             extend='both', alpha=contour_alpha, zorder=1)
             cs = ax.contour(lon_grid, lat_grid, z_grid, levels=10, colors='black',
-                            linewidths=0.5, alpha=0.5)
+                            linewidths=0.5, alpha=0.5, zorder=2)
             ax.clabel(cs, inline=True, fontsize=8, fmt='%.0f')
 
             if orig_df is not None and date_str in orig_df.columns:
@@ -381,7 +484,12 @@ def visualize_kriging_result(
         "bbox": bbox_str,
         "output_type": "gif" if n_frames > 1 and frame is None else "png",
         "output_dir": output_dir,
-        "output_files": output_files
+        "output_files": output_files,
+        "basemap": {
+            "enabled": show_basemap,
+            "provider": basemap_provider if show_basemap else None,
+            "contextily_available": CONTEXTILY_AVAILABLE
+        }
     }, indent=2)
 
 

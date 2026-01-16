@@ -16,6 +16,9 @@ pip install requests pandas numpy mcp
 # Full functionality (kriging + visualization)
 pip install pykrige matplotlib pillow
 
+# Basemap support (satellite/map backgrounds)
+pip install contextily
+
 # GeoTIFF output (optional)
 pip install rasterio
 ```
@@ -62,6 +65,9 @@ The project implements a four-stage groundwater analysis pipeline via MCP server
 - Input: Grid CSV or sectioned format file (.dat) from kriging
 - Single frame output: PNG with contour map and variance plot (side-by-side)
 - Multiple frames output: GIF animation with time series visualization
+- **Basemap support**: Satellite/map backgrounds via contextily
+  - Providers: `OpenStreetMap`, `CartoDB.Positron`, `CartoDB.Voyager`, `Esri.WorldImagery`
+  - Parameters: `show_basemap`, `basemap_provider`, `basemap_alpha`, `basemap_zoom_buffer`
 - Supports `output_dir` parameter for organized file management
 
 **4. analysis-report** (`analysis_report_mcp.py`)
@@ -95,9 +101,10 @@ Key parameter code: `72019` (Depth to water level, feet below land surface)
 5. **Kriging** → Ordinary Kriging with configurable variogram
    - Single date → Grid CSV + GeoTIFF + metadata
    - Multiple dates → Sectioned format (.dat) with [HEADER], [COORDINATES], [DEPTH], [VARIANCE] sections
-6. **Visualization** → Contour map with observation point overlay
+6. **Visualization** → Contour map with observation point overlay and basemap
    - Single frame → PNG (depth map + variance map side by side)
    - Multiple frames → GIF animation with time series
+   - Basemap → Satellite (`Esri.WorldImagery`) or map backgrounds (`OpenStreetMap`)
 7. **Reporting** → Analysis report with statistics and trends
    - Markdown report with data overview, statistics, and quality warnings
    - JSON format for programmatic access
