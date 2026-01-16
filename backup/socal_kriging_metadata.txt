@@ -1,0 +1,21 @@
+Kriging Interpolation Results
+==================================================
+
+Input file: socal_gw_20260113.csv
+Date: 2026-01-13
+Input points: 41
+Variogram model: spherical
+Grid resolution: 50 x 50
+Grid bounds:
+  Lon: [-117.421197, -116.626197]
+  Lat: [32.514499, 34.197646]
+
+Input Statistics:
+  Min: 6.74 ft
+  Max: 414.77 ft
+  Mean: 133.93 ft
+
+Output Statistics:
+  Min: 15.09 ft
+  Max: 393.66 ft
+  Mean: 110.35 ft

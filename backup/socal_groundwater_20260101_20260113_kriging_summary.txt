@@ -1,0 +1,92 @@
+Kriging Interpolation Summary - Multiple Dates
+============================================================
+
+Input file: socal_groundwater_20260101_20260113.csv
+Grid resolution: 50 x 50
+Variogram model: spherical
+
+Dates processed: 13
+Dates skipped: 0
+
+============================================================
+Results by Date
+============================================================
+
+Date: 2026-01-01
+  Input points: 43
+  Input range: 4.67 ~ 415.01 ft
+  Output range: 14.44 ~ 394.16 ft
+  Files: ['csv']
+
+Date: 2026-01-02
+  Input points: 38
+  Input range: 6.02 ~ 415.03 ft
+  Output range: 14.89 ~ 394.18 ft
+  Files: ['csv']
+
+Date: 2026-01-03
+  Input points: 41
+  Input range: 6.33 ~ 414.93 ft
+  Output range: 14.90 ~ 394.08 ft
+  Files: ['csv']
+
+Date: 2026-01-04
+  Input points: 42
+  Input range: 5.95 ~ 414.92 ft
+  Output range: 14.92 ~ 394.05 ft
+  Files: ['csv']
+
+Date: 2026-01-05
+  Input points: 39
+  Input range: 5.45 ~ 414.92 ft
+  Output range: 14.75 ~ 394.07 ft
+  Files: ['csv']
+
+Date: 2026-01-06
+  Input points: 39
+  Input range: 6.32 ~ 414.89 ft
+  Output range: 14.94 ~ 394.03 ft
+  Files: ['csv']
+
+Date: 2026-01-07
+  Input points: 41
+  Input range: 6.45 ~ 414.74 ft
+  Output range: 14.90 ~ 393.91 ft
+  Files: ['csv']
+
+Date: 2026-01-08
+  Input points: 38
+  Input range: 6.53 ~ 414.85 ft
+  Output range: 15.07 ~ 393.98 ft
+  Files: ['csv']
+
+Date: 2026-01-09
+  Input points: 38
+  Input range: 6.61 ~ 415.07 ft
+  Output range: 15.13 ~ 394.18 ft
+  Files: ['csv']
+
+Date: 2026-01-10
+  Input points: 39
+  Input range: 6.66 ~ 415.00 ft
+  Output range: 15.10 ~ 394.08 ft
+  Files: ['csv']
+
+Date: 2026-01-11
+  Input points: 39
+  Input range: 6.68 ~ 414.84 ft
+  Output range: 15.08 ~ 393.85 ft
+  Files: ['csv']
+
+Date: 2026-01-12
+  Input points: 41
+  Input range: 6.71 ~ 414.78 ft
+  Output range: 15.10 ~ 393.71 ft
+  Files: ['csv']
+
+Date: 2026-01-13
+  Input points: 41
+  Input range: 6.74 ~ 414.77 ft
+  Output range: 15.09 ~ 393.66 ft
+  Files: ['csv']
+

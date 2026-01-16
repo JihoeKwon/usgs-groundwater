@@ -1,0 +1,72 @@
+Kriging Interpolation Results - Multiple Dates
+============================================================
+
+Input file: socal_groundwater_20260101_20260113.csv
+Output file: socal_kriging_multiframe.dat
+Grid resolution: 50 x 50
+Grid points per frame: 2500
+Variogram model: spherical
+
+Grid bounds:
+  Lon: [-117.421197, -116.626197]
+  Lat: [32.514499, 34.197646]
+
+Dates processed: 13
+Dates skipped: 0
+
+============================================================
+Statistics by Date
+============================================================
+
+2026-01-01:
+  Input: 43 pts, 4.67 ~ 415.01 ft
+  Output: 14.44 ~ 394.16 ft (mean: 109.47)
+
+2026-01-02:
+  Input: 38 pts, 6.02 ~ 415.03 ft
+  Output: 14.89 ~ 394.18 ft (mean: 110.35)
+
+2026-01-03:
+  Input: 41 pts, 6.33 ~ 414.93 ft
+  Output: 14.90 ~ 394.08 ft (mean: 109.64)
+
+2026-01-04:
+  Input: 42 pts, 5.95 ~ 414.92 ft
+  Output: 14.92 ~ 394.05 ft (mean: 109.69)
+
+2026-01-05:
+  Input: 39 pts, 5.45 ~ 414.92 ft
+  Output: 14.75 ~ 394.07 ft (mean: 110.37)
+
+2026-01-06:
+  Input: 39 pts, 6.32 ~ 414.89 ft
+  Output: 14.94 ~ 394.03 ft (mean: 110.56)
+
+2026-01-07:
+  Input: 41 pts, 6.45 ~ 414.74 ft
+  Output: 14.90 ~ 393.91 ft (mean: 109.72)
+
+2026-01-08:
+  Input: 38 pts, 6.53 ~ 414.85 ft
+  Output: 15.07 ~ 393.98 ft (mean: 110.56)
+
+2026-01-09:
+  Input: 38 pts, 6.61 ~ 415.07 ft
+  Output: 15.13 ~ 394.18 ft (mean: 110.63)
+
+2026-01-10:
+  Input: 39 pts, 6.66 ~ 415.00 ft
+  Output: 15.10 ~ 394.08 ft (mean: 110.40)
+
+2026-01-11:
+  Input: 39 pts, 6.68 ~ 414.84 ft
+  Output: 15.08 ~ 393.85 ft (mean: 110.21)
+
+2026-01-12:
+  Input: 41 pts, 6.71 ~ 414.78 ft
+  Output: 15.10 ~ 393.71 ft (mean: 110.39)
+
+2026-01-13:
+  Input: 41 pts, 6.74 ~ 414.77 ft
+  Output: 15.09 ~ 393.66 ft (mean: 110.35)
+

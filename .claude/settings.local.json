@@ -3,15 +3,21 @@
     "allow": [
       "mcp__context7__query-docs",
       "Bash(python:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "mcp__usgs-gwinfo__get_groundwater_data",
+      "Bash(curl:*)",
+      "mcp__kriging__kriging_interpolate_multiple",
+      "mcp__visualize-kriging__visualize_kriging_result",
+      "mcp__analysis-report__generate_analysis_report"
     ]
   },
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
-    "usgs-nwis",
+    "usgs-gwinfo",
+    "kriging",
+    "visualize-kriging",
     "notion",
     "slack",
-    "youtube-transcript",
     "playwright",
     "linear"
   ]
