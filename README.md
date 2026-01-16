@@ -22,11 +22,12 @@ USGS 지하수 데이터 수집, Kriging 보간, 시각화를 위한 MCP(Model C
 │                 │    │                 │    │                 │
 │ • 관측소 조회    │    │ • Ordinary      │    │ • 등고선 맵     │
 │ • 수위 데이터    │    │   Kriging       │    │ • 불확실성 맵   │
-│ • CSV 출력      │    │ • GeoTIFF 출력  │    │ • 비교 플롯     │
+│ • CSV 출력      │    │ • 다중날짜 보간  │    │ • GIF 애니메이션│
+│                 │    │ • .dat/.csv출력  │    │ • 비교 플롯     │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
         │                      │                      │
         ▼                      ▼                      ▼
-   [CSV 데이터]          [Grid CSV]              [PNG 이미지]
+   [CSV 데이터]          [.dat/.csv]            [PNG/GIF 이미지]
 ```
 
 ## 설치
@@ -88,20 +89,22 @@ python visualize_mcp.py
 |------|------|
 | `get_groundwater_sites` | 경계 상자 내 관측소 목록 조회 |
 | `get_groundwater_data` | 지정 기간의 지하수위 데이터 조회 및 CSV 출력 |
+| `get_groundwater_data_single_date` | 단일 날짜 지하수위 데이터 조회 |
 | `get_site_history` | 특정 관측소의 과거 데이터 조회 |
 
 ### kriging
 
 | 도구 | 설명 |
 |------|------|
-| `kriging_interpolate` | Ordinary Kriging 보간 수행 |
+| `kriging_interpolate` | 단일 날짜 Ordinary Kriging 보간 수행 |
+| `kriging_interpolate_multiple` | 다중 날짜 Kriging 보간 (섹션 형식 .dat 출력) |
 | `get_variogram_models` | 사용 가능한 베리오그램 모델 목록 |
 
 ### visualize-kriging
 
 | 도구 | 설명 |
 |------|------|
-| `visualize_kriging_result` | Kriging 결과 시각화 |
+| `visualize_kriging_result` | Kriging 결과 시각화 (PNG/GIF 애니메이션) |
 | `get_available_colormaps` | 사용 가능한 컬러맵 목록 |
 | `create_comparison_plot` | 두 데이터셋 비교 플롯 |
 

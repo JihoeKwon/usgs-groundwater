@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-GeoAI agent project for collecting, analyzing, and visualizing groundwater data from the USGS NWIS (National Water Information System) API. The project uses MCP (Model Context Protocol) servers to enable AI-driven groundwater analysis workflows.
+Agent project for collecting, analyzing, and visualizing groundwater data from the USGS NWIS (National Water Information System) API. The project uses MCP (Model Context Protocol) servers to enable AI-driven groundwater analysis workflows.
 
 ## Development Commands
 
@@ -40,20 +40,22 @@ The project implements a three-stage groundwater analysis pipeline via MCP serve
 ```
 
 **1. usgs-gwinfo** (`usgs_gwinfo_mcp.py`)
-- Tools: `get_groundwater_sites`, `get_groundwater_data`, `get_site_history`
+- Tools: `get_groundwater_sites`, `get_groundwater_data`, `get_groundwater_data_single_date`, `get_site_history`
 - Input: Bounding box (west,south,east,north), date range, aquifer type
-- Output: CSV with site coordinates and water depth values
+- Output: CSV with site coordinates and water depth values (wide format with dates as columns)
 
 **2. kriging** (`kriging_mcp.py`)
-- Tools: `kriging_interpolate`, `get_variogram_models`
+- Tools: `kriging_interpolate`, `kriging_interpolate_multiple`, `get_variogram_models`
 - Input: CSV from usgs-gwinfo with Lat/Lon columns
-- Output: Grid CSV, GeoTIFF (if rasterio available), metadata
+- Single date output: Grid CSV, GeoTIFF (if rasterio available), metadata
+- Multiple dates output: Sectioned format file (.dat) with all dates in single file
 - Variogram models: spherical (default), gaussian, exponential, linear
 
 **3. visualize-kriging** (`visualize_mcp.py`)
 - Tools: `visualize_kriging_result`, `get_available_colormaps`, `create_comparison_plot`
-- Input: Grid CSV from kriging
-- Output: PNG visualization with contour map and variance plot
+- Input: Grid CSV or sectioned format file (.dat) from kriging
+- Single frame output: PNG with contour map and variance plot
+- Multiple frames output: GIF animation with time series visualization
 
 ### USGS API Integration
 
@@ -77,7 +79,11 @@ Key parameter code: `72019` (Depth to water level, feet below land surface)
 3. **Data Fetch** → JSON daily values for filtered sites
 4. **CSV Export** → Wide format with dates as columns (UTF-8-sig for Excel)
 5. **Kriging** → Ordinary Kriging with configurable variogram
+   - Single date → Grid CSV + GeoTIFF + metadata
+   - Multiple dates → Sectioned format (.dat) with [HEADER], [COORDINATES], [DEPTH], [VARIANCE] sections
 6. **Visualization** → Contour map with observation point overlay
+   - Single frame → PNG (depth map + variance map side by side)
+   - Multiple frames → GIF animation with time series
 
 ## API Constraints
 
@@ -94,5 +100,9 @@ External MCP servers (`.mcp.json`):
 
 ## Key Files
 
+- `usgs_gwinfo_mcp.py` - USGS data collection MCP server
+- `kriging_mcp.py` - Kriging interpolation MCP server
+- `visualize_mcp.py` - Visualization MCP server
 - `USGS_NWIS_GUIDE.md` - API documentation with Python examples
+- `USGS_GWINFO_MCP_GUIDE.md` - MCP server usage guide
 - `backup/` - Legacy standalone scripts (pre-MCP architecture)

@@ -56,7 +56,7 @@ Claude Code에서는 `.mcp.json`에 설정되어 자동으로 실행됩니다.
 
 ### 2. get_groundwater_data
 
-지정된 영역과 기간의 지하수위 데이터를 조회합니다.
+지정된 영역과 기간의 지하수위 데이터를 조회합니다. **다중 날짜 범위를 지원합니다.**
 
 **파라미터:**
 | 파라미터 | 타입 | 필수 | 설명 |
@@ -71,35 +71,73 @@ Claude Code에서는 `.mcp.json`에 설정되어 자동으로 실행됩니다.
 ```json
 {
   "bbox": "-117.5,32.5,-116.5,33.5",
-  "start_date": "2026-01-13",
+  "start_date": "2026-01-01",
   "end_date": "2026-01-13",
   "aquifer_type": "U",
   "sites_found": 22,
   "sites_with_data": 20,
-  "dates": ["2026-01-13"],
-  "output_csv": "san_diego_gw.csv",
+  "date_count": 13,
+  "dates": ["2026-01-01", "2026-01-02", "..."],
+  "stats": {"min": 4.67, "max": 415.07, "mean": 134.62},
+  "output_csv": "socal_groundwater.csv",
   "data": {
     "323527117050003": {
       "name": "018S002W22E005S",
-      "lat": 32.591,
-      "lon": -117.083,
+      "lat": "32.591",
+      "lon": "-117.083",
       "values": {
-        "2026-01-13": 35.01
+        "2026-01-01": 35.47,
+        "2026-01-02": 35.46,
+        "...": "..."
       }
     }
   }
 }
 ```
 
-**CSV 출력 형식:**
+**CSV 출력 형식 (Wide Format):**
 ```
-Site,Name,Lat,Lon,2026-01-13,Change
-323527117050003,"018S002W22E005S",32.591,-117.083,35.01,
+Site,Name,Lat,Lon,2026-01-01,2026-01-02,...,2026-01-13,Change
+323527117050003,"018S002W22E005S",32.591,-117.083,35.47,35.46,...,35.01,-0.46
 ```
 
 ---
 
-### 3. get_site_history
+### 3. get_groundwater_data_single_date
+
+**단일 날짜**의 지하수위 데이터를 간편하게 조회합니다.
+
+**파라미터:**
+| 파라미터 | 타입 | 필수 | 설명 |
+|---------|------|------|------|
+| `bbox` | string | O | 경계 상자 `'서,남,동,북'` |
+| `date` | string | O | 대상 날짜 `'YYYY-MM-DD'` |
+| `aquifer_type` | string | X | 대수층 유형 (기본값: `'U'`) |
+| `output_csv` | string | X | CSV 출력 파일명 |
+
+**반환값:**
+```json
+{
+  "bbox": "-117.5,32.5,-116.5,33.5",
+  "date": "2026-01-13",
+  "aquifer_type": "U",
+  "sites_found": 22,
+  "sites_with_data": 20,
+  "output_csv": "san_diego_gw.csv",
+  "data": {
+    "323527117050003": {
+      "name": "018S002W22E005S",
+      "lat": "32.591",
+      "lon": "-117.083",
+      "value": 35.01
+    }
+  }
+}
+```
+
+---
+
+### 4. get_site_history
 
 특정 관측소의 과거 데이터를 조회합니다.
 
@@ -140,12 +178,22 @@ Claude Code가 자동으로 다음을 수행:
 
 ### 파이프라인 워크플로우
 
+**단일 날짜 분석:**
 ```
-[get_groundwater_data] → CSV 생성
+[get_groundwater_data_single_date] → CSV 생성
         ↓
-[kriging_interpolate] → 보간 그리드 생성
+[kriging_interpolate] → Grid CSV + GeoTIFF
         ↓
 [visualize_kriging_result] → PNG 시각화
+```
+
+**시계열 분석 (다중 날짜):**
+```
+[get_groundwater_data] → CSV 생성 (날짜별 컬럼)
+        ↓
+[kriging_interpolate_multiple] → .dat 섹션 파일
+        ↓
+[visualize_kriging_result] → GIF 애니메이션
 ```
 
 ---

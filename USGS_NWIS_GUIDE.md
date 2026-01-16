@@ -211,14 +211,30 @@ print(avg_by_site)
 3. **측정소 상태**: 일부 측정소는 비활성 또는 데이터가 없을 수 있음
 4. **좌표계**: WGS84 사용
 
-## 생성된 파일
+## MCP 서버 연동
 
-작성된 Python 스크립트들:
-- `usgs_nwis_central_valley.py` - 원본 전체 기능 버전
-- `usgs_nwis_simple_test.py` - 간단한 테스트 버전
-- `usgs_nwis_final.py` - 최종 실용 버전
+이 프로젝트는 USGS API를 MCP 서버로 래핑하여 Claude Code에서 자연어로 사용할 수 있습니다.
 
-필요한 패키지:
+**현재 MCP 서버:**
+- `usgs_gwinfo_mcp.py` - 데이터 수집 MCP 서버
+- `kriging_mcp.py` - 공간 보간 MCP 서버
+- `visualize_mcp.py` - 시각화 MCP 서버
+
+**필요한 패키지:**
 ```bash
-pip install requests pandas
+# 기본 의존성
+pip install requests pandas mcp
+
+# Kriging + 시각화
+pip install pykrige matplotlib
+
+# GeoTIFF (선택)
+pip install rasterio
 ```
+
+**사용 예:**
+```
+San Diego 지역의 2026년 1월 지하수 데이터를 시각화해줘
+```
+
+자세한 MCP 사용법은 `USGS_GWINFO_MCP_GUIDE.md`를 참조하세요.
